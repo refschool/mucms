@@ -1,0 +1,1 @@
+<body style="margin:0; padding:0; margin-top:3px;" ><?php include("../core.class.php"); echo $cmsVersion; ?></body>

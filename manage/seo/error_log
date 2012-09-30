@@ -1,0 +1,7 @@
+[08-May-2011 18:38:24] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/referenc/public_html/tablettepc.org/manage/seo/seofunctions.php on line 52
+[08-May-2011 18:38:51] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/referenc/public_html/tablettepc.org/manage/seo/seofunctions.php on line 52
+[08-May-2011 18:38:56] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/referenc/public_html/tablettepc.org/manage/seo/seofunctions.php on line 52
+[08-May-2011 18:39:17] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/referenc/public_html/tablettepc.org/manage/seo/seofunctions.php on line 52
+[17-May-2011 16:07:15] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/seo/seofunctions.php on line 31
+[17-May-2011 16:07:18] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/seo/seofunctions.php on line 31
+[17-May-2011 16:07:48] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/seo/seofunctions.php on line 31

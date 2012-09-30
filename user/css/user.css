@@ -1,0 +1,65 @@
+/* ACCOUNT CSS Document */
+html, body {height:100%;background-color:#ffffff;color:#444;}
+* { margin:0; padding:0;font-family:Arial, Helvetica, sans-serif;}
+
+/* table styling */
+.centered-table {width:500px;padding:15px 20px 30px 20px;margin-left:auto;margin-right:auto; border:2px solid #388ABC;background-color:#B8D7EA;}
+.centered-table label {display:block}
+.vlabel {width:auto;padding:3px; text-align:right;border:1px; border-color:#000;}
+.vform  {background-color:transparent; padding:3px; border:1px; border-color:#000;}
+.menu { display:block; list-style-type:none; float:left; padding-left:5px;}
+
+.profile-table {width:600px;padding:10px 10px 10px 0;margin:10px 0 10px 0; border-collapse:collapse;border:2px solid #000;background-color:#F0F4F5;}
+.profile-table tr {border:1px solid #999;}
+.profile-title {padding:10px 5px 10px 5px; text-align:center; font-weight:bold;}
+.profile-label {width:170px;padding:2px 10px 2px 2px;background-color:#B1CDDC; text-align:right;border:1px; border-color:#000;}
+.profile-data {padding:2px 2px 2px 10px;border:1px; border-color:#000;}
+.profile-link {padding:10px 5px 10px 5px;text-align:center;}
+
+.backtoprofile {width:200px; height:auto;margin-left:auto;margin-right:auto; margin-top:230px; padding:30px;font-size:18px; color:#000; background-color:#F1FFB8; border:3px solid #000;text-align:center;}
+/* wrapping DIV styling */
+#superframe{width:100%;margin-left:auto;margin-right:auto; height:auto;background:transparent repeat-x url(images/minibandeau.gif) top;}
+
+#frame{width:824px;height:auto;margin-left:auto;margin-right:auto;background-color:#ffffff ;}
+
+
+#mini-header{width:824px;height:30px;background-color:#337BA9;}
+
+#container{width:100%;height:auto;float:left;margin-left:auto;margin-right:auto;background-color:transparent;}
+.form {width:auto;margin-left:auto;margin-right:auto;}
+label {margin:0 0 5px 0;color:#2D6E96; font-size:17px;}
+input.bg,input.bg2 {width:246px; height:20px;padding:2px 0 0 4px;font-size:1em;letter-spacing:1px;color:#444;background:transparent url(input250.jpg) no-repeat top left;border:1px solid #337BA9;}
+input.cp {width:67px; height:25px;padding:1px 0 0 4px;font-size:1em;letter-spacing:1px;color:#444;background:transparent url(input250.jpg) no-repeat top left;border:1px solid #337BA9;}
+input.btn {width:113px; height:30px;padding:0;}
+.tashort {width:100%;padding:2px 0 0 4px;letter-spacing:1px;background:transparent url(images/textarea.jpg) no-repeat top left;border:1px solid #337BA9;color:#444;}
+
+.image {width:auto;height:auto;margin:0;padding:2px;border-width:1px; border-color:#CCC; border-style:solid;}
+.post {width:100%;height:auto;color:#000;padding-bottom:10px;}
+.box { width:90%;height:auto; padding:0 0 0 10px;margin:10px 0 10px 0;}
+#logout {width:auto;height:auto;float:right;}
+#logout a:link{color:#ffffff;text-decoration:none}
+#logout a:hover,#logout a:active,#logout a:visited{color:#ffffff;}
+
+#greeting {width:auto;height:auto;padding:5px;}
+/*///////////////////////////////////////////////////////////*/
+h1 {margin:5px 0 10px 10px;font-weight:bold;font-size:2.0em;letter-spacing:-2px;text-align:center;color:#337BA9;}
+h2 {margin:10px 0 10px 5px;font-size:1.4em;font-weight:bold;display:block; color:#337BA9;text-align:center;}
+h3 {margin:10px 0 10px 0;font-size :1.3em;font-weight:bold;letter-spacing : -.05em;color:#337BA9;}
+p {font-size:14px;line-height:1.5em; margin:5px 0 10px 0;padding:0 0 0 5px;}
+
+a {margin:0 0 3px 0;color:#49A8DC;}
+a:link,a:active,a:hover,a:visited { font-weight:normal; font-size:14px;color:#3982AA;}
+/* {color:#4399C8; font-weight:normal; font-size:14px;}*/
+
+.post ul {width:auto; padding-top:0px; padding-bottom:0px; padding-left:10px; padding-right:0px; list-style-image:url('images/bullet.png'); margin-left:0px; list-style-position: inside;}
+.post li {display:block;border-bottom:0px; margin-left:0px;margin-right:0;padding-top:5px; padding-left:0px; padding-bottom:5px;font-size:12px;}
+
+.box ul {width:auto; padding:0 0 0 5px;}
+.box li {list-style-type:none;margin:5px 0 5px 0;}
+
+.box li a:link{color:#49A8DC;}
+.box li a:hover,.box li a:active{color:#49A8DC;}
+
+.portrait {width:140px; height:180px;margin:0;padding:0;background-color:#888;text-align:center;border:3px solid #777; }
+
+

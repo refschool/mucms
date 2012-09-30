@@ -1,0 +1,117 @@
+/* CSS Document µCMS Default Theme */
+/* Layout */
+
+* { margin:0; padding:0;font-family:Arial, Helvetica, sans-serif;font-size:12px}
+body {height:100%;background-color:#ffffff;background:url('images/background.png') top left repeat-x}
+
+#superframe{width:100%;height:100%;margin-left:auto;margin-right:auto; margin-top:10px;height:100%;background-color:none;}
+#frame{width:800px;height:100%;margin-left:auto;margin-right:auto;background-color:#fff ;}
+#head{width:800px;height:auto;background-color:transparent;}
+#branding {width:800px;height:auto; padding:0 0 0 0; margin:0 0 0 0;border-bottom:3px solid #00f}
+#menu {height:25px;width:800px;border-bottom:solid 4px #FF7F00;text-align:left;font-size:14px;}
+#main{width:auto;height:auto;background-color:#B3C4E6;}
+#leftbar {width:590px;height:100%;border-style:none;border-width:0px;border-color:#CCCCCC;background-color:#fff;float:left;}
+
+#sidebar {float:right;width:210px;height:100%;background-color:#ffffff;position:relative;margin:0px;background-color:#fff}
+#footer {width:auto;height:auto;margin:10px 0 0 0;padding:5px 0 5px 0;border-top:2px solid #FF7F00;border-bottom:4px solid #0066FF;font-size:12px;color:#000;text-align:left; }
+
+#footer ul {width:auto; }
+#footer li {font-size:12px;padding:0 5px 0 5px;}
+#footer a:link,#footer a:visited {color:#185190; font-weight:normal; font-size:12px;}
+#comment {text-align:left}
+
+h1 {padding:0 0 0 10px;font-weight:bold;font-size:1.3em;text-align:left;letter-spacing:-1px;line-height:40px;color:#fff;background-color:#0066FF}
+h2 {margin:15px 10px 10px 10px;padding:0;font-size:1.3em;font-weight:bold;color:#FF7F00;line-height:1.5em;}
+a {text-decoration:none}
+h3 {padding:5px 0 5px 5px;font-size : 12px;line-height:16px;background-color:#0066FF;color:#fff}
+h4 {padding:0 0 5px 0;font-weight:bold;font-size:14px;color:#7F66FF;}
+h5 {font-weight:normal;font-size:13px;text-align:left;letter-spacing:0x;color:#000000;}
+h6 {line-height:normal; font-size:13px; clear :left;}
+
+img {margin:0}
+
+/****************leftbar**********************/
+.caption {text-align:center;background-color:#CCCCCC;}
+
+.post {width:100%;height:auto;color:#000;margin:0px; padding:10px 0 10px 0; font-size:14px; border-bottom:dotted 1px #ccc}
+.post ul {width:auto; margin:20px 0 20px 10px;padding:0 0 0 10px; list-style-image:url('images/bullet.gif');  list-style-position: inside;}
+.post ul li{font-size:12px;margin:5px 0 5px 0;padding:0 10px 0 0;}
+
+.post ol {width:auto; margin:20px 0 20px 25px;padding:0 0 0 10px;}
+.post ol li {font-size:12px;margin:5px 0 5px 0;padding:0 10px 0 0;}
+
+.post p {font-size:12px;line-height:1.4em; margin:5px 0 10px 10px;padding:0 10px 0 0}
+.post  a:link,.text a:visited,.text a:active {color:#185190;border-bottom:1px #3E51B5 solid}
+.post a:link,.post a:visited{color:#185190;}
+.readmore {}
+
+
+.image {width:auto;height:auto;margin-left:auto;margin-right:auto;padding:2px;text-align:center;}
+.link {width:455px;height:auto;font-size:12px;color:#000; border-top:#dddddd solid 1px; border-bottom:#dddddd solid 1px;margin-top:10px; margin-bottom:5px; padding:5px; padding-bottom:10px; background-color:#fafafa;}
+.bookmark {width:auto;height:auto;font-size:11px;color:#000;position:relative; border-top:#dddddd solid 1px; border-bottom:#dddddd solid 1px;margin-left:5px; margin-top:10px; margin-bottom:10px; padding:5px; background-color:#fafafa;}
+.related{width:auto;height:auto;font-size:11px;color:#000;position:relative; border-top:#dddddd solid 1px; border-bottom:#dddddd solid 1px;margin-left:5px; margin-top:10px; margin-bottom:10px; padding:5px; background-color:#fafafa;}
+
+.home {font-size:18px}
+
+/**********************************
+*   sidebar  
+***********************************/
+.box { width:200px; height:auto;padding:0 0 5px 0;margin-left:auto; margin-right:auto;margin-top:15px; margin-bottom:15px; font-size:12px;background:none;}
+.box ul {width:auto; padding:5px 0 10px 25px;list-style-image:url('images/bullet.gif');}
+.box ul li {padding:5px 10px 0 0}
+
+.tagbox { width:200px; height:auto;padding:0 0 15px 0;margin-left:auto; margin-right:auto;margin-top:15px; margin-bottom:15px; font-size:12px;background:none;}
+.tagbox ul {width:auto; padding:5px 0 10px 5px;list-style-type:none}
+.tagbox ul li {padding:5px 10px 0 0;margin:0 0 5px 0}
+
+.boxdata {background:#fff}
+.tag {float:left}
+/************************************************
+**     TOP
+************************************************/
+
+#menu ul {line-height:25px;}
+#menu li{ position:relative;font-weight:bold;display:block;list-style-type:none; float:left; border-right:solid 1px #aaa; }
+#menu li a:link, #menu li a:hover, #menu li a:active, 
+#menu li a:visited {font-size:14px;font-weight:bold;color:#444444; text-decoration:none;padding-right:15px;padding-left:15px;}
+#menu li a:hover, #menu li a:active {color:#444444;background-color:#FF7F00;margin-top:0px;margin-bottom:0px; float:left;}
+
+/************************************************
+**     *** widgets ****
+************************************************/
+.link a:link,.link a:visited{color:#185190; font-weight: bold;}
+.bookmark a:link, .bookmark a:visited {color:#185190; font-weight:normal;}
+.code {font-weight:bold;font-family: Courier, "Courier New", monospace}
+/**********form******/
+
+form input {margin:5px 5px 5px 0;font-size:14px; border-width:1px;color:#444}
+textarea {margin:5px 0 5px 0; border-style:inset;border-width:1px;color:#444}
+.submit {padding:7px;}
+table {border-collapse:collapse}
+.submit {border-width:1;}
+.label {background-color:#aaaaaa; padding:3px; border:1px; border-color:#000;}
+.form  {background-color:#dddddd; padding:3px; border:1px; border-color:#000;}
+
+/* CSS Document */
+caption {padding:0px;font-family:Arial, Helvetica, sans-serif;text-align:left;
+font-weight:bold;}
+
+.logo img{border-style:none}
+
+#related {margin:10px 10px 0 0;padding:10px; border:1px #ccc solid;background-color:#eee;}
+#related ul {width:auto; padding:5px 0 10px 25px;list-style-image:url('images/bullet.gif');}
+
+/************************************************
+					BOTTOM
+*************************************************/
+.date {margin:0 0 0 10px}
+.comment-preview {margin:10px 0 0 0;}
+.comment-preview a{text-decoration:none}
+.comments-count {margin:0 0 0 10px;padding:3px;color:#fff;background-color:#0066FF;-moz-border-radius: 3px;border-radius: 3px;border:1px solid #0066FF}
+#comment-form {margin:10px 10px 0 0;padding:10px; border:1px #ccc solid;background-color:#eee;}
+.comment {margin:10px 10px 0 0;padding:10px;border:1px #ccc solid;}
+
+.subfooter {width:200px;height:150px;float:left;background-color:transparent}
+.subfooter ul {width:auto; padding:5px;}
+.subfooter li {list-style-type:none;padding:5px;margin:0;font-size:12px;}
+.subfooter a:link,#footer a:visited {color:#aaa; font-weight:normal;}

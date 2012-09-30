@@ -1,0 +1,105 @@
+/* general styling*/
+* {font-family:Arial, Helvetica, sans-serif;}
+body {margin:0; padding:0;background-color:#eee;}
+/* styling for div elements */
+h2 {margin:0}
+#frame {margin:0 0 0 0; padding:0 0 0 0;}
+#header {width:100%;height:auto; margin:0 0 4px 0; padding:0; position:fixed;z-index:101;color:#fff; background-color:#888;}
+#main {width:100%;height:auto;/*float:left;*/ margin:0; padding:40px 0 0 0; background-color:none;}
+#footer {height:70px;color:#fff;background-color:#888;font-size:12px}
+
+#editor {float:left;height:auto;padding:0 0 0 5px;font-size:10px;background-color:transparent;}
+#editor ul {margin:0; padding:0;}
+
+
+#browser {float:right;height:100%;margin:0 0 0 5px; padding:0 0 0 0;font-size:10px;}
+#browser ul {margin:0; padding:0;}
+.message {height:30px;float:right;margin:0 150px 0 0}
+
+
+/****** menu bar **********/
+/****** common styling **********/
+
+#menu {position:relative; font-size:12px; z-index:100;background-color:#888}
+#menu ul {padding:0 0 0 0; margin:0; list-style: none;background-color:#888;}
+#menu ul li a, #menu ul li a:visited {display:block; text-decoration:none; color:#000;width:auto; height:20px; text-align:left; color:#000; border:none; background-color:#888; line-height:20px; font-size:12px; overflow:hidden;padding:2px;}
+
+#menu ul li {padding:0 10px 0 0; margin:0 0 0 0;float:left; position:relative;}
+#menu ul li ul {margin:3px 0 0 0;display: none;z-index:101;background:#DBDBDB;} /*hide the submenu*/
+
+/* specific to non IE browsers */
+
+#menu ul li:hover a {color:#000; background:#DBDBDB;/*text-decoration:underline;*/}
+#menu ul li:hover ul {display:block; position:absolute; top:21px; left:0; width:200px;border:1px solid #000}
+#menu ul li:hover ul li a.hide {background:#eee; color:#000;}
+#menu ul li:hover ul li:hover a.hide {background:#eee; color:#000;}
+
+
+#menu ul li:hover ul li ul {width:200px;display: none;}
+#menu ul li:hover ul li a {padding:3px 0 3px 5px;width:193px;display:block; background:#DBDBDB; color:#000;border-bottom:1px solid #aaa}
+#menu ul li:hover ul li a:hover {background:#fff; color:#000;}
+
+
+#menu ul li:hover ul li:hover ul {display:block; position:absolute; left:105px; top:0;}
+#menu ul li:hover ul li:hover ul.left {left:-105px;}
+
+/****** end menu bar **********/
+
+p {font-size:12px;}
+/* fieldset element */
+#identification {width:200px;height:auto; float:left; margin:5px 10px 5px 0;}
+label {margin:3px 0 3px 2px;font-size:10px;font-weight:bold;display:block;}
+label.clickable {display:inline;float:none/*important to make it inline*/}
+
+.form {padding:0 0 0 10px; margin:0 0 0 0;}
+#main_text {width:98%;font-size:12px;font-family: consolas, "Courier New";}
+#robots {width:98%;font-size:12px;font-family: consolas, "Courier New";}
+#config {width:98%;font-size:12px;font-family: consolas, "Courier New";}
+
+/* Tabbed navigation */
+/*tab is for li element*/
+.tab{ color:#888; display:block;float:left; margin:0 0 0 0; height:18px;padding:2px;
+background-color:#ccc;border:1px solid #ccc;font-size:14px;font-weight:bold;border-bottom:none;
+text-align: center;cursor: pointer;cursor: hand; list-style-type:none;
+ }
+	  
+/*panel is for div element*/
+.panel{ width: 100%;height:100%;margin:0 0 0 0 ;padding:0 0 0 0;display:none;color:#222; border:1px solid #ccc;border-top:none;overflow: auto;background-color:#fff;}
+.subset {width:95%;margin:2px 0; padding:0;background-color:none;}
+.subset p {display:inline; font-size:12px;}
+/* Editor toolbar */
+
+#transaction {margin:0; padding:2px;position:fixed; border:1px solid #000;background-color:#ddd}
+#transaction ul {margin:0; padding:0;}
+input {color:#666}
+input.btn {margin:0; padding:0; background-color:#fff;border:1px solid #ccc;}
+input.save {width:33px;height:33px;margin:0;padding:2px;background:transparent no-repeat url(images/save.jpg) left; border:1px solid #ccc;}
+input.savenedit {width:33px;height:33px;margin:0;padding:2px;background:transparent no-repeat url(images/savenedit.jpg) left; border:1px solid #ccc;}
+#transaction li {display:block;float:left; margin:0 5px 0 5px;}
+
+/* Editor */
+.info1 {margin:2px 0;border: 1px #ccc solid;background-color:#F0F0EE}
+
+
+/* Browser */
+#browsercat {width:90px; height:auto;float:left; margin:0 0 5px 0; padding:3px;border:1px solid #888; background-color:#FFF4AF;}
+#browsercat a{margin:1px;padding:2px ;font-size:12px;font-weight:bold;line-height:1.8em;text-decoration:none; background-color:#EBEBEB;border:1px solid #ccc}
+#listing {width:350px; height:100%;margin:0 0 0 5px;float:left; border:1px solid #888;overflow:auto;}
+#preview {width:98%;height:auto;margin:2px 0 0 0;padding:0;overflow:auto;background-color:#fff;border:1px solid #ccc; background:#fff;}
+
+/* browser table type 1 */
+.collapse {width:100%;border-collapse:collapse;}
+.vlabel {border-bottom:solid 1px #aaaaaa; padding:2px 3px 2px 3px; background-color:#cccccc;font-weight:bold; font-size:12px;}
+.header {border-left:solid 1px #aaaaaa; padding:2px 3px 2px 3px; background-color:#F7B64A; font-weight:bold; font-size:12px;}
+.vform {border-bottom:solid 1px #9AD2FF;background-color:#E0ECFF; padding:2px 3px 2px 3px;}
+.data {border-left:solid 1px #cccccc; border-bottom:dashed 1px #cccccc; background-color:#E0ECFF; padding:2px 3px 2px 3px;}
+.Y {background-color:#eee}
+.N {background-color:#bbb}
+#uploader {width:350px; height:550px;float:right;margin:0;padding:0;}
+#imagefolderbrowser {width:auto; height:300px;margin:0;padding:0;background-color:#ADEFFB}
+#imagefolderbrowser ul li {list-style-type:none}
+#imagelist {width:170px;height:550px;;overflow:scroll;float:left}
+
+#metadata {border:solid #ccc 1px;display:none;background-color:#FFE5BC}
+
+.round-button {text-decoration:none;padding:3px;border:1px solid #BF7601; -moz-border-radius: 5px;}

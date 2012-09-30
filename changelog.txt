@@ -1,0 +1,14 @@
+Mucms Changelog Version 2.8
+===========================
+// NOTICE converting the files from dev to production environment
+1/modify htaccess short tags and install dir
+2/manage module rollback IP filtering
+
+MUCMS
+13-08-2012
+-changement dans config.php du nom de la variable de la base de données de $db à $database pou éviter confusion avec objet de connexion mysqli
+-changement du nom de fichier d'installation install.php  en index.php
+-added not empty conditons for hook_insert_function
+-modified tag-category-functions.php returned arrays conditional, if not empty then return array else return false
+-removed eror reporting in mu-header and put it in config.php
+-fixed get_link_tags

@@ -1,0 +1,5 @@
+[30-Apr-2011 00:16:29] PHP Parse error:  syntax error, unexpected '{' in /home/referenc/public_html/tablettepc.org/manage/class/manager.class.php on line 156
+[30-Apr-2011 00:17:48] PHP Parse error:  syntax error, unexpected '}' in /home/referenc/public_html/tablettepc.org/manage/class/manager.class.php on line 167
+[30-Apr-2011 10:21:47] PHP Parse error:  syntax error, unexpected T_SWITCH, expecting ',' or ';' in /home/referenc/public_html/tablettepc.org/manage/settings/savedb.php on line 21
+[30-Apr-2011 22:42:55] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home/referenc/public_html/tablettepc.org/manage/settings/controller.php on line 10
+[30-Apr-2011 23:38:09] PHP Parse error:  syntax error, unexpected $end, expecting ',' or ';' in /home/referenc/public_html/tablettepc.org/manage/settings/controller.php on line 25
