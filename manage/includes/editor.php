@@ -236,7 +236,7 @@ $meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
 	
 	?>
 	
-	<p><a href="http://localhost/devmucms/manage/newpost.php">Create a New Post</a></p>
+	<p><a href="<?=$tld2?>/manage/newpost.php">Create a New Post</a></p>
 	
 	<?php
 }

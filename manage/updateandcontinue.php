@@ -273,7 +273,7 @@ build_rss();
 //update the sitemap
 build_sitemap();
 
-echo "<meta http-equiv='refresh' content='5; url=$tld"."manage/write.php?id=$id'>";
+echo "<meta http-equiv='refresh' content='".$redir_delay."; url=$tld"."manage/write.php?id=$id'>";
 $db->close();
 ?>
 
