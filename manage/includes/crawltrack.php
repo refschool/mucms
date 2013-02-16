@@ -15,7 +15,6 @@ if(strpos($post['query_string'],'/') == 0){
 $crawldata = get_googlebot_crawls($url);
 
 
-
 echo '<table class="collapse"><tr class="header"><td>N°</td><td>Date</td><td>Interval</td><td class="hlabel">Robot</td><td >IP</td><td>Crawl Err</td></tr>';
 for($i=0;$i < count($crawldata);$i++){
 	echo '<tr>';
