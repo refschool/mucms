@@ -12,14 +12,14 @@ if(!isset($_GET['id'])){$editid='1';} else {$editid = $_GET['id'];}
 
 if(!isset($_SESSION['LoggedIn'])){
 	echo 'u are not logged in please log in';
-echo "<meta http-equiv='refresh' content='2;$tld"."manage/index.php' />";
+echo "<meta http-equiv='refresh' content='2;$tld2".$install_folder."/manage/index.php' />";
 
 }
 	
 	
 if(isset($_SESSION['Userlevel']) &&  $_SESSION['Userlevel'] <> 'admin'){
 echo 'user level = '. $_SESSION['Userlevel'];
-	echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
+	echo "Vous n'avez pas les droits suffisants pour Ã©diter !<br> ";
 	echo '<a href="'.$tld.'">Retour</a><br>';
 	echo '<a href="'.$tld.'manage/logout.php">Logout</a>';
 }
@@ -31,7 +31,7 @@ else {
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Article management</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/manager.css" />
 <script type="text/javascript" src="js/ajax.js"></script>
 <script language="javascript" type="text/javascript" src="js/script.js"></script>
@@ -108,7 +108,7 @@ $(document).ready(function() {
 		$('#ajaxUpdate').click(function(){
 			var txt = $('#main_text').val();
 			
-			$.post('do.php',{postid: "<?=$editid ?>" , main_text : txt });//alert('<?=$editid ?>'+' édité : ' + txt);
+			$.post('do.php',{postid: "<?=$editid ?>" , main_text : txt });//alert('<?=$editid ?>'+' Ã©ditÃ© : ' + txt);
 		});
 	
 	

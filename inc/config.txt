@@ -2,6 +2,8 @@
 $tld = 'http://www.yourdomain.com/';
 $tld2 = 'http://www.yourdomain.com';
 
+$install_folder = 'INSTALL_FOLDER';
+
 $db = 'DB';
 $host = 'HOST';
 $user = 'USER';
@@ -16,7 +18,7 @@ $feed = 'FEED';
 $masteremail = 'todo@mucms.com';
 
 $authorname = 'AUTHOR' ;
-$themepath = 'template/default/';
+$themepath = $install_folder . 'template/default/';
 
 //site configuration
 $akismet_key = '04637fae8d1f';

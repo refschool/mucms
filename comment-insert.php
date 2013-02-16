@@ -10,11 +10,7 @@ require("inc/config.php");
 include("inc/class/core.class.php");
 include("inc/microakismet-1.2/class.microakismet.inc.php");
 
-/*
-//create connection object
-	@$db = new mysqli($host,$user,$pass,$db);
-	if (mysqli_connect_errno())	{	echo 'Error  : could not connect to database. Try again';	exit;	}
-	*/
+
 $comment = new Comments();
 
 //get POST  variable

@@ -96,12 +96,12 @@ $c = fetch_comments($post_id);
 }
 
 function comment_form(){
-	global $tld,$post_id;
+	global $tld2,$post_id,$install_folder;
 
 ?>
 	<div id="comment-form">
 		<p style="font-weight:bold;font-size:16px; color:#FF7F00">Leave a Comment</p>
-		<form method="post" action="<?=$tld?>comment-insert.php">
+		<form method="post" action="<?=$tld2?><?=$install_folder?>/comment-insert.php">
 			<input type="text" name="name" value="" maxlength="100" />Name*<br />
 			<input type="text" name="email" value="" />E-mail*<br />
 			<input type="text" name="website" value="" />Website<br />

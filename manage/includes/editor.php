@@ -44,7 +44,7 @@ if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];
 			
 			<td>Author<br/>
 				<input type="text" name="author" size ="20" maxlength="40" value="<?php
-if (!isset($editid)){echo $authorname;} else {
+if (empty($post['author'])){echo $authorname;} else {
 	echo $post['author'];} ?>">
 			</td>
 			<td>Tags<br/>
@@ -127,7 +127,7 @@ $meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
 
 		<tr>
 			<td>Permalink</td>
-			<td><?=$tld?>
+			<td><?=$tld2 . $install_folder . '/'?>
 			<input type=text id="thisurl" name="thisurl" size ="60" maxlength="300" value="<?=$post['query_string']; ?>">
 <a href="<?=$post['path']?>">Preview</a>
 			</td>
@@ -164,27 +164,30 @@ $meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
 	
 	<div id="tabs-3">
 
-		<a href="/manage/comment-delete.php?post_id=<?=$post['id']?>">Delete ALL Spam</a><br><br>
+		<a href="<?=$install_folder?>/manage/comment-delete.php?post_id=<?=$post['id']?>">Delete ALL Spam</a><br><br>
 		
 		
 			<table class="collapse">
-				<tr class="header"><th width="40">Name</th><th width="80">Comment</th></tr>
+				<thead class="header">
+					<tr><th width="20">Comments</th></tr>
+				</thead>
 			<?php
 				$comments = get_comments($post['id']);
 				for($i=0;$i<count($comments);$i++){
 	
 	?>
-				<tr style="border-bottom:solid 1px #aaa">
-				<td><a href="<?=$comments[$i]['website']?>" title="<?=$comments[$i]['website']?>"><?=$comments[$i]['name']?></a><br>
-				<?=$comments[$i]['email']?><br>
-				<br>
-				</td>
-					<td>
-					<?=$comments[$i]['timestamp']?> Status:<?=$comments[$i]['status']?><br>
-					<?=$comments[$i]['comment']?>
-					<bR>
-					<a id="<?=$comments[$i]['comment_id']?>" href="/manage/comment-delete.php?post_id=<?=$post['id']?>&com_id=<?=$comments[$i]['comment_id']?>">Delete</a></td>
-				</tr>
+				<tbody>
+					<tr style="border-bottom:solid 1px #aaa;">
+					<td class="com_<?=$comments[$i]['status']?>" style="padding : 10px"><a href="<?=$comments[$i]['website']?>" title="<?=$comments[$i]['website']?>"><?=$comments[$i]['name']?></a>,<?=$comments[$i]['email']?><?=$comments[$i]['timestamp']?> Status:<?=$comments[$i]['status']?> : 
+					<a id="<?=$comments[$i]['comment_id']?>" href="<?=$install_folder?>/manage/comment-delete.php?post_id=<?=$post['id']?>&com_id=<?=$comments[$i]['comment_id']?>">Delete</a>
+						<br>
+						<br>
+						<br>
+						<?=$comments[$i]['comment']?>
+						
+						</td>
+					</tr>
+				</tbody>
 	
 	<?php
 
@@ -236,7 +239,7 @@ $meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
 	
 	?>
 	
-	<p><a href="<?=$tld2?>/manage/newpost.php">Create a New Post</a></p>
+	<p><a href="<?=$tld2.$install_folder?>/manage/newpost.php">Create a New Post</a></p>
 	
 	<?php
 }

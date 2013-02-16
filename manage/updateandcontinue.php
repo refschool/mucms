@@ -22,17 +22,20 @@ $meta_id = $_POST['meta_id'];
 
 $title = $_POST['title'];
 $query_string = trim($_POST['thisurl']);
+
 	//process query_string according to old style url (pre 2.4 mucms version) remove first slash
-	$first_slash_pos = strpos($query_string,'/');
-	if($first_slash_pos == 0){
+	/*$first_slash_pos = strpos($query_string,'/');
+	if($first_slash_pos == 0){*/
 		
-		$path = $tld2 . $query_string;
-		} 
+		$path = $tld2 . $install_folder . '/'. $query_string;
+		/*} 
 		else 
 		{
 		
-		$path = $tld . $query_string;
+		$path = $tld . $install_folder . '/' . $query_string;
 		}
+	*/
+
 
 $h1_title = $_POST['h1_title'];
 $author = $_POST['author'];
@@ -273,7 +276,7 @@ build_rss();
 //update the sitemap
 build_sitemap();
 
-echo "<meta http-equiv='refresh' content='".$redir_delay."; url=$tld"."manage/write.php?id=$id'>";
+echo "<meta http-equiv='refresh' content='".$redir_delay."; url=$tld2".$install_folder. "/manage/write.php?id=$id'>";
 $db->close();
 ?>
 

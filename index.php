@@ -4,8 +4,8 @@ include('inc/functions.php');
 
 //include hook functinos
 				 //include($themepath ."comments.php"); 
-				  include($themepath ."body.php");
-				  include( $themepath . 'sidebar.php');
+				  include($themepath .'body.php');
+				  include($themepath . 'sidebar.php');
 /********************************
 * 	dispatcher
 *********************************/
@@ -27,13 +27,13 @@ include("content/plugins/plugin-config.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title><?php hook_insert('meta_title'); ?> | <?=$tUrl?></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="<?php hook_insert('meta_desc');?>" />
 <meta name="keywords" content = "<?php hook_insert('meta_kw');?>" />
 <?php hook_insert('meta_robots'); ?>
 <?php hook_insert('verification'); ?>
-<link rel="stylesheet" type="text/css" href="<?=$tld.$themepath?>global.css" />
-<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$feed?>" />
+<link rel="stylesheet" type="text/css" href="<?=$tld.$install_folder .$themepath?>global.css" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld2 . $install_folder .$feed?>" />
 <link rel="shortcut icon" href="<?=$tld.$themepath?>images/favicon.ico" type="images/x-icon" />
 <?php
 //_-`-_HOOK::before_head_-`-_

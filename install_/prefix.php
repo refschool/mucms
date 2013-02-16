@@ -12,7 +12,7 @@ $author = $mainauthor;
 $date = date('Y-m-d H:i:s');
 
 
-echo $prefix .' '. $host .' '. $db .' '.$user .' '. $password .' '. $hometitle .' '. $mainauthor ;
+echo $prefix .' '. $host .' '. $dbname .' '.$user .' '. $password .' '. $hometitle .' '. $mainauthor ;
 
 //=========Create config.php========
 //detect if file exist

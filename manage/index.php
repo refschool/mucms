@@ -52,20 +52,20 @@ elseif(!empty($_POST['username']) && !empty($_POST['password'])){
 			
 			if($_SESSION['Userlevel'] == 'admin'){
 			//echo 'Success : '.$_SESSION['Username'];
-			echo "<meta http-equiv='refresh' content='0;$tld"."manage/write.php' />";
+			echo "<meta http-equiv='refresh' content='0;$tld".$install_folder."/manage/write.php' />";
 			}
 			else {
 				
 				echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
-				echo '<a href="'.$tld.'">Retour</a><br>';
-				echo '<a href="'.$tld.'manage/logout.php">Logout</a>';	
+				echo '<a href="'.$tld.$install_folder.$install_folder.'">Retour</a><br>';
+				echo '<a href="'.$tld.$install_folder.'manage/logout.php">Logout</a>';	
 				
 			}
 		}
 		else {
 		
 		echo 'Login or password not correct please try again';
-		echo "<meta http-equiv='refresh' content='1;$tld"."manage/index.php' />";
+		echo "<meta http-equiv='refresh' content='1;$tld".$install_folder."/index.php' />";
 		}
 }
 

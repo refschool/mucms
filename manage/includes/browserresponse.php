@@ -58,12 +58,12 @@ $result = $db->query($sql);
 while($line = $result->fetch_assoc()){
 		//content table
  		$id = $line["id"];
-		$title=$line["title"];
+		$title=utf8_decode($line["title"]);
 		$published = $line["published"];
 		$count = $line["COMCOUNT"];
 
 		//display the datas rows of the table		
-		$content .=  '<tr class="'.$published.'"><td>'.$id.'</td><td><a href="'.$tld.'manage/write.php?id='.$id.'">'.$title.'</a></td><td><a href="javascript:ajax('.$id.');">Preview</a></td><td>'.$count.'</td></tr>';
+		$content .=  '<tr class="'.$published.'"><td>'.$id.'</td><td><a href="'.$tld2.$install_folder.'/manage/write.php?id='.$id.'">'.$title.'</a></td><td><a href="javascript:ajax('.$id.');">Preview</a></td><td>'.$count.'</td></tr>';
 		}
 		$content .=  '</table>';
 echo $content;

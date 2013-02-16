@@ -20,7 +20,7 @@ include ("../inc/config.php");
 
 <?php
 echo "<div class=\"backtoprofile\">Now you are logged out<br /></div>";
-echo "<meta http-equiv='refresh' content='1;".$tld."manage/' />";
+echo "<meta http-equiv='refresh' content='".$redir_delay.";".$tld.$install_folder."/manage/' />";
  ?>
 </body>
 </html>

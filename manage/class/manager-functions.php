@@ -14,8 +14,8 @@ function pretty($array){
 }
 
 //creat a new post and insert information in the table content and meta and set uncategorized as default category
-function create_post(){
-	global $db,$tprefix,$tld;
+function create_post($authorname = ''){
+	global $db,$tprefix,$tld,$install_folder;
 	
 		$today = date('Y-m-d H:m:s');
 
@@ -33,7 +33,9 @@ function create_post(){
 		$new_post_id = get_latest_post_id();echo 'new post_id = '  . $new_post_id.'<br>';
 
 		$content_sql = "INSERT INTO `$tprefix"."_content` (`id`,`meta_id`,`date_posted`,`published`,`author`,`title`) 
-		VALUES ('$new_post_id', '$new_meta_id','$today' ,'N','$authorname','YOUR TITLE HERE')";echo $content_sql.'<br>';
+		VALUES ('$new_post_id', '$new_meta_id','$today' ,'N','$authorname','YOUR TITLE HERE')";
+
+		echo $content_sql.'<br>';
 
 		$db->query($meta_sql) or die('query failed');
 		$db->query($content_sql) or die('query failed');

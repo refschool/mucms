@@ -103,3 +103,7 @@ input.savenedit {width:33px;height:33px;margin:0;padding:2px;background:transpar
 #metadata {border:solid #ccc 1px;display:none;background-color:#FFE5BC}
 
 .round-button {text-decoration:none;padding:3px;border:1px solid #BF7601; -moz-border-radius: 5px;}
+
+/*comments*/
+.com_U {background-color:#ff0000;}
+.com_P {}
