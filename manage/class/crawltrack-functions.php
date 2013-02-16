@@ -53,7 +53,12 @@ function get_googlebot_crawls($url){
 }
 
 
-
+/**
+ * [get_google_referal description]
+ * @param  [type] $url [description]
+ * @param  [type] $now [description]
+ * @return [type]      [description]
+ */
 function get_google_referal($url,$now){
 	global $db;
 
