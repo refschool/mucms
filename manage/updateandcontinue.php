@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title>Update Post</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <?php
 /*
@@ -84,7 +84,20 @@ $redirect_type = $_POST['redirect_type'];
 
 $meta_type = 'post';//new field in mucms 2.0
 $meta_robotCANONICAL =(isset($_POST['meta_robotCANONICAL']) ?  $_POST['meta_robotCANONICAL'] : '');
-$meta_robotNOINDEX =(isset($_POST['meta_robotNOINDEX']) ?  $_POST['meta_robotNOINDEX'] : '');
+
+//  noindex  = true if post is not published
+if( $_POST['published'] == 'N'){
+	$meta_robotNOINDEX = 'checked';
+	echo '<br>NO INDEX = '.$meta_robotNOINDEX ;
+} 
+
+if( $_POST['published'] == 'Y'){
+	$meta_robotNOINDEX = '';
+	echo '<br>NO INDEX = '.$meta_robotNOINDEX ;
+} 	
+
+
+
 $meta_robotNOFOLLOW =(isset($_POST['meta_robotNOFOLLOW']) ?  $_POST['meta_robotNOFOLLOW'] : '');
 $meta_robotNOARCHIVE =(isset($_POST['meta_robotNOARCHIVE']) ?  $_POST['meta_robotNOARCHIVE'] : '');
 $meta_robotNOSNIPPET =(isset($_POST['meta_robotNOSNIPPET']) ?  $_POST['meta_robotNOSNIPPET'] : '');
@@ -114,7 +127,8 @@ $update_content = "update `$tprefix"."_content` set
 `lang`='$lang',
 `readmore`='$readmore',
 `published`='$published',
-`note`='$note' where `id`='$id'" ;echo $update_content;
+`note`='$note' where `id`='$id'" ;
+echo '<br>'.$update_content;
 
 $query_state = $db->query($update_content); 
 if($query_state === TRUE){echo '<h1>The Query Was successful </h1>';} else {echo '<h1>The Query Failed </h1>'.$db->error;};

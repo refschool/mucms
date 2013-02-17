@@ -4,7 +4,7 @@
 if(isset($_GET['id'])){
 	$editid = $_GET['id'];
 	$post = get_post_content($editid); 
-	
+	//pretty($post);
 	?>
 	
 	
@@ -13,8 +13,17 @@ if(isset($_GET['id'])){
 	<ul>
 		<li><a href="#tabs-1">Body Element</a></li>
 		<li><a href="#tabs-2">Category</a></li>
-		<li><a href="#tabs-3">Comments</a></li>
-		<li><a href="#tabs-4">History</a></li>		
+		<li><a href="#tabs-3">Comments (<?=get_comment_nb($_GET['id'])?>)</a></li>
+		<li><a href="#tabs-4">History
+		<?php if(!empty($post['note'])){
+			echo '(' . (str_word_count($post['note'])) .' words)';
+		} else {
+			echo 'Empty';
+		}
+
+			?>
+
+		</a></li>		
 		<li><a href="#tabs-5">Ping</a></li>
 	</ul>
 	
@@ -23,10 +32,12 @@ if(isset($_GET['id'])){
 <div class="info1">
 	<table>
 		<tr>
-			<td><label>
-				<input type="radio" name="published" value="Y" <?php if($post['published'] == 'Y'){echo "checked";} else {echo "";}?>> Publish<br></label>
+			<td>
+				<label><input type="radio" name="published" value="Y" <?php if($post['published'] == 'Y'){echo "checked";} else {echo "";}?>> Publish</label>
+			</td>	
+			<td>
 				<label><input type="radio" name="published" value="N" <?php if($post['published'] == 'N'){echo "checked";} else {echo "";}?>> Unpublish</label>
-				</td>	
+			</td>	
 	
 	
 			
@@ -40,15 +51,15 @@ if(isset($_GET['id'])){
 				<input type="text" name="date_posted" size ="19" maxlength="19" value="<?php
 if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];} ?>">
 			</td>
-
-			
+		</tr>
+		<tr>
 			<td>Author<br/>
 				<input type="text" name="author" size ="20" maxlength="40" value="<?php
 if (empty($post['author'])){echo $authorname;} else {
 	echo $post['author'];} ?>">
 			</td>
-			<td>Tags<br/>
-				<input type="text" id="tag" name="tag" size ="30" maxlength="120" value="<?php echo get_tags_as_string($editid); ?>">
+			<td colspan="3">Tags<br/>
+				<input type="text" id="tag" name="tag" size ="50" maxlength="120" value="<?php echo get_tags_as_string($editid); ?>">
 			</td>			
 		</tr>		
 		
@@ -73,7 +84,8 @@ if (empty($post['author'])){echo $authorname;} else {
 			<tr>
 				<td>
 					<label for="social_body_text">Body text Intro</label>
-					<textarea cols="80" rows="2" id="social_body_text" name="social_body_text"><?php echo $post['social_body_text'];?></textarea>	<label for="readmore">Readmore</label>
+					<textarea cols="80" rows="2" id="social_body_text" name="social_body_text"><?php echo $post['social_body_text'];?></textarea>	
+					<label for="readmore">Readmore</label>
 	<input type=text name="readmore" size ="50" maxlength="100" value="<?php echo $post['readmore'];?>"><br>
 				</td>
 			</tr>
@@ -83,9 +95,19 @@ if (empty($post['author'])){echo $authorname;} else {
 
 	<label>Keyword
 	<input type=text name="keyword" size ="40" maxlength="100" value="<?php echo $post['keyword'];?>"></label>
-<?php
-$meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
-?>
+
+
+	<?php
+	$meta_array = fetch_meta_info($post['path']);
+
+
+	//pretty($meta_array);
+	//
+	//
+	?>
+
+
+
 	<div class="subset">
 		<label for="meta_robot">meta_robot</label>
 
@@ -164,18 +186,29 @@ $meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
 	
 	<div id="tabs-3">
 
-		<a href="<?=$install_folder?>/manage/comment-delete.php?post_id=<?=$post['id']?>">Delete ALL Spam</a><br><br>
 		
 		
-			<table class="collapse">
-				<thead class="header">
-					<tr><th width="20">Comments</th></tr>
-				</thead>
+		
+
 			<?php
 				$comments = get_comments($post['id']);
+
+				if(!empty($comments)){
+					?>
+
+				<table class="collapse">
+					<thead class="header">
+						<tr><th width="20">Comments</th></tr>
+					</thead>
+
+					<a href="<?=$install_folder?>/manage/comment-delete.php?post_id=<?=$post['id']?>">Delete ALL Spam</a><br><br>
+					<?php
+
 				for($i=0;$i<count($comments);$i++){
+
+					
 	
-	?>
+			?>
 				<tbody>
 					<tr style="border-bottom:solid 1px #aaa;">
 					<td class="com_<?=$comments[$i]['status']?>" style="padding : 10px"><a href="<?=$comments[$i]['website']?>" title="<?=$comments[$i]['website']?>"><?=$comments[$i]['name']?></a>,<?=$comments[$i]['email']?><?=$comments[$i]['timestamp']?> Status:<?=$comments[$i]['status']?> : 
@@ -188,13 +221,18 @@ $meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
 						</td>
 					</tr>
 				</tbody>
+			</table>
 	
+
 	<?php
 
-	}				
+				}	//end for loop
+			}  else {
+				echo 'no comment.';
+			}
 		?>
 			
-	</table>
+	
 	
 
 	</div>
@@ -206,10 +244,8 @@ $meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
 	
 	
 	<div id="tabs-5">
-	<a href="<?php $pingst = $tld.'manage/ping.php?url='.$post['path'];echo $pingst;  ?>">Ping this article</a>	<br />
-<a href="http://twitter.com/">Tweet this !</a><br />	
-<a href="http://hellotext.com">HelloTxt This !</a><br />		
-		
+		<a href="<?php $pingst = $tld.'manage/ping.php?url='.$post['path'];echo $pingst;  ?>">Ping Google</a>	<br />
+		<a href="http://twitter.com/">Tweet this !</a><br />	
 	</div>
 
 <input type="submit" Value="Update" >
@@ -238,9 +274,9 @@ $meta_array = fetch_meta_info($post['path']);//print_r($meta_array);
 	$post['keyword'] = ''; 	
 	
 	?>
-	
-	<p><a href="<?=$tld2.$install_folder?>/manage/newpost.php">Create a New Post</a></p>
-	
+	<div style="position:relative;width:300px;top:120px;margin-left:auto;margin-right:auto">
+	<p style="font-size:30px;"><a href="<?=$tld2.$install_folder?>/manage/newpost.php">Create a New Post</a></p>
+	</div>
 	<?php
 }
 ?>

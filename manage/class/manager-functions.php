@@ -61,12 +61,18 @@ function create_post($authorname = ''){
 }
 
 
-//rewrite this function to use url as argument instead of post_id
+/**
+ * retrieve the meta info of a url
+ * @param  [type] $path [description]
+ * @return [type]       [description]
+ */
 function fetch_meta_info($path){
 		global $db,$tprefix,$tld;
-		$sql = "select * from `$tprefix"."_meta` where `path` = '$path'  ";//echo $sql;
+		$sql = "select * from `$tprefix"."_meta` where `path` = '$path'  ";
+		//echo $sql;
+		//
 		$result = $db->query($sql);
-	$row = $result->fetch_assoc();
+		$row = $result->fetch_assoc();
 		if(!empty($row)){
 			return $row;	
 			}
@@ -77,8 +83,9 @@ function fetch_meta_info($path){
 
 //get the content of the post
 function get_post_content($id){
-	global $tprefix;global $db;
-	$sql="select * from `$tprefix"."_content` C inner join `$tprefix"."_meta` M on M.meta_id = C.meta_id where C.id ='$id'";//echo $sql;
+	global $tprefix,$db;
+	$sql="select * from `$tprefix"."_content` C inner join `$tprefix"."_meta` M on M.meta_id = C.meta_id where C.id ='$id'";
+	//echo $sql;
 	$result = $db->query($sql);
 	$row = $result->fetch_assoc();	
 	
@@ -119,7 +126,7 @@ function get_new_meta_id(){
 
 //get the latest post_id
 function get_latest_post_id(){
-	global $db;global $tprefix;
+	global $db,$tprefix;
 		$sql = "select max(`id`) M from `".$tprefix."_content`";//echo $sql;
 		$result = $db->query($sql);
 		$row = $result->fetch_assoc();
@@ -135,5 +142,16 @@ function get_manager_version(){
 	fclose($handle);
 	
 	return $content;
+
+}
+
+
+function get_path($post_id){
+	global $db,$tprefix;
+		$sql = "select `path` from `".$tprefix."_meta` M inner join `".$tprefix."_content` C on C.meta_id = M.meta_id where C.id  = '$post_id'";
+		//echo $sql;
+		$result = $db->query($sql);
+		$row = $result->fetch_assoc();
+		return $row['path'];
 
 }

@@ -44,7 +44,7 @@ else {
 tinyMCE.init({
         mode : "textareas",
 		editor_selector :"mceEditor",
-		entity_encoding : "raw",
+		/*entity_encoding : "raw",*/
 		convert_urls : false,
         theme : "advanced",   //(n.b. no trailing comma, this will be critical as you experiment later)
 		plugins:"wordcount,table,fullscreen",
@@ -144,14 +144,14 @@ $(document).ready(function() {
 
 	<div id="main">		
 
-		<div id="editor" style="width:48%">
+		<div id="editor" style="width:50%">
 			<?php
 			include("includes/editor.php");
 			?>
 
 		</div><!-- END OF EDITOR DIV -->
 
-		<div id="browser" style="width:50%">
+		<div id="browser" style="width:49%">
 			<?php
 			include("includes/browser.php");
 			?>

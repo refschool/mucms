@@ -21,7 +21,7 @@ function show_latest_posts($nb){
 		$m = get_latest_post(10);	
 	?>
 	<div class="box">
-		<h3>Dernières news</h3>
+		<h3>DerniÃ¨res news</h3>
 		<div class="boxdata">
 		<ul>
 			<?php
@@ -79,7 +79,7 @@ function show_sidebar_category(){
 	
 	?>
 	<div class="box">
-		<h3>Catégories</h3>
+		<h3>CatÃ©gories</h3>
 		<div class="boxdata">
 		<ul>
 			<?php

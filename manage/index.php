@@ -52,20 +52,20 @@ elseif(!empty($_POST['username']) && !empty($_POST['password'])){
 			
 			if($_SESSION['Userlevel'] == 'admin'){
 			//echo 'Success : '.$_SESSION['Username'];
-			echo "<meta http-equiv='refresh' content='0;$tld".$install_folder."/manage/write.php' />";
+			echo "<meta http-equiv='refresh' content='0;$tld2".$install_folder."/manage/write.php' />";
 			}
 			else {
 				
 				echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
-				echo '<a href="'.$tld.$install_folder.$install_folder.'">Retour</a><br>';
-				echo '<a href="'.$tld.$install_folder.'manage/logout.php">Logout</a>';	
+				echo '<a href="'.$tld2.$install_folder.'">Retour</a><br>';
+				echo '<a href="'.$tld2.$install_folder.'manage/logout.php">Logout</a>';	
 				
 			}
 		}
 		else {
 		
 		echo 'Login or password not correct please try again';
-		echo "<meta http-equiv='refresh' content='1;$tld".$install_folder."/index.php' />";
+		echo "<meta http-equiv='refresh' content='1;$tld2".$install_folder."/index.php' />";
 		}
 }
 
@@ -78,7 +78,7 @@ else {
 		<tr><td class="vform"><label for="username">Login</label><input class="bg" type="text" name="username" id="username" /></td></tr>
 		<tr><td class="vform"><label for="password">Password</label><input class="bg" type="password" name="password" id="password" /></td></tr>
 		<tr><td class="vform"><input class="btn" type="submit" name="login" id="login" value="Login" /></td></tr>
-		<tr><td><a href="<?php echo $tld;?>user/requestpassword.php">Mot de passe oublié?</a></td></tr>
+		<tr><td><a href="<?=$tld2 . $install_folder?>/user/requestpassword.php">Mot de passe oublié?</a></td></tr>
 	</table>
 	</form>
 

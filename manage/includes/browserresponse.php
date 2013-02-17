@@ -1,6 +1,8 @@
 <?php session_start();
 
 include("../../inc/config.php");
+include("../class/manager-functions.php");
+
 $category = $_GET["cat"];//$sql="";
 
 //by default select all the posts within a range here 50 posts ordered by date//
@@ -50,7 +52,7 @@ this script will update the listing of the posts in the brower based on the cate
 
 $content = '<table class="collapse">';
 $content .= '<tr class="header">';
-$content .= '<td>ID</td><td width="250">Title</td><td>View</td><td>Preview</td><td>nb com</td></tr>';
+$content .= '<td>ID</td><td width="250">Title</td><td>PreView</td><td>URL</td><td>nb com</td></tr>';
 
 
 //echo $sql;echo $tprefix;
@@ -63,7 +65,7 @@ while($line = $result->fetch_assoc()){
 		$count = $line["COMCOUNT"];
 
 		//display the datas rows of the table		
-		$content .=  '<tr class="'.$published.'"><td>'.$id.'</td><td><a href="'.$tld2.$install_folder.'/manage/write.php?id='.$id.'">'.$title.'</a></td><td><a href="javascript:ajax('.$id.');">Preview</a></td><td>'.$count.'</td></tr>';
+		$content .=  '<tr class="'.$published.'"><td>'.$id.'</td><td><a href="'.$tld2.$install_folder.'/manage/write.php?id='.$id.'">'.$title.'</a></td><td><a href="javascript:ajax('.$id.');">Preview</a></td><td>'.get_path($id).'</td><td>'.$count.'</td></tr>';
 		}
 		$content .=  '</table>';
 echo $content;

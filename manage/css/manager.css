@@ -78,13 +78,13 @@ input.savenedit {width:33px;height:33px;margin:0;padding:2px;background:transpar
 #transaction li {display:block;float:left; margin:0 5px 0 5px;}
 
 /* Editor */
-.info1 {margin:2px 0;border: 1px #ccc solid;background-color:#F0F0EE}
+.info1 {width:100%;margin:0px 0;border: 1px #ccc solid;background-color:#F0F0EE}
 
 
 /* Browser */
-#browsercat {width:90px; height:auto;float:left; margin:0 0 5px 0; padding:3px;border:1px solid #888; background-color:#FFF4AF;}
+#browsercat {width:90px; height:100%;float:left; margin:0 0 5px 0; padding:3px;border:1px solid #888; background-color:#FFF4AF;}
 #browsercat a{margin:1px;padding:2px ;font-size:12px;font-weight:bold;line-height:1.8em;text-decoration:none; background-color:#EBEBEB;border:1px solid #ccc}
-#listing {width:350px; height:100%;margin:0 0 0 5px;float:left; border:1px solid #888;overflow:auto;}
+#listing {width:100%; height:100%;margin:0 0 0 5px;float:left; border:1px solid #888;overflow:auto;}
 #preview {width:98%;height:auto;margin:2px 0 0 0;padding:0;overflow:auto;background-color:#fff;border:1px solid #ccc; background:#fff;}
 
 /* browser table type 1 */

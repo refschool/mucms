@@ -8,16 +8,24 @@
 	</ul>
 
 	<div id="btabs-1"><!--  Post manager -->
+		<table>
+			<tr>
+				<td>
 		<div id="browsercat">
 		<?php 
 		//show the different categories
 		show_categories();
 		?>
 		</div>
+	</td>
+	<td>
 
 		<div id="listing">
 		<!--  AJAX call browserresponse.php-->
 		</div>
+</td>
+</tr>
+</table>
 
 		<div id="preview">
 		<!--  AJAX call response.php-->

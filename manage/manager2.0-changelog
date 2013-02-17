@@ -1,5 +1,11 @@
 ============================= Manager Changelog Version 2.0 ==========================================
 
+
+16-02-2013	Les posts non publiés sont en noindex, si on le publie il est en index, si on le remet en non publié il est en no index
+			option tinymce entity encoding n'est palus à ram car on est en utf 8 (entity encoding bon si on reste à iso-8859-1)
+			ajout indicateur nb commentaire et longueur des notes (history)
+			VERSION IS 2.0
+======================================================================================================
 01-08-2012	destruction fichier atom.php et sitemap.php, remplacé par rss-functions.php et sitemap-functions.php
 			mise à jour des fichier rss et sitemap directement apèrs update de l'article
 ============================= Manager Changelog Version 1.8 et antérieure=============================
