@@ -10,7 +10,7 @@
 	<div id="btabs-1"><!--  Post manager -->
 		<table>
 			<tr>
-				<td>
+				<td valign="top">
 		<div id="browsercat">
 		<?php 
 		//show the different categories
@@ -18,7 +18,7 @@
 		?>
 		</div>
 	</td>
-	<td>
+	<td valign="top">
 
 		<div id="listing">
 		<!--  AJAX call browserresponse.php-->

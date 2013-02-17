@@ -3,9 +3,6 @@
  *   comment.php 04/04/2010
  *		Version 0.1
  */
-
-//ini_set("include_path", ".:../:./inc:../inc:../../inc:");
-
 require("inc/config.php");
 include("inc/class/core.class.php");
 include("inc/microakismet-1.2/class.microakismet.inc.php");

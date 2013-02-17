@@ -51,6 +51,11 @@ if(isset($_GET['id'])){
 				<input type="text" name="date_posted" size ="19" maxlength="19" value="<?php
 if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];} ?>">
 			</td>
+
+			<td>			
+				<input type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed']; ?>>Closed to comment
+			</td>
+
 		</tr>
 		<tr>
 			<td>Author<br/>
@@ -167,6 +172,7 @@ if (empty($post['author'])){echo $authorname;} else {
 	
 	
 	</form>
+	<input type="submit" Value="Update" >
 </div>
 <!-- END OF BODY ELEMENTS-->
 		
@@ -240,6 +246,7 @@ if (empty($post['author'])){echo $authorname;} else {
 	<div id="tabs-4">
 	<p>Modifications</p>
 	<textarea name="post_note" rows="10" cols="90"><?=$post['note']?></textarea>
+	<input type="submit" Value="Update" >
 	</div>
 	
 	
@@ -248,7 +255,7 @@ if (empty($post['author'])){echo $authorname;} else {
 		<a href="http://twitter.com/">Tweet this !</a><br />	
 	</div>
 
-<input type="submit" Value="Update" >
+
 </div>
 <?php
 } else {

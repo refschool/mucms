@@ -9,5 +9,6 @@
 	</ul>
 </li>
 <li><a href="<?=$tld.$install_folder?>/manage/settings/index.php">Site Settings</a></li>
+<li><a href="<?=$tld2.$install_folder?>/crawltrack">Crawltrack</a></li>
 <li><a href="<?=$tld.$install_folder?>/manage/logout.php">Logout</a></li>
 </ul>

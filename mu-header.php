@@ -91,6 +91,7 @@ if($meta_type == 'home'){
 				$content['page_element'][0]['readmore']=$p['readmore'];
 				$content['page_element'][0]['main_text']=$p['main_text'];
 				$content['page_element'][0]['id'] = $p['id'];
+				$content['page_element'][0]['com_closed'] = $p['com_closed'];
 				$content['page_element'][0]['date_posted'] = $p['date_posted'];					
 				
 				

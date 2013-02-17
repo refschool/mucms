@@ -100,6 +100,7 @@ function get_post_content($id){
 	$post['lang'] = $row['lang']; 
 	$post['readmore'] = $row['readmore'];
 	$post['published'] = $row['published'];
+	$post['com_closed'] = $row['com_closed'];
 	$post['note'] = $row['note'];
 	
 	$post['query_string'] = $row['query_string'];

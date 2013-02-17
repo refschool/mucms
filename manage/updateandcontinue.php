@@ -62,8 +62,9 @@ $main_text = addslashes(trim(($_POST['main_text'])));
 $lang = (isset($_POST['lang']) ?  $_POST['lang'] : $lang);
 
 
-$readmore = $_POST['readmore'];
+$readmore = addslashes(trim($_POST['readmore']));
 $published = $_POST['published'];
+$com_closed = $_POST['com_closed'];
 
 if(get_magic_quotes_gpc () == 1){
 $note = trim($_POST['post_note']);
@@ -127,6 +128,7 @@ $update_content = "update `$tprefix"."_content` set
 `lang`='$lang',
 `readmore`='$readmore',
 `published`='$published',
+`com_closed`='$com_closed',
 `note`='$note' where `id`='$id'" ;
 echo '<br>'.$update_content;
 

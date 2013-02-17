@@ -99,7 +99,8 @@ function get_single_post($path){
 				$p['social_body_text'] = $row['social_body_text'];		
 				$p['main_text'] = $row['main_text'];
 				$p['lang'] = $row['lang'];	
-				$p['readmore'] = $row['readmore'];	
+				$p['readmore'] = $row['readmore'];
+				$p['com_closed'] = $row['com_closed'];		
 				
 				$p['path'] = $row['path'];
 				$p['redirect'] = $row['redirect'];

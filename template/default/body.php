@@ -94,6 +94,8 @@ function get_body(){
 									echo $content['page_element'][0]['main_text'];
 									
 									hook_insert('end_of_post');
+
+									echo '<p>Posté le ' . $content['page_element'][0]['date_posted'].'</p>';
 								
 								/*
 									//get related posts
@@ -125,7 +127,15 @@ function get_body(){
 									<?php 
 									hook_insert('comment_count');
 									hook_insert('comments');
-									hook_insert('comment_form');
+
+
+									if($content['page_element'][0]['com_closed']  == 'checked'){
+										echo '<p>Fermé aux commentaires</p>';
+									}
+										else {
+											hook_insert('comment_form');
+										}
+									
 									 
 									
 									?>
@@ -135,6 +145,7 @@ function get_body(){
 
 									
 									<?php
+
 									echo '</div>';
 		
 			break;

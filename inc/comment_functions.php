@@ -83,11 +83,12 @@ $c = fetch_comments($post_id);
 	
 		$g_url = get_gravatar( $c[$i]['email']);
 		?>
-		<div class="comment">
+		<div class="comment" >
 		<img src="<?=$g_url?>" style="float:left;margin:0 20px 0 0 "/> 
 		<a href="<?=$c[$i]['website']?>"><?=$c[$i]['name']?></a>
 		<p><?=$c[$i]['comment']?></p>
 		<p><?=$c[$i]['timestamp']?></p>
+		<br style="clear:both" />
 		</div>
 		
 		<?php
