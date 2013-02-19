@@ -48,42 +48,21 @@ function get_seo_urls(){
 
 //fetch get urls from tables : links, content to compute
 function get_urls($group){
-	global $db;global $tprefix;global $tld;
+	global $db,$tprefix,$tld;
 
 	switch($group){
 	case 'all':
 		//query all the urls of table content
-		$sql  = "select * from `$tprefix"."_content` where `published` = 'Y'";//echo $sql;
+		$sql  = "select `path` from `$tprefix"."_meta` ";
+		echo $sql;
 		$result = $db->query($sql); 
 		if($result){
 			while($row = $result->fetch_assoc()){
-				$urls[] = $row['thisurl'];
+				$urls[] = $row['path'];
 			}
 		}		
 		
-		//query all urls from table links
-		$sql2 = "select * from `$tprefix"."_links` where `topic` IN ('category','tag')";//echo $sql2;
-		$result2 = $db->query($sql2); 
-		if($result2){
-			while($row2 = $result2->fetch_assoc()){
-				$urls2[] = $row2['url'];
-			}
-		}
-		//add tld at top of array
-		array_unshift($urls,$tld);
-		$urls = array_merge($urls,$urls2);
-		
-		
-		break;
-		
-		
-	case 'category':
-		//query category urls from links table
-		break;
-		
-	case 'tag':
-		//query  tag urls from links table
-		break;
+
 		}
 		
 		
