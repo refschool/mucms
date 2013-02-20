@@ -57,8 +57,8 @@ else {
 	<div id="header">
 		<div class="message">
 			<?php 
-			$myMan = new Manager();
-			//$myMan->showVersionMessage();
+			//$myMan = new Manager();
+			
 			?>
 		</div>
 		

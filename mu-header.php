@@ -8,7 +8,7 @@ $path = 'http://' . $_SERVER['HTTP_HOST'] . ($_SERVER['REQUEST_URI']);
 
 $meta_type = get_meta_type($path);
 $content = array();
-//echo $meta_type;
+
 
 
 //guess from the type in the meta table what type of content we want
@@ -43,6 +43,7 @@ if($redirect){
 
 //home page
 if($meta_type == 'home'){
+
 		//homepage
 		$content['type'] = 'index';
 		$content['title'] = $home_title;
@@ -61,6 +62,8 @@ if($meta_type == 'home'){
 				$content['page_element'][$i]['date_posted'] = $p[$i]['date_posted'];
 
 			}
+
+			
 
 	}
 

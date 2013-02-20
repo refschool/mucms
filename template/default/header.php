@@ -7,5 +7,7 @@
 
 	<?php 
 	//$hook['menu'][0]();
-	hook_insert('menu'); ?>
+	hook_insert('menu'); 
+
+	?>
 			</div>
