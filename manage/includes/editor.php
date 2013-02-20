@@ -206,7 +206,7 @@ if (empty($post['author'])){echo $authorname;} else {
 					<thead class="header">
 						<tr><th width="20">Comments</th></tr>
 					</thead>
-
+					<tbody>
 					<a href="<?=$install_folder?>/manage/comment-delete.php?post_id=<?=$post['id']?>">Delete ALL Spam</a><br><br>
 					<?php
 
@@ -215,7 +215,7 @@ if (empty($post['author'])){echo $authorname;} else {
 					
 	
 			?>
-				<tbody>
+				
 					<tr style="border-bottom:solid 1px #aaa;">
 					<td class="com_<?=$comments[$i]['status']?>" style="padding : 10px"><a href="<?=$comments[$i]['website']?>" title="<?=$comments[$i]['website']?>"><?=$comments[$i]['name']?></a>,<?=$comments[$i]['email']?><?=$comments[$i]['timestamp']?> Status:<?=$comments[$i]['status']?> : 
 					<a id="<?=$comments[$i]['comment_id']?>" href="<?=$install_folder?>/manage/comment-delete.php?post_id=<?=$post['id']?>&com_id=<?=$comments[$i]['comment_id']?>">Delete</a>
@@ -226,13 +226,20 @@ if (empty($post['author'])){echo $authorname;} else {
 						
 						</td>
 					</tr>
-				</tbody>
-			</table>
+
 	
 
 	<?php
 
-				}	//end for loop
+				}
+
+					//end for loop
+				?>
+
+				</tbody>
+			</table>
+
+				<?php
 			}  else {
 				echo 'no comment.';
 			}

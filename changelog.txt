@@ -1,5 +1,8 @@
 Mucms Changelog Version 2.8
 ===========================
+//  SLQ change : added com_closed to content table
+
+
 // NOTICE converting the files from dev to production environment
 1/modify htaccess short tags and install dir
 2/manage module rollback IP filtering
