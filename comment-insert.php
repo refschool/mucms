@@ -11,10 +11,10 @@ include("inc/microakismet-1.2/class.microakismet.inc.php");
 $comment = new Comments();
 
 //get POST  variable
-$name = $_POST['name'];
-$email = $_POST['email'];
-$website = $_POST['website'];
-$comment = strip_tags($_POST['comment'],'<a>');
+$name = addslashes($_POST['name']);
+$email = addslashes($_POST['email']);
+$website = addslashes($_POST['website']);
+$comment = addslashes(strip_tags($_POST['comment'],'<a>'));
 $post_id = $_POST['post_id'];
 $ip = $_SERVER['REMOTE_ADDR'];
 $user_agent = $_SERVER['HTTP_USER_AGENT'];

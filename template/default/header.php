@@ -1,6 +1,6 @@
 			<div id="head">
 				<div id="branding">
-					<img src="<?=$tld2.$install_folder .$themepath?>images/banner.jpg" width="" height="" alt="<?=$home_title?>" />
+					<img src="<?=$tld2. '/' . $install_folder . '/' .$themepath?>images/banner.jpg" width="" height="" alt="<?=$home_title?>" />
 				</div>	
 
 

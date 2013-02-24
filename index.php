@@ -33,7 +33,7 @@ include("content/plugins/plugin-config.php");
 <?php hook_insert('meta_robots'); ?>
 <?php hook_insert('verification'); ?>
 <link rel="stylesheet" type="text/css" href="<?=$tld2.$install_folder .'/'.$themepath?>global.css" />
-<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld2 . $install_folder . $feed?>atom.xml" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld2 . $install_folder . '/' .  $feed?>atom.xml" />
 <link rel="shortcut icon" href="<?=$tld2.$install_folder.$themepath?>images/favicon.ico" type="images/x-icon" />
 <?php
 //_-`-_HOOK::before_head_-`-_

@@ -1,5 +1,7 @@
-Mucms Changelog Version 2.8
+Mucms Changelog Version 3.0
 ===========================
+Addslashes devant les POST dans comment-insert.php
+
 //  SLQ change : added com_closed to content table
 
 
