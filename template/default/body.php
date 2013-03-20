@@ -149,7 +149,36 @@ function get_body(){
 									echo '</div>';
 		
 			break;
-			
+
+
+	case 'directory-home':
+
+										
+						for($i=0;$i<count($content['page_element']);$i++){		
+										?>
+										
+							<div class="post">
+								<div class="text">	
+							<a href="<?=$content['page_element'][$i]['path']?>"><h2 class="home"><?=$content['page_element'][$i]['website_name']?></h2></a>
+							
+							<?=$content['page_element'][$i]['short_desc']?>
+								</div>
+							</div>
+						<?php
+								
+							//make a hook here
+							?>
+
+								<?php
+								 						
+						}
+	
+
+			break;				
+
+
+
+
 	case 'directory':
 
 				

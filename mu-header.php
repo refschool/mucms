@@ -182,6 +182,36 @@ if($meta_type == 'home'){
 	
 	}
 
+
+
+//home page
+if($meta_type == 'directory-home'){
+
+		//homepage
+		$content['type'] = $meta_type;
+		$content['title'] = $home_title;
+		$content['description'] = $home_description;
+		$content['keyword'] = $home_keyword;
+			
+		//get latest entries of directories
+		$sql = "select * from `$tprefix"."_dir_entry` E INNER JOIN `$tprefix"."_meta` M ON M.meta_id = E.meta_id where E.status = 'approved' order by `datetime` desc limit 10 ";
+		//echo $sql;
+		$result = $db->query($sql);  $k = 0;
+		while($row = $result->fetch_assoc()){
+			$content['page_element'][$k]['website_name'] = $row['website_name'];
+			$content['page_element'][$k]['website_url'] = $row['website_url'];
+			$content['page_element'][$k]['path'] = $row['path'];
+			$content['page_element'][$k]['short_desc'] = $row['short_desc'];
+			$k++;
+		}
+		
+
+			
+
+	}
+
+
+
 //directory	
 	if($meta_type == 'directory'){
 		
