@@ -65,7 +65,7 @@ while($line = $result->fetch_assoc()){
 		$count = $line["COMCOUNT"];
 
 		//display the datas rows of the table		
-		$content .=  '<tr class="'.$published.'"><td>'.$id.'</td><td><a href="'.$tld2.$install_folder.'/manage/write.php?id='.$id.'">'.$title.'</a></td><td><a href="javascript:ajax('.$id.');">Preview</a></td><td>'.get_path($id).'</td><td>'.$count.'</td></tr>';
+		$content .=  '<tr class="'.$published.'"><td>'.$id.'</td><td><a href="'.$tld2.'/'.$install_folder.'/manage/write.php?id='.$id.'">'.$title.'</a></td><td><a href="javascript:ajax('.$id.');">Preview</a></td><td>'.get_path($id).'</td><td>'.$count.'</td></tr>';
 		}
 		$content .=  '</table>';
 echo $content;

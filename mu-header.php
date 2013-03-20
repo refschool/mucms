@@ -182,7 +182,68 @@ if($meta_type == 'home'){
 	
 	}
 
+//directory	
+	if($meta_type == 'directory'){
+		
+
+		//select the directory entry
+		
+
+		
+		//get the path of the posts that have the cat_id
+		$sql = "select * from `$tprefix"."_dir_entry` E INNER JOIN `$tprefix"."_meta` M ON M.meta_id = e.meta_id  where `path` = '$path' ";
+		//echo $sql;
+		$result = $db->query($sql);
+		
+		
+			$content['type'] = 'directory';
+
 	
+			while($row = $result->fetch_assoc()){
+				$content['page_element']['website_name'] = $row['website_name'];
+				$content['page_element']['website_url'] = $row['website_url'];
+				$content['page_element']['path']= $row['path'];
+				$content['page_element']['long_desc']=$row['long_desc'];
+				$content['page_element']['short_desc']=$row['short_desc'];
+
+				$content['page_element']['street']=$row['street'];
+				$content['page_element']['street2']=$row['street2'];
+				$content['page_element']['postcode']=$row['postcode'];
+				$content['page_element']['city']=$row['city'];
+				$content['page_element']['country']=$row['country'];
+				$content['page_element']['phone']=$row['phone'];
+
+
+
+				$content['page_element']['twitter']=$row['twitter'];
+				$content['page_element']['facebook']=$row['facebook'];
+
+
+				$content['title'] = $row['website_name'];
+				$content['description'] = $row['description'];
+
+
+				$content['status']=$row['status'];
+
+
+				}
+
+		
+if($content['status'] <> 'approved'){
+				//send 404 header first
+				header("HTTP/1.0 404 Not Found");
+				//then cast the content for 404 page
+				$content['type'] = 'error404';
+		}
+
+
+	} //end meta_type = directory
+
+
+
+
+
+
 //testing 
 //include("content/plugins/dir/dir2.php");
 

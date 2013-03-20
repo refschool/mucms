@@ -18,7 +18,7 @@ $feed = 'FEED';
 $masteremail = 'todo@mucms.com';
 
 $authorname = 'AUTHOR' ;
-$themepath = $install_folder . 'template/default/';
+$themepath = 'template/default/';
 
 //site configuration
 $akismet_key = '04637fae8d1f';

@@ -1,4 +1,6 @@
 <?php
+
+/* version 1.0 */
 $domain = 'http://' . $_SERVER['HTTP_HOST'];
 $prefix = trim($_POST["prefix"]);
 $host= trim($_POST["host"]);
@@ -7,12 +9,12 @@ $user = trim($_POST["user"]);
 $password = trim($_POST["password"]);
 $hometitle = trim($_POST["hometitle"]);
 $mainauthor = trim($_POST["mainauthor"]);
-
+$install_folder = trim($_POST["install_folder"]);
 $author = $mainauthor;
 $date = date('Y-m-d H:i:s');
 
 
-echo $prefix .' '. $host .' '. $dbname .' '.$user .' '. $password .' '. $hometitle .' '. $mainauthor ;
+echo $prefix .' '. $host .' '. $dbname .' '.$user .' '. $password .' '. $hometitle .' '. $mainauthor . '<br>';
 
 //=========Create config.php========
 //detect if file exist
@@ -23,6 +25,8 @@ if(file_exists('../inc/config.txt')){
 	//write domain name
 		$newConfig = preg_replace("|www.yourdomain.com|i",$_SERVER['HTTP_HOST'] ,$newConfig);
 		$newConfig = preg_replace("|www.yourdomain2.com|i",$_SERVER['HTTP_HOST'] ,$newConfig);
+	//write install folder
+		$newConfig = preg_replace("/INSTALL_FOLDER/",$install_folder,$newConfig);
 	//write databasename
 		$newConfig = preg_replace("/DB/",$dbname,$newConfig);
 	//write host
@@ -40,8 +44,8 @@ if(file_exists('../inc/config.txt')){
 	//write main author name
 		$newConfig = preg_replace("/AUTHOR/",$mainauthor,$newConfig);
 	//write the feed path
-		$feed = $domain . '/content/feed/atom.xml';
-		$newConfig = preg_replace("/FEED/",$feed,$newConfig);
+	//	$feed = '/content/feed/atom.xml';
+	//	$newConfig = preg_replace("/FEED/",$feed,$newConfig);
 		
 		
 		

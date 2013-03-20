@@ -27,16 +27,7 @@ class Manager {
 
 //===============================================
 
-function getLatestLinkId(){
-global $db;global $tprefix;
-		$sql="select max(link_id) from `".$tprefix."_links`";
-//		echo $sql2;
-		$r = $db->query($sql);
-		$m = $r->fetch_assoc();
-		$max = $m['max(link_id)']+1;
-		
-		return $max;
-}
+
 /*
 * This function show the content of a given post based on its id (from content table)
 * used in the editor
@@ -141,42 +132,6 @@ function showArray($array){
 	print_r($array);
 	echo '</pre>';
 }	
-
-
-//============================
-//		Code for the browser module
-//============================
-
-function display_footer_link(){
-global $db; global $tprefix; global $tld;
-
-
-}
-
-function retrieve_links($post_id){
-	global $db; global $tprefix; global $tld;
-
-	
-	$sql = "select * from `$tprefix"."_links` where `post_id` != 0 AND  `post_id` = $post_id  ";//echo $sql;
-	$result = $db->query($sql);$k=0;
-	if($result){
-			while($row=$result->fetch_assoc()){
-				$links[$k]['link_id'] = $row['link_id'];
-				$links[$k]['post_id'] = $row['post_id'];
-				$links[$k]['topic']  = $row['topic'];
-				$links[$k]['url']  = $row['url'];
-				$links[$k]['alt']  = $row['alt'];
-				$links[$k]['anchor']  = $row['anchor'];
-				$links[$k]['misc']  = $row['misc'];
-				$k++;
-			}
-
-		return $links; 
-		} else 
-		{ 
-			return FALSE;
-		}
-}
 
 
 

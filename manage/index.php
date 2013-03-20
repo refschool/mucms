@@ -1,6 +1,7 @@
 <?php session_start();
  include ("../inc/config.php");
 
+
  //code executed if owner is logged in
 if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
@@ -22,7 +23,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 echo 'you are logged in';
 echo 'loggedIn = '. $_SESSION['LoggedIn'].'<br>';
 echo 'Username = '. $_SESSION['Username'].'<br>';
-echo "<meta http-equiv='refresh' content='0;$tld"."manage/write.php' />";	
+echo "<meta http-equiv='refresh' content='0;".$tld2. "/manage/write.php' />";	
 }
 
 elseif(!empty($_POST['username']) && !empty($_POST['password'])){
@@ -52,20 +53,20 @@ elseif(!empty($_POST['username']) && !empty($_POST['password'])){
 			
 			if($_SESSION['Userlevel'] == 'admin'){
 			//echo 'Success : '.$_SESSION['Username'];
-			echo "<meta http-equiv='refresh' content='0;$tld2".$install_folder."/manage/write.php' />";
+			echo "<meta http-equiv='refresh' content='0;".$_SESSION['returnPath']."' />";
 			}
 			else {
 				
 				echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
-				echo '<a href="'.$tld2.$install_folder.'">Retour</a><br>';
-				echo '<a href="'.$tld2.$install_folder.'manage/logout.php">Logout</a>';	
+				echo '<a href="'.$tld2."/".$install_folder.'">Retour</a><br>';
+				echo '<a href="'.$tld2."/".$install_folder.'manage/logout.php">Logout</a>';	
 				
 			}
 		}
 		else {
 		
 		echo 'Login or password not correct please try again';
-		echo "<meta http-equiv='refresh' content='1;$tld2".$install_folder."/index.php' />";
+		echo "<meta http-equiv='refresh' content='1;$tld2"."/".$install_folder."/manage/index.php' />";
 		}
 }
 

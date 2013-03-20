@@ -20,7 +20,7 @@ require_once('hooks.php');
 include("content/plugins/plugin-config.php");
 
 
-//$path = 'http://' . $_SERVER['HTTP_HOST'] . ($_SERVER['REQUEST_URI']); echo $path;
+
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -32,9 +32,9 @@ include("content/plugins/plugin-config.php");
 <meta name="keywords" content = "<?php hook_insert('meta_kw');?>" />
 <?php hook_insert('meta_robots'); ?>
 <?php hook_insert('verification'); ?>
-<link rel="stylesheet" type="text/css" href="<?=$tld2.$install_folder .'/'.$themepath?>global.css" />
-<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld2 . $install_folder . '/' .  $feed?>atom.xml" />
-<link rel="shortcut icon" href="<?=$tld2.$install_folder.$themepath?>images/favicon.ico" type="images/x-icon" />
+<link rel="stylesheet" type="text/css" href="<?=$tld2.$themepath?>global.css" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld2 .'/'. $install_folder . 'content/feed/' ?>atom.xml" />
+<link rel="shortcut icon" href="<?=$tld2.$themepath?>images/favicon.ico" type="images/x-icon" />
 <?php
 //_-`-_HOOK::before_head_-`-_
 //header script

@@ -1,5 +1,7 @@
 <?php
 
+
+//include("../inc/debug-functions.php");
 include("tag-functions.php");
 include("category-functions.php");
 include("browser-functions.php");
@@ -9,9 +11,7 @@ include("crawltrack-functions.php");
 include("rss-functions.php");
 include("sitemap-functions.php");
 
-function pretty($array){
-	echo '<pre>';print_r($array);echo '</pre>';
-}
+
 
 //creat a new post and insert information in the table content and meta and set uncategorized as default category
 function create_post($authorname = ''){

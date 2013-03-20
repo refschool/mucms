@@ -154,7 +154,7 @@ if (empty($post['author'])){echo $authorname;} else {
 
 		<tr>
 			<td>Permalink</td>
-			<td><?=$tld2 . $install_folder . '/'?>
+			<td><?=$tld2 . '/' . $install_folder . '/'?>
 			<input type=text id="thisurl" name="thisurl" size ="60" maxlength="300" value="<?=$post['query_string']; ?>">
 <a href="<?=$post['path']?>">Preview</a>
 			</td>

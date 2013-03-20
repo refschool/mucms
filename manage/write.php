@@ -1,5 +1,5 @@
 <?php session_start();
-error_reporting(E_ALL);
+
 ini_set("include_path", ".:../:./inc:../inc:../../inc");
 
 include("../inc/config.php");include("class/manager-functions.php");

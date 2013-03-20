@@ -1,4 +1,6 @@
 <?php
+
+include("debug-functions.php");
 include("hook-functions.php");
 include("comment_functions.php");
 include("tag-category-functions.php");
@@ -201,13 +203,9 @@ function get_post_id($sefurl){
 
 
 
-	
-
-
-
-
 
 //show the horizontal menu at top of page
+//this function does not exist and not useful anymore
 function get_menu (){
 	$m = get_link_items('menu');
 	

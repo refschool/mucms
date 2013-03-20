@@ -152,13 +152,17 @@ function get_body(){
 			
 	case 'directory':
 
-			for($i=0;$i<count($content['page_element']);$i++){		
+				
 						?>
 										
 					<div class="post">
 						<div class="text">	
-							<a href="<?=$content['page_element'][$i]['website_url']?>"><h2 class="home"><?=$content['page_element'][$i]['website_name']?></h2></a>
+							<a href="<?=$content['page_element']['website_url']?>"><h2 class="home"><?=$content['page_element']['website_name']?></h2></a>
 							
+							<?=$content['page_element']['short_desc']?>
+
+							<?=$content['page_element']['long_desc']?>
+
 						</div>
 					</div>
 										<?php
@@ -170,7 +174,7 @@ function get_body(){
 										
 								
 								<?php
-								}  						
+													
 					
 	
 
