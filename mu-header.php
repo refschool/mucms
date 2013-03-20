@@ -191,7 +191,7 @@ if($meta_type == 'home'){
 
 		
 		//get the path of the posts that have the cat_id
-		$sql = "select * from `$tprefix"."_dir_entry` E INNER JOIN `$tprefix"."_meta` M ON M.meta_id = e.meta_id  where `path` = '$path' ";
+		$sql = "select * from `$tprefix"."_dir_entry` E INNER JOIN `$tprefix"."_meta` M ON M.meta_id = E.meta_id  where `path` = '$path' ";
 		//echo $sql;
 		$result = $db->query($sql);
 		
