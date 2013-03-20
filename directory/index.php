@@ -24,9 +24,9 @@ $cat = get_categories();
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content = "" />
-<link rel="stylesheet" type="text/css" href="<?=$tld2.$themepath?>global.css" />
-<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld2 . $install_folder . '/' .  $feed?>" />
-<link rel="shortcut icon" href="<?=$tld2.$themepath?>images/favicon.ico" type="images/x-icon" />
+<link rel="stylesheet" type="text/css" href="<?=$tld.$themepath?>global.css" />
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld . 'directory/' ?>atom.xml" />
+<link rel="shortcut icon" href="<?=$tld.$themepath?>images/favicon.ico" type="images/x-icon" />
 
 <script type="text/javascript" src="../manage/js/tinymce/jscripts/tiny_mce/tiny_mce.js" ></script >
 <script type="text/javascript" >
