@@ -1,7 +1,15 @@
-Upgrade vers la version 2.8 avec mode directory
+Version 3.0
 
-copier index.php, mu-header,fichier templates (pas le css)
-copier debug-functions.php
+
+
+
 
 
 2.8.0
+Upgrade vers la version 2.8 avec mode directory
+
+copier fichier inc/*,debug-functions.php
+copier index.php, mu-header,fichier templates (pas le css)
+
+
+
