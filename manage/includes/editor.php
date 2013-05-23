@@ -154,7 +154,7 @@ if (empty($post['author'])){echo $authorname;} else {
 
 		<tr>
 			<td>Permalink</td>
-			<td><?=$tld2 . '/' . $install_folder . '/'?>
+			<td><?=$tld2 . '/'?>
 			<input type=text id="thisurl" name="thisurl" size ="60" maxlength="300" value="<?=$post['query_string']; ?>">
 <a href="<?=$post['path']?>">Preview</a>
 			</td>
@@ -165,7 +165,7 @@ if (empty($post['author'])){echo $authorname;} else {
 	
 <!--End of metadata-->
 
-	<textarea id="main_text" name="main_text" rows="25" class="mceEditor"><?php echo htmlentities($post['main_text']);?></textarea>
+	<textarea id="main_text" name="main_text" rows="25" class="mceEditor"><?php echo $post['main_text'];?></textarea>
 
 	
 
@@ -207,7 +207,7 @@ if (empty($post['author'])){echo $authorname;} else {
 						<tr><th width="20">Comments</th></tr>
 					</thead>
 					<tbody>
-					<a href="<?=$install_folder?>/manage/comment-delete.php?post_id=<?=$post['id']?>">Delete ALL Spam</a><br><br>
+					<a href="<?=$tld2?>/manage/comment-delete.php?post_id=<?=$post['id']?>">Delete ALL Spam</a><br><br>
 					<?php
 
 				for($i=0;$i<count($comments);$i++){
@@ -218,7 +218,7 @@ if (empty($post['author'])){echo $authorname;} else {
 				
 					<tr style="border-bottom:solid 1px #aaa;">
 					<td class="com_<?=$comments[$i]['status']?>" style="padding : 10px"><a href="<?=$comments[$i]['website']?>" title="<?=$comments[$i]['website']?>"><?=$comments[$i]['name']?></a>,<?=$comments[$i]['email']?><?=$comments[$i]['timestamp']?> Status:<?=$comments[$i]['status']?> : 
-					<a id="<?=$comments[$i]['comment_id']?>" href="<?=$install_folder?>/manage/comment-delete.php?post_id=<?=$post['id']?>&com_id=<?=$comments[$i]['comment_id']?>">Delete</a>
+					<a id="<?=$comments[$i]['comment_id']?>" href="<?=$tld2?>/manage/comment-delete.php?post_id=<?=$post['id']?>&com_id=<?=$comments[$i]['comment_id']?>">Delete</a>
 						<br>
 						<br>
 						<br>

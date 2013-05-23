@@ -1,13 +1,12 @@
 <?php session_start();
 include("../../inc/config.php");
 include("../class/manager-functions.php");
-include("seofunctions.php");
-include("pr.class.php");
+//include("crawltrack-functions.php");
 
 
 	if($_SESSION['Userlevel'] <> 'admin'){
 echo 'user level = '. $_SESSION['Userlevel'];
-	echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
+	echo "Vous n'avez pas les droits suffisants pour Ã©diter !<br> ";
 	echo '<a href="'.$tld.'">Retour</a><br>';
 	echo '<a href="'.$tld.'manage/logout.php">Logout</a>';
 }
@@ -32,23 +31,17 @@ else {
 		$("#tabs").tabs();
 	});
 	
-	
 	$(function() {
-		$("#category").click(function(){
-			
-		
-		});
-	});
+		$( "#start" ).datepicker({ dateFormat: 'yy-mm-dd' });
+		$( "#end" ).datepicker({ dateFormat: 'yy-mm-dd' });
+		});	
 	</script>
-
-
-
 </head>
 <?php
 	if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 	{
 ?>
-<body onload="updatelist('<?php $_SESSION['category'] = '' ? 'all' : $_SESSION['category'] ; echo $_SESSION['category']; ?>');">
+<body>
 
 <div id="frame">
 	<div id="header">
@@ -71,13 +64,79 @@ else {
 	<div id="main">		
 
 		<div id="editor" style="width:75%">
-			<?php
-			include("seoeditor.php");
-			?>
+
+			
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Keyword Distribution by Page</a></li>
+		</ul>
+	
+	<div id="tabs-1">
+
+
+		<?php
+				if($_POST['end'] == ''){
+					$_POST['end'] = date('Y-m-d');
+				} 
+				
+				if($_POST['start'] == ''){
+					$_POST['start'] = date('Y-m-d',strtotime('- 1 month')) ;
+				} 
+		?>
+			<form action="<?=$_SERVER['PHP_SELF'];?>?id_page=<?=$_GET['id_page']?>" method="post" >
+					<table>
+					<tr>
+						<td>
+							<label>Start</label><br>
+							<input type="text" id="start" name="start" size="10" value="<?=$_POST['start']?>" />
+						</td>
+						<td>
+							<label>End</label><br>
+							<input type="text" id="end" name="end" size="10" value="<?=$_POST['end']?>" />
+						</td>
+					
+					
+						<td><input type="submit" value="submit" /></td>
+					</tr>
+
+				</table>
+			</form>
+		<?php
+
+//afficher toutes les pages
+
+$traffic_sitewide = get_pages_traffic_evolution($_GET['id_page'],$_POST['start'],$_POST['end']);
+
+echo '<table class="collapse"><tr><th>Hits</th><th>Month</th><th>URL</th></tr>';
+for($i=0;$i<count($traffic_sitewide);$i++){
+
+?>
+<tr>
+	
+	<td><?=$traffic_sitewide[$i]['count']?></td>
+	<td><?=$traffic_sitewide[$i]['month']?></td>
+	<td><?=$traffic_sitewide[$i]['url_page']?></td>
+
+</tr>
+
+<?php
+}
+
+	?>
+</table>
+		<br style="clear:both" />
+	</div>
+
+
+
+
+
+
+
 
 		</div><!-- END OF EDITOR DIV -->
 
-s	</div>
+	</div>
 </div>
 </body>
 <?php

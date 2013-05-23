@@ -20,10 +20,10 @@ $cat = get_categories();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Directory | <?=$tUrl?></title>
+<title><?=$directory_title?> | <?=$tUrl?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="description" content="" />
-<meta name="keywords" content = "" />
+<meta name="description" content="<?=$directory_description?>" />
+<meta name="keywords" content = "<?=$directory_keyword?>" />
 <link rel="stylesheet" type="text/css" href="<?=$tld.$themepath?>global.css" />
 <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld . 'directory/' ?>atom.xml" />
 <link rel="shortcut icon" href="<?=$tld.$themepath?>images/favicon.ico" type="images/x-icon" />

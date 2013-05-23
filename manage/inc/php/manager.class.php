@@ -127,11 +127,6 @@ $sql = "SELECT DISTINCT `cat` FROM `".$tprefix."_content` order by `cat` asc";
 	return $categoryList;
 	}
 
-function showArray($array){
-	echo '<pre>';
-	print_r($array);
-	echo '</pre>';
-}	
 
 
 

@@ -1,8 +1,9 @@
 <?php session_start();
 
  include("../inc/config.php"); 
- include("class/manager.class.php");
- include("class/manager-functions.php");
+ include("../inc/debug-functions.php"); 
+ //include("inc/manager.class.php");
+ include("inc/php/manager-functions.php");
  
 ?>
 
@@ -20,14 +21,23 @@
 $id = $_POST['id'];
 $meta_id = $_POST['meta_id'];
 
-$title = $_POST['title'];
+
+
+if(get_magic_quotes_gpc () == 1){
+	$title = $_POST['title'];
+}
+else {
+	$title = addslashes($_POST['title']);
+}
+
+
 $query_string = trim($_POST['thisurl']);
 
 	//process query_string according to old style url (pre 2.4 mucms version) remove first slash
 	/*$first_slash_pos = strpos($query_string,'/');
 	if($first_slash_pos == 0){*/
 		
-		$path = $tld2 . $install_folder . '/'. $query_string;
+		$path = $tld2 .  '/'. $query_string;
 		/*} 
 		else 
 		{
@@ -37,8 +47,27 @@ $query_string = trim($_POST['thisurl']);
 	*/
 
 
-$h1_title = $_POST['h1_title'];
-$author = $_POST['author'];
+
+
+
+if(get_magic_quotes_gpc () == 1){
+	$h1_title = $_POST['h1_title'];
+}
+else {
+	$h1_title = addslashes($_POST['h1_title']);
+}
+
+
+
+if(get_magic_quotes_gpc () == 1){
+	$author = $_POST['author'];
+}
+else {
+	$author = addslashes($_POST['author']);;
+}
+
+
+
 $date_posted= $_POST['date_posted'];
 
 
@@ -180,106 +209,47 @@ $db->query($update_meta);
 	
 	}
 
+
+
+
+echo '<h2>======= TAG SECTION ============</h2>';
+
 //--TAGS TABLE UPDATE QUERY______________________
 // process tag strings
 
 /*
 * 1 - add cms level new tags
-* 2 - add post level new tags
-* 3 - remove post level deprecated tags
-* 4 - remove cms level deprecated tags
+* 2 - delete existing tag post association
+* 3 - add new tag post association
+* DONE
 */
 
 
-echo '<h2>======= TAG SECTION ============</h2>';
+//only add tags,
+//do not remove tags from CMS when there is no tag-post association
+//
 	//trim spaces
 	if(!empty($tagstring)){
-	$tagstring = str_replace(' ','',$tagstring);//echo $tagstring ;
-	$tags = explode(',',$tagstring);
-	sort($tags);
-	
-	echo '<h2>identified tags from the form field</h2>';
-	pretty($tags);	
+		$tagstring = str_replace(' ','',$tagstring);
+		//echo $tagstring ;
+		$tags = explode(',',$tagstring);
+		sort($tags);
+		
+		echo '<h2>identified tags from the form field</h2>';
+		pretty($tags);	
 
 	}
 	
-	if(!empty($tags)){	
-	
-		$cms_existing_tags = get_existing_tags();
-		echo '<h2>Current tags in CMS </h2>';
-		pretty($cms_existing_tags);		
-		;
-		
-		
-		$existing_post_tags = get_post_tags($id);
-		echo '<h2>Current tags for this POST</h2>';		
-		 pretty($existing_post_tags);
+	add_cms_tags($tags);
 
+	//now that we know which tags are sent from the form
+	//attach them to the post
+	//delete current tag_post association
+	//
+	remove_tag_post_association($id);
 
-		if(!empty(	$cms_existing_tags)){
-		$tags_to_add_to_cms = array_diff($tags,$cms_existing_tags);sort($tags_to_add_to_cms);
-		echo '<h2>Tag to add to CMS </h2>';
+	add_tag_post_association($tags,$id);
 
-		 pretty($tags_to_add_to_cms);
-		 
-			} else {
-			$tags_to_add_to_cms = $tags;
-			
-			}
-		//===============================================
-
-			$tags_to_add_to_post = array_diff($tags,$existing_post_tags);
-			sort($tags_to_add_to_post);
-			echo '<h2>Tag to add to POST </h2>';
-			pretty($tags_to_add_to_post);
-	
-
-		
-			$tags_to_delete_from_post = array_diff($existing_post_tags,$tags);sort($tags_to_delete_from_post);	
-			echo '<h2>Tag to delete from POST</h2>';
-			pretty($tags_to_delete_from_post);
-
-
-	/*
-	 * ADD TAGS
-	*/
-	
-	
-		//if tag is new to cms
-		if(count($tags_to_add_to_cms) > 0){
-			add_cms_tags($tags_to_add_to_cms);//add to tags and meta table
-		}
-		
-		//  !IMPORTANT
-		//if tag is new to post then add the binding between tag id and post id
-		if(count($tags_to_add_to_post) > 0){
-			add_tag_post_association($tags_to_add_to_post,$id);//add to tags and meta table
-		}
-		
-		//if tag is removed from post
-		if(count($tags_to_delete_from_post) > 0){
-			remove_tag_post_association($tags_to_delete_from_post,$id);//add to tags and meta table
-		}
-		
-		//if tag not used in CMS
-		
-		$active_tags = get_active_tags();
-		
-		echo '<h2>Active tags </h2>';
-		pretty($active_tags);
-
-
-		if(!empty(	$cms_existing_tags)){
-		$tags_to_delete_from_cms = array_diff($cms_existing_tags,$active_tags);sort($tags_to_delete_from_cms);
-		echo '<h2>Tag to delete from CMS </h2>';
-	
-		} 	
-				
-		if(count($tags_to_delete_from_cms) > 0){
-			remove_cms_tags($tags_to_delete_from_cms);//add to tags and meta table
-		}		
-
-	}
 
 echo '<h2>======= END  TAG SECTION ============</h2>';
 
@@ -292,7 +262,7 @@ build_rss();
 //update the sitemap
 build_sitemap();
 
-echo "<meta http-equiv='refresh' content='".$redir_delay."; url=$tld2".$install_folder. "/manage/write.php?id=$id'>";
+echo "<meta http-equiv='refresh' content='".$redir_delay."; url=$tld2/manage/write.php?id=$id'>";
 $db->close();
 ?>
 

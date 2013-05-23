@@ -1,0 +1,2 @@
+[05-May-2013 14:25:31 Europe/Berlin] PHP Fatal error:  Call to undefined method Manager::showCategories() in /home/referenc/public_html/frenchmanucure.com/manage/linkerati/linkerati-browser.php on line 11
+[06-May-2013 00:00:44 Europe/Berlin] PHP Fatal error:  Call to undefined method Manager::showCategories() in /home/referenc/public_html/frenchmanucure.com/manage/linkerati/linkerati-browser.php on line 11

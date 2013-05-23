@@ -5,3 +5,22 @@
 [17-May-2011 16:07:15] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/seo/seofunctions.php on line 31
 [17-May-2011 16:07:18] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/seo/seofunctions.php on line 31
 [17-May-2011 16:07:48] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/seo/seofunctions.php on line 31
+[03-May-2013 00:20:18 Europe/Berlin] PHP Fatal error:  Call to undefined function get_google_referal() in /home/referenc/public_html/frenchmanucure.com/manage/seo/home_human.php on line 8
+[03-May-2013 00:35:09 Europe/Berlin] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php:2) in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 2
+[03-May-2013 00:35:09 Europe/Berlin] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/class/crawltrack-functions.php on line 156
+[03-May-2013 00:35:20 Europe/Berlin] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/class/crawltrack-functions.php on line 156
+[03-May-2013 00:35:44 Europe/Berlin] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/class/crawltrack-functions.php on line 158
+[03-May-2013 00:37:12 Europe/Berlin] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/class/crawltrack-functions.php on line 158
+[03-May-2013 00:41:49 Europe/Berlin] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/referenc/public_html/frenchmanucure.com/manage/class/crawltrack-functions.php on line 158
+[03-May-2013 00:43:04 Europe/Berlin] PHP Fatal error:  Call to undefined function pretty() in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 14
+[03-May-2013 23:37:20 Europe/Berlin] PHP Parse error:  syntax error, unexpected T_STRING in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 66
+[03-May-2013 23:39:35 Europe/Berlin] PHP Parse error:  syntax error, unexpected T_STRING in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 66
+[03-May-2013 23:39:51 Europe/Berlin] PHP Parse error:  syntax error, unexpected ';' in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 66
+[03-May-2013 23:40:01 Europe/Berlin] PHP Parse error:  syntax error, unexpected ';' in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 66
+[04-May-2013 00:21:21 Europe/Berlin] PHP Parse error:  syntax error, unexpected $end in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 102
+[04-May-2013 00:24:55 Europe/Berlin] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 86
+[04-May-2013 00:24:57 Europe/Berlin] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 86
+[04-May-2013 00:25:18 Europe/Berlin] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 86
+[04-May-2013 00:25:20 Europe/Berlin] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 86
+[04-May-2013 00:25:55 Europe/Berlin] PHP Parse error:  syntax error, unexpected $end in /home/referenc/public_html/frenchmanucure.com/manage/seo/stat.php on line 100
+[04-May-2013 23:42:17 Europe/Berlin] PHP Fatal error:  Call to undefined function pretty() in /home/referenc/public_html/frenchmanucure.com/manage/seo/home_crawl.php on line 88

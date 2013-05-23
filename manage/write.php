@@ -2,9 +2,9 @@
 
 ini_set("include_path", ".:../:./inc:../inc:../../inc");
 
-include("../inc/config.php");include("class/manager-functions.php");
-
-include("class/manager.class.php");
+include("../inc/config.php");
+include("inc/php/manager-functions.php");
+//include("inc/php/manager.class.php");
 //manage default values
 if(!isset($_GET['cat'])){$cat='all';} else {$cat = $_GET['cat'];}
 if(!isset($_GET['id'])){$editid='1';} else {$editid = $_GET['id'];}
@@ -32,7 +32,7 @@ else {
 <head>
 <title>Article management</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" type="text/css" href="css/manager.css" />
+<link rel="stylesheet" type="text/css" href="inc/css/manager.css" />
 <script type="text/javascript" src="js/ajax.js"></script>
 <script language="javascript" type="text/javascript" src="js/script.js"></script>
 		<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />	
@@ -128,7 +128,7 @@ $(document).ready(function() {
 	<div id="header">
 		<div class="message">
 			<?php 
-			$myMan = new Manager();
+			//$myMan = new Manager();
 			//$myMan->showVersionMessage();
 			?>
 		</div>

@@ -3,3 +3,5 @@
 [30-Apr-2011 10:21:47] PHP Parse error:  syntax error, unexpected T_SWITCH, expecting ',' or ';' in /home/referenc/public_html/tablettepc.org/manage/settings/savedb.php on line 21
 [30-Apr-2011 22:42:55] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home/referenc/public_html/tablettepc.org/manage/settings/controller.php on line 10
 [30-Apr-2011 23:38:09] PHP Parse error:  syntax error, unexpected $end, expecting ',' or ';' in /home/referenc/public_html/tablettepc.org/manage/settings/controller.php on line 25
+[05-May-2013 00:01:10 Europe/Berlin] PHP Fatal error:  Call to undefined method Manager::showCategories() in /home/referenc/public_html/frenchmanucure.com/manage/settings/settings-browser.php on line 11
+[05-May-2013 00:01:14 Europe/Berlin] PHP Fatal error:  Call to undefined method Manager::showCategories() in /home/referenc/public_html/frenchmanucure.com/manage/settings/settings-browser.php on line 11

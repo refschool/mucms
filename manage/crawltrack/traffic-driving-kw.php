@@ -1,13 +1,12 @@
 <?php session_start();
 include("../../inc/config.php");
 include("../class/manager-functions.php");
-include("seofunctions.php");
-include("pr.class.php");
+
 
 
 	if($_SESSION['Userlevel'] <> 'admin'){
 echo 'user level = '. $_SESSION['Userlevel'];
-	echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
+	echo "Vous n'avez pas les droits suffisants pour Ã©diter !<br> ";
 	echo '<a href="'.$tld.'">Retour</a><br>';
 	echo '<a href="'.$tld.'manage/logout.php">Logout</a>';
 }
@@ -31,34 +30,21 @@ else {
 	$(function() {
 		$("#tabs").tabs();
 	});
-	
-	
+
 	$(function() {
-		$("#category").click(function(){
-			
-		
-		});
-	});
+		$( "#start" ).datepicker({ dateFormat: 'yy-mm-dd' });
+		$( "#end" ).datepicker({ dateFormat: 'yy-mm-dd' });
+		});	
 	</script>
-
-
-
 </head>
+
 <?php
 	if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 	{
 ?>
-<body onload="updatelist('<?php $_SESSION['category'] = '' ? 'all' : $_SESSION['category'] ; echo $_SESSION['category']; ?>');">
-
+<body>
 <div id="frame">
 	<div id="header">
-		<div class="message">
-			<?php 
-			
-			
-			?>
-		</div>
-		
 		<div id="menu">
 			<?php
 			include("../includes/menu.php");
@@ -68,17 +54,71 @@ else {
 		<br style="clear:both" />
 	</div><!-- END OF HEADER DIV  -->
 
-	<div id="main">		
+	<div id="main">	
+		<div id="editor" style="width:75%">		
+			<div id="tabs">
+				<ul>
+					<li><a href="#tabs-1">Keywords That Drive Traffic to Site</a></li>
+				</ul>
+				<?php
+				if($_POST['end'] == ''){
+					$_POST['end'] = date('Y-m-d');
+				} 
+				
+				if($_POST['start'] == ''){
+					$_POST['start'] = date('Y-m-d',strtotime('- 1 month')) ;
+				}
 
-		<div id="editor" style="width:75%">
-			<?php
-			include("seoeditor.php");
-			?>
+				?>
+			
 
+				<div id="tabs-1">
+				<form action="<?=$_SERVER['PHP_SELF'];?>" method="post" >
+					<table>
+					<tr>
+						<td>
+							<label>Start</label><br>
+							<input type="text" id="start" name="start" size="10" value="<?=$_POST['start']?>" />
+						</td>
+						<td>
+							<label>End</label><br>
+							<input type="text" id="end" name="end" size="10" value="<?=$_POST['end']?>" />
+						</td>
+					
+					
+						<td><input type="submit" value="submit" /></td>
+					</tr>
+
+				</table>
+			</form>
+				<?php
+				
+				//get the keyword that generated traffic in this period of thime 
+				
+				$hit = get_keyword_count_by_date_range($_POST['start'],$_POST['end']);
+
+				echo '<table class="collapse"><tr><th>Day</th><th>Keyword</th></tr>';
+				for($i=0;$i<count($hit);$i++){
+				?>
+				<tr>
+					<td style="border:#000 solid 1px"><?=$hit[$i]['count']?></td>
+					<td style="border:#000 solid 1px"><?=$hit[$i]['keyword']?></td>
+				</tr>
+
+
+				<?php
+
+				}
+				echo '</table>';
+				?>
+
+				</div>
+			</div>
 		</div><!-- END OF EDITOR DIV -->
+	</div>
 
-s	</div>
-</div>
+
+</div>	
 </body>
 <?php
 

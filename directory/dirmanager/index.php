@@ -71,17 +71,17 @@ tinyMCE.init({
 		</div>
 	</div>
 
-	<div id="main">		
+	<div id="main" style="width:960px">		
 		<table class="collapse">
 			<tr class="header">
-				<th>Entry Id</th>
-				<th>Meta Id</th>
-				<th>cat Id</th>
-				<th>Website Name</th>
-				<th>Url</th>
-				<th>Email</th>
-				<th>Datetime</th>
-				<th>Action</th>
+				<th width="50">Entry Id</th>
+				<th width="50">Meta Id</th>
+				<th width="50">cat Id</th>
+				<th width="120">Website Name</th>
+				<th width="250">Url</th>
+				<th width="60">Email</th>
+				<th width="120">Datetime</th>
+				<th width="50">Action</th>
 			</tr>
 			<?php
 			for($i=0;$i<count($entry);$i++){

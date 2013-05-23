@@ -23,7 +23,7 @@
 		
 			?>
 			
-		<a href="<?=$tld2.$install_folder?>/manage/seo/compute_pr.php?url_group=all">Compute pagerank</a>
+		<a href="<?=$tld2?>/manage/seo/compute_pr.php?url_group=all">Compute pagerank</a>
 		
 		<br style="clear:both" />
 	</div>

@@ -23,7 +23,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 echo 'you are logged in';
 echo 'loggedIn = '. $_SESSION['LoggedIn'].'<br>';
 echo 'Username = '. $_SESSION['Username'].'<br>';
-echo "<meta http-equiv='refresh' content='0;".$tld2. "/manage/write.php' />";	
+echo "<meta http-equiv='refresh' content='0;".$tld2 ."/manage/write.php' />";	
 }
 
 elseif(!empty($_POST['username']) && !empty($_POST['password'])){

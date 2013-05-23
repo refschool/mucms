@@ -89,12 +89,17 @@ input.savenedit {width:33px;height:33px;margin:0;padding:2px;background:transpar
 
 /* browser table type 1 */
 .collapse {width:100%;border-collapse:collapse;}
+.collapse th{border-left:solid 1px #000;border:1px solid #000;font-weight:bold;background-color:#5D97EF; padding:2px 3px 2px 3px;}
+.collapse td {border-left:solid 1px #cccccc; border-bottom:dashed 1px #cccccc; background-color:#E0ECFF; padding:2px 3px 2px 3px;}
+
+
 .vlabel {border-bottom:solid 1px #aaaaaa; padding:2px 3px 2px 3px; background-color:#cccccc;font-weight:bold; font-size:12px;}
 .header {border-left:solid 1px #aaaaaa; padding:2px 3px 2px 3px; background-color:#F7B64A; font-weight:bold; font-size:12px;}
 .vform {border-bottom:solid 1px #9AD2FF;background-color:#E0ECFF; padding:2px 3px 2px 3px;}
+
 .data {border-left:solid 1px #cccccc; border-bottom:dashed 1px #cccccc; background-color:#E0ECFF; padding:2px 3px 2px 3px;}
-.Y {background-color:#eee}
-.N {background-color:#bbb}
+.Y td{background-color:#eee}
+.N td {background-color:#bbb}
 #uploader {width:350px; height:550px;float:right;margin:0;padding:0;}
 #imagefolderbrowser {width:auto; height:300px;margin:0;padding:0;background-color:#ADEFFB}
 #imagefolderbrowser ul li {list-style-type:none}

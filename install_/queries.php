@@ -81,6 +81,7 @@ $sql = "CREATE TABLE `$prefix"."_content` (
   `lang` varchar(2) character set utf8 collate utf8_unicode_ci default NULL,
   `readmore` text character set utf8 collate utf8_unicode_ci,
   `published` text character set utf8 collate utf8_unicode_ci,
+  `com_closed` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
   `note` text character set utf8 collate utf8_unicode_ci NOT NULL,
   `last_edited` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`)

@@ -54,7 +54,7 @@ tinyMCE.init({
 		</div>
 	</div>
 
-		<div id="main">	
+		<div id="main" style="padding:50px 0 0 20px;width:960px;border:solid 2px #000">	
 			<form method='post' action='dir-update.php' >
 					<input type="hidden" name="entry_id" value="<?=$entry['entry_id']?>" />
 					

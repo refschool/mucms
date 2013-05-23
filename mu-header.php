@@ -126,8 +126,8 @@ if($meta_type == 'home'){
 		
 			$i=0;
 			$content['type'] = 'thecategory';
-			$content['title'] = 'Résultats pour la catégorie '.$cat_label;
-			$content['description'] = 'Résultats pour la catégorie '.$cat_label;
+			$content['title'] = 'RÃ©sultats pour la catÃ©gorie '.$cat_label;
+			$content['description'] = 'RÃ©sultats pour la catÃ©gorie '.$cat_label;
 			$content['keyword'] = $cat_label;
 			
 			//put the post of the cateogry in the array
@@ -165,8 +165,8 @@ if($meta_type == 'home'){
 		
 			$i=0;
 			$content['type'] = 'thetag';
-			$content['title'] = 'Résultats pour le tag '.$tag_label;			
-			$content['description'] = 'Résultats pour le tag '.$tag_label;
+			$content['title'] = 'RÃ©sultats pour le tag '.$tag_label;			
+			$content['description'] = 'RÃ©sultats pour le tag '.$tag_label;
 			$content['keyword'] = $tag_label;
 			
 			while($row = $result->fetch_assoc()){

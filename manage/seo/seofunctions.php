@@ -1,7 +1,4 @@
 <?php
-
-
-
 function compute_pagerank($urls){
 	
 	$p = new pagerankChecker();
