@@ -47,8 +47,8 @@ tinyMCE.init({
 		/*entity_encoding : "raw",*/
 		convert_urls : false,
         theme : "advanced",   //(n.b. no trailing comma, this will be critical as you experiment later)
-		plugins:"wordcount,table,fullscreen",
-		theme_advanced_buttons3_add : "fullscreen,tablecontrols,fontsizeselect",
+		plugins:"wordcount,table,fullscreen,searchreplace",
+		theme_advanced_buttons3_add : "searchreplace,fullscreen,tablecontrols,fontsizeselect",
 		theme_advanced_toolbar_location : "top",
 		theme_advanced_statusbar_location : "bottom",
 		theme_advanced_toolbar_align : "left"

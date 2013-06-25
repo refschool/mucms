@@ -24,8 +24,8 @@ WHILE ( $nav_row = $nav_query->fetch_array() )
      }
      IF ( $goOn == 1 )
      {
-          $tree .= '<input type="checkbox" name="category[]" value="'.$nav_row['cat_id'].'"  '.check_category($editid,$nav_row['cat_id']).'/>'.$nav_row['cat_label'].'<br>';      // Process the main tree node
-          ARRAY_PUSH($exclude, $nav_row['cat_id']);          // Add to the exclusion list
+          $tree .= '<input type="checkbox" name="category[]" value="'.$nav_row['cat_id'].'"  '.check_category($editid,$nav_row['cat_id']).'/>'.$nav_row['cat_label'].'<a href="'.$tld.'/manage/settings/category-form.php?parent_id='.$nav_row['cat_id'].'&parent_name='.$nav_row['cat_label'].'">[+]</a><br>';      // Process the main tree node
+          ARRAY_PUSH($exclude, $nav_row['cat_id']);          // Add to the exclusion list$tld
           IF ( $nav_row['cat_id'] < 6 )
           { $top_level_on = $nav_row['cat_id']; }
  
@@ -36,7 +36,7 @@ WHILE ( $nav_row = $nav_query->fetch_array() )
 // Recursive function to get all of the children...unlimited depth
 function build_child($oldID) {
 	// Refer to the global array defined at the top of this script
-     global $exclude, $depth, $db,$tprefix,$editid; 
+     global $exclude, $depth, $db,$tprefix,$editid,$tld; 
 	$tempTree = '';
 	 
 	 
@@ -48,7 +48,7 @@ function build_child($oldID) {
           {
                FOR ( $c=0;$c<$depth;$c++ )               // Indent over so that there is distinction between levels
                { $tempTree .= "&nbsp;"; }
-               $tempTree .= "- " . '<input type="checkbox" name="category[]" value="'.$child['cat_id'].'" '.check_category($editid,$child['cat_id']).' />'.$child['cat_label'].'<br>';
+               $tempTree .= "- " . '<input type="checkbox" name="category[]" value="'.$child['cat_id'].'" '.check_category($editid,$child['cat_id']).' />'.$child['cat_label'].'<a href="'.$tld.'/manage/settings/category-form.php?parent_id='.$child['cat_id'].'&parent_name='.$child['cat_label'].'">[+]</a><br>';
                $depth++;          // Incriment depth b/c we're building this child's child tree  (complicated yet???)
                $tempTree .= build_child($child['cat_id']);          // Add to the temporary local tree
                $depth--;          // Decrement depth b/c we're done building the child's child tree.

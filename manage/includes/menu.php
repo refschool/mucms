@@ -8,7 +8,12 @@
 		<li><a href="<?=$tld2?>/manage/linkerati/index.php">Linkerati</a></li>
 	</ul>
 </li>
-<li><a href="<?=$tld2?>/manage/settings/index.php">Site Settings</a></li>
+<li><a href="#">Site Settings</a>
+	<ul>
+		<li><a href="<?=$tld2?>/manage/settings/index.php">Site Settings</a></li>
+		<li><a href="<?=$tld2?>/manage/settings/categories.php">Category</a></li>
+	</ul>
+</li>	
 <li><a href="<?=$tld2?>/crawltrack">Crawltrack</a>
 	<ul>
 		<li><a href="<?=$tld2?>/manage/crawltrack/hit-by-page.php">Traffic to site by pages</a></li>
