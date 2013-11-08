@@ -34,7 +34,7 @@ include("content/plugins/plugin-config.php");
 <?php hook_insert('verification'); ?>
 <link rel="stylesheet" type="text/css" href="<?=$tld.$themepath?>global.css" />
 <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld . 'content/feed/' ?>atom.xml" />
-<link rel="shortcut icon" href="<?=$tld2.$themepath?>images/favicon.ico" type="images/x-icon" />
+<link rel="shortcut icon" href="<?=$tld.$themepath?>images/favicon.ico" type="images/x-icon" />
 <?php
 //_-`-_HOOK::before_head_-`-_
 //header script

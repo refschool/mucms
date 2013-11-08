@@ -48,7 +48,7 @@ h2 {margin:0}
 p {font-size:12px;}
 /* fieldset element */
 #identification {width:200px;height:auto; float:left; margin:5px 10px 5px 0;}
-label {margin:3px 0 3px 2px;font-size:10px;font-weight:bold;display:block;}
+label {margin:3px 0 3px 2px;font-size:10px;font-weight:bold;}
 label.clickable {display:inline;float:none/*important to make it inline*/}
 
 .form {padding:0 0 0 10px; margin:0 0 0 0;}
