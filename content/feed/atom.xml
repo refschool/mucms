@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" >
+  <title>Yvonh.com</title>
+   <link href="http://www.yvonh.com/content/feed/atom.xml" rel="self" /> 
+   <updated>2016-08-29T20:27:53Z</updated>
+     <author>
+    <name>Yvonh</name>
+	</author>
+  <id>http://www.yvonh.com/</id>
+  <entry>
+	<title>Utiliser NPM Script au lieu de Gulp pour builder</title>
+	<link href="http://www.yvonh.com/utiliser-npm-script-au-lieu-de-gulp-pour-builder/"/>
+	<id>tag:www.yvonh.com,2016-04-15 02:37:50:/utiliser-npm-script-au-lieu-de-gulp-pour-builder/</id>
+	<updated>2016-04-15T02:04:50Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>Creer un projet avec NPM proprement</title>
+	<link href="http://www.yvonh.com/creer-un-projet-avec-npm-proprement/"/>
+	<id>tag:www.yvonh.com,2016-01-08 08:30:45:/creer-un-projet-avec-npm-proprement/</id>
+	<updated>2016-01-08T08:01:45Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>Getting started with nodeJS</title>
+	<link href="http://www.yvonh.com/getting-started-with-nodejs/"/>
+	<id>tag:www.yvonh.com,2015-12-05 17:40:45:/getting-started-with-nodejs/</id>
+	<updated>2015-12-05T17:12:45Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>Dumping results with PDO</title>
+	<link href="http://www.yvonh.com/"/>
+	<id>tag:www.yvonh.com,2015-01-27 14:44:57:/</id>
+	<updated>2015-01-27T14:01:57Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>Debugging with twig</title>
+	<link href="http://www.yvonh.com/debugging-with-twig/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/debugging-with-twig/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>Improve your OOP skills with Symfony</title>
+	<link href="http://www.yvonh.com/introducing-symfony-2-framework/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/introducing-symfony-2-framework/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>Component to know well when learning Symfony</title>
+	<link href="http://www.yvonh.com/component-to-know-well-when-learning-symfony/"/>
+	<id>tag:www.yvonh.com,2014-12-24 10:20:04:/component-to-know-well-when-learning-symfony/</id>
+	<updated>2014-12-24T10:12:04Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>Walkthrough the AngularJS Tutorial</title>
+	<link href="http://www.yvonh.com/walkthrough-the-angularjs-tutorial/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/walkthrough-the-angularjs-tutorial/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>yvon</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>Transitioning from procedural programmer to OOP programmer</title>
+	<link href="http://www.yvonh.com/transitioning-from-procedural-programmer-to-oop-programmer/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/transitioning-from-procedural-programmer-to-oop-programmer/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>yvon</name>
+	</author>
+	<summary></summary>
+	</entry>
+<entry>
+	<title>PHP internall 500 error how to investigate </title>
+	<link href="http://www.yvonh.com/php/php-internall-500-error-how-to-investigate/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/php/php-internall-500-error-how-to-investigate/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>When you have Ã  5000 internal server error, and if you are programming with php, first look at the php error log file.</summary>
+	</entry>
+<entry>
+	<title>Firefox Addon for developping Fire Extensions</title>
+	<link href="http://www.yvonh.com/uncategorized/firefox-addon-for-developping-fire-extensions/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/uncategorized/firefox-addon-for-developping-fire-extensions/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>These are Firefox extensions to help you develop extensions !</summary>
+	</entry>
+<entry>
+	<title>Is Google shooting its own foot by allowing scams on Adsense?</title>
+	<link href="http://www.yvonh.com/internetmarketing/is-google-shooting-its-own-foot-by-allowing-scams-on-adsense/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/internetmarketing/is-google-shooting-its-own-foot-by-allowing-scams-on-adsense/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>There's been a lot said about Google loosening its policy to allow unethical ads to show on its ad platform. Why you should care about this issue.</summary>
+	</entry>
+<entry>
+	<title>New recipes for following quality tweeps (and get quality followers)</title>
+	<link href="http://www.yvonh.com/twitter/new-recipes-for-following-quality-tweeps-and-get-quality-followers/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/twitter/new-recipes-for-following-quality-tweeps-and-get-quality-followers/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>Twitter by defautl makes it easy to follow loads of people. But aren't you wasting your time with this old approach? Here is why auto follow services are doomed.</summary>
+	</entry>
+<entry>
+	<title>Delicious Bookmarklet find it here !</title>
+	<link href="http://www.yvonh.com/uncategorized/delicious-bookmarklet-find-it-here/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/uncategorized/delicious-bookmarklet-find-it-here/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>you will find here the link to the delicious bookmarklets, useful to bookmark from your browser without going to Delicious.com ! </summary>
+	</entry>
+<entry>
+	<title>List of useful firefox addons for web developper I use and more</title>
+	<link href="http://www.yvonh.com/firefoxaddon/list-of-useful-firefox-addons-for-web-developper-i-use-and-more/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/firefoxaddon/list-of-useful-firefox-addons-for-web-developper-i-use-and-more/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>Here is a list of Firefox addons that I use everyday, they have proven values on the World Wide Web.</summary>
+	</entry>
+<entry>
+	<title>Huge list of Twitter related service</title>
+	<link href="http://www.yvonh.com/twitter/huge-list-of-twitter-related-service/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/twitter/huge-list-of-twitter-related-service/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>This is a list of web services that use Twitter as foundation and trying to help people make the most of Twitter.</summary>
+	</entry>
+<entry>
+	<title>A bookmarklet to let you easily test javascript snippets</title>
+	<link href="http://www.yvonh.com/programming/a-bookmarklet-to-let-you-easily-test-javascript-snippets/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/programming/a-bookmarklet-to-let-you-easily-test-javascript-snippets/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>I am currently getting seriously programming Javascript, which is not a so easy to learn language, simply because there is no good debugger. </summary>
+	</entry>
+<entry>
+	<title>Mobile website Checking Tools (continued)</title>
+	<link href="http://www.yvonh.com/mobileweb/mobile-website-checking-tool-w3c/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/mobileweb/mobile-website-checking-tool-w3c/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>The W3C has a mobile website validation that operates differently from the ready.mobi one</summary>
+	</entry>
+<entry>
+	<title>Interesting feature for Yahoo! Mail</title>
+	<link href="http://www.yvonh.com/general/interesting-feature-yahoo-mail/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/general/interesting-feature-yahoo-mail/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>Yahoo launched a new extension for email last year called ymail.com, it sounds like Gmail but is very different.</summary>
+	</entry>
+<entry>
+	<title>I no longer use Dreamweaver</title>
+	<link href="http://www.yvonh.com/development/no-longer-use-dreamweaver/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/development/no-longer-use-dreamweaver/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>At the beginning of my webdesign experience I used Dreamweaver a lot, but since I know a little more on web programming DW is a burden to me</summary>
+	</entry>
+<entry>
+	<title>FireFTP</title>
+	<link href="http://www.yvonh.com/firefoxaddon/fireftp/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/firefoxaddon/fireftp/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>FireFTP is an addon for Firefox browser that let you upload/download very easily without quitting Firefox, but htere's more to this!</summary>
+	</entry>
+<entry>
+	<title>Mobile website Checking Tools</title>
+	<link href="http://www.yvonh.com/mobileweb/mobile-website-check-tools/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/mobileweb/mobile-website-check-tools/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>There are a couple of great mobile checking tools that you should consider in order to make the best of your mobile website</summary>
+	</entry>
+<entry>
+	<title>Free Internet Marketing Ebooks to Read</title>
+	<link href="http://www.yvonh.com/internetmarketing/free-internet-marketing-ebook-read/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/internetmarketing/free-internet-marketing-ebook-read/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>Here are a few Internet marketing ebooks you should read in order to get started in the affiliate marketing experience</summary>
+	</entry>
+<entry>
+	<title>Google Reader API (finally) released?</title>
+	<link href="http://www.yvonh.com/rss/google-reader-api-finally-released/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/rss/google-reader-api-finally-released/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>Google Reader is a powerful RSS aggregator of RSS stream, it is fast and can extract the full RSS of a blog</summary>
+	</entry>
+<entry>
+	<title>Why Did Twitter Phishing spread so fast?</title>
+	<link href="http://www.yvonh.com/twitter/why-did-twitter-phishing-spread-so-fast/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/twitter/why-did-twitter-phishing-spread-so-fast/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>This week-end, the first phishing in the history of Twitter struck thousand of users. It revealed the very nature of Twitter which is a fast communication medium.</summary>
+	</entry>
+<entry>
+	<title>What I think about the Big 3 bailout</title>
+	<link href="http://www.yvonh.com/elsewhere/what-i-think-about-detroit-big-three/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/elsewhere/what-i-think-about-detroit-big-three/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>This post  is really not connected to the Internet business world, but I think I should make some points clear</summary>
+	</entry>
+<entry>
+	<title>How to follow twitter users and get followed</title>
+	<link href="http://www.yvonh.com/twitter/how-follow-twitter-users-get-followed/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/twitter/how-follow-twitter-users-get-followed/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>I'll try to explain my way to follow Twitter users, having used it a little, some patterns emerge.</summary>
+	</entry>
+<entry>
+	<title>Yvonh.com design pending</title>
+	<link href="http://www.yvonh.com/news/yvonh-design-pending/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/news/yvonh-design-pending/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvonh</name>
+	</author>
+	<summary>As I'll be on vacation on December, I won't be able to finish my website layout design, so I'll stick with this ugly basic design derived from the mucms default one</summary>
+	</entry>
+<entry>
+	<title>Hello World</title>
+	<link href="http://www.yvonh.com/general/hello-world/"/>
+	<id>tag:www.yvonh.com,0000-00-00 00:00:00:/general/hello-world/</id>
+	<updated>-0001-11-30T00:11:00Z</updated>
+	<author>
+		<name>Yvon</name>
+	</author>
+	<summary>Welcome to My personal blog</summary>
+	</entry>
+</feed>
