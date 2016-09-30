@@ -12,7 +12,7 @@ label {display:block;}
 <fieldset><legend>Enter Parameters</legend>
 <form method="POST" action="prefix.php" enctype="multipart/form-data" >
 
-<label for="install_folder">Install Folder</label>
+<label for="install_folder">Install Folder (if it's root leave it empty)</label>
 <input type="text" name="install_folder" value="" /><br />
 
 <label for="prefix">Table prefix</label>

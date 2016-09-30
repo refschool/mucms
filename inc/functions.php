@@ -47,8 +47,11 @@ function is_active_redirect($path){
 	}
 }
 
-
-//return content type
+/**
+ * 
+ * todo make a global object to pass as argument and prevent global
+ * get meta type home,category,etc,post
+ * */
 function get_meta_type($path){
 	global $tprefix; global $tld;global $db;
 	$sql = "select `type` from `$tprefix"."_meta` where `path` = '$path'";//echo $sql;

@@ -1,5 +1,7 @@
 <?php session_start();
-include("../adminpc/inc/config.php");
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+ini_set("include_path", ".:../:./inc:../inc:../../inc");
+require("../../adminpc/inc/config.php");
 
 $parent_id = trim($_POST['parent_id']);
 
@@ -19,13 +21,13 @@ for($i=0;$i<count($lang);$i++){
 //  create the meta_id
 $path = $tld.'/category/'.$cat_label;
 
-$sql = "insert into `".$tprefix."_meta` (path, meta_canonical, type ) values ('$path','checked','category',)";
+$sql = "insert into `".$tprefix."_meta` (path, meta_canonical, type ) values ('$path','checked','category')";
 echo $sql . '<br>';
 $db->query($sql);
 $meta_id = $db->insert_id;
 
 
-//update into ctegory table
+//update into cqtegory table
 
 $sql = "update `".$tprefix."_category` set meta_id = '$meta_id' where `cat_id` = '$cat_id'";
 echo $sql . '<br>';

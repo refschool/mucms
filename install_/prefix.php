@@ -83,6 +83,9 @@ echo 'HOST = '.$host.'USER = '.$user.'PASS = '.$pass.'DB = '.$dbname;
 		exit;
 	}
 */
+
+echo '<br>';
+
 //queries
 include("queries.php");
 	

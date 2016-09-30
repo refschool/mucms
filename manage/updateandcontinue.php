@@ -31,24 +31,9 @@ else {
 }
 
 
-$query_string = trim($_POST['thisurl']);
+//$query_string = trim($_POST['thisurl']);
 
-	//process query_string according to old style url (pre 2.4 mucms version) remove first slash
-	/*$first_slash_pos = strpos($query_string,'/');
-	if($first_slash_pos == 0){*/
-		
-		$path = $tld2 .  '/'. $query_string;
-		/*} 
-		else 
-		{
-		
-		$path = $tld . $install_folder . '/' . $query_string;
-		}
-	*/
-
-
-
-
+$path = trim($_POST['thisurl']);
 
 if(get_magic_quotes_gpc () == 1){
 	$h1_title = $_POST['h1_title'];
@@ -262,7 +247,7 @@ build_rss();
 //update the sitemap
 build_sitemap();
 
-echo "<meta http-equiv='refresh' content='".$redir_delay."; url=$tld2/manage/write.php?id=$id'>";
+echo "<meta http-equiv='refresh' content='1; url=$tld2/manage/write.php?id=$id'>";
 $db->close();
 ?>
 

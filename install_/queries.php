@@ -15,14 +15,14 @@ $sql ="CREATE TABLE `$prefix"."_category` (
   PRIMARY KEY  (`cat_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
 $db->query($sql);
-
+echo $sql.'<br>';
 
 //create table Category-post
 $sql = "CREATE TABLE `$prefix"."_cat_post` (
   `cat_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 
 
 
@@ -47,7 +47,7 @@ CREATE TABLE `$prefix"."_meta` (
   `type` text collate utf8_unicode_ci,
   PRIMARY KEY  (`meta_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 
 //create comment table
 $sql = "
@@ -64,7 +64,10 @@ CREATE TABLE `$tprefix"."_comments` (
   `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
   PRIMARY KEY  (`comment_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
+
+
+
 
 
 
@@ -81,12 +84,12 @@ $sql = "CREATE TABLE `$prefix"."_content` (
   `lang` varchar(2) character set utf8 collate utf8_unicode_ci default NULL,
   `readmore` text character set utf8 collate utf8_unicode_ci,
   `published` text character set utf8 collate utf8_unicode_ci,
-  `com_closed` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
+  `com_closed` varchar(7) COLLATE utf8_unicode_ci DEFAULT NULL,
   `note` text character set utf8 collate utf8_unicode_ci NOT NULL,
   `last_edited` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 
 //create table tags
 $sql = "CREATE TABLE `$prefix"."_tags` (
@@ -96,14 +99,14 @@ $sql = "CREATE TABLE `$prefix"."_tags` (
   PRIMARY KEY (`tag_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 ";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 
 //create table tags-post
 $sql = "CREATE TABLE `$prefix"."_tag_post` (
   `tag_id` int(11) NOT NULL,
   `post_id` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 /*******************************************************		
 
 					DATA INSERTION
@@ -114,15 +117,15 @@ $db->query($sql);
 //insert table category entries
 
 $sql = "INSERT INTO `$prefix"."_category` VALUES (1, 1, 1, 'accueil', '$date');";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 $sql = "INSERT INTO `$prefix"."_category` VALUES (2, 1, 2, 'uncategorized', '$date');";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 //insert entry into meta table for the default category
 $sql = "insert into `$prefix"."_meta` (`meta_id`,`query_string`,`path`,`meta_canonical`,`type`) VALUES ('2','/category/uncategorized','".$tld."category/uncategorized','checked','category')";echo $sql.'<br>';
 $db->query($sql);
 
 //insert table Category-post entries
-$sql = "INSERT INTO `$prefix"."_cat_post` VALUES (2, 3);";
+$sql = "INSERT INTO `$prefix"."_cat_post` VALUES (2, 3);";echo $sql.'<br>';
 $db->query($sql);
 
 //insert table content entry
@@ -153,7 +156,7 @@ VALUES
 'Discover why now',
 'Y', 
 'Record your modification here',
-'".$date."');";	
+'".$date."');";	echo $sql.'<br>';
 $db->query($sql);
 
 
@@ -164,7 +167,7 @@ $db->query($sql);echo $sql.'<br>';
 
 //insert meta for the default post
 $sql = "INSERT INTO `$prefix"."_meta` (`meta_id`,`query_string`,`path`, `meta_canonical`, `description`, `keyword`, `type`) VALUES ('4', '/welcome-to-microcms/', '$domain"."/welcome-to-microcms/', 'checked', 'MicroCMS is designed for simplicity and loading speed.','Mucms', 'post');";
-$db->query($sql);echo $sql;
+$db->query($sql);echo $sql.'<br>';
 
 
 
