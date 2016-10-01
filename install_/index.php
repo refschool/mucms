@@ -18,7 +18,7 @@ label {display:block;}
 <label for="prefix">Table prefix</label>
 <input type="text" name="prefix" value="" /><br />
 
-<label for="host">Host</label>
+<label for="host">Database Host</label>
 <input type="text" name="host" value="" /><br />
 
 <label for="dbname">Database name</label>

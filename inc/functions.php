@@ -299,8 +299,6 @@ function get_posts ($start,$number,$type,$cat = '') {
 	
 function get_footer(){
 		
-	//	$f = get_link_items('footer');
-		
 		?>
 		
 		<div id="footer">

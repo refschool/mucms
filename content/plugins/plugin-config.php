@@ -9,7 +9,7 @@ $hook['menu'][10] = 'get_custom_menu' ;
 
 //custom footer
 include("custom-footer.php");
-$hook['footer'][10] = 'get_custom_footer' ;
+//$hook['footer'][10] = 'get_custom_footer' ;
 
 
 
