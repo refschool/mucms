@@ -23,6 +23,9 @@ $meta_id = $_POST['meta_id'];
 
 
 
+
+pretty($_POST);
+
 if(get_magic_quotes_gpc () == 1){
 	$title = $_POST['title'];
 }
@@ -73,12 +76,16 @@ $main_text = addslashes(trim(($_POST['main_text'])));
 }
 
 //$lang = $_POST['lang'];
-$lang = (isset($_POST['lang']) ?  $_POST['lang'] : $lang);
+$lang = (isset($_POST['lang']) ?  $_POST['lang'] : 'fr');
 
 
 $readmore = addslashes(trim($_POST['readmore']));
 $published = $_POST['published'];
-$com_closed = $_POST['com_closed'];
+
+$com_closed = '';
+if(isset($_POST['com_closed'])){
+	$com_closed = $_POST['com_closed'];
+}
 
 if(get_magic_quotes_gpc () == 1){
 $note = trim($_POST['post_note']);
@@ -151,7 +158,6 @@ if($query_state === TRUE){echo '<h1>The Query Was successful </h1>';} else {echo
 
 //--META TABLE UPDATE QUERY______________________
 $update_meta = "update `$tprefix"."_meta` set 
-`query_string` = '$query_string',
 `path` = '$path',
 `redirect` = '$redirect',
 `redirect_type` = '$redirect_type',
@@ -223,8 +229,6 @@ echo '<h2>======= TAG SECTION ============</h2>';
 		echo '<h2>identified tags from the form field</h2>';
 		pretty($tags);	
 
-	}
-	
 	add_cms_tags($tags);
 
 	//now that we know which tags are sent from the form
@@ -234,6 +238,8 @@ echo '<h2>======= TAG SECTION ============</h2>';
 	remove_tag_post_association($id);
 
 	add_tag_post_association($tags,$id);
+	}
+	
 
 
 echo '<h2>======= END  TAG SECTION ============</h2>';
@@ -247,7 +253,7 @@ build_rss();
 //update the sitemap
 build_sitemap();
 
-echo "<meta http-equiv='refresh' content='1; url=$tld2/manage/write.php?id=$id'>";
+echo "<meta http-equiv='refresh' content='1; url=write.php?id=$id'>";
 $db->close();
 ?>
 

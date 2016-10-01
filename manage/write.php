@@ -12,7 +12,7 @@ if(!isset($_GET['id'])){$editid='1';} else {$editid = $_GET['id'];}
 
 if(!isset($_SESSION['LoggedIn'])){
 	echo 'u are not logged in please log in';
-echo "<meta http-equiv='refresh' content='2;$tld2".$install_folder."/manage/index.php' />";
+echo "<meta http-equiv='refresh' content='2;'/manage/index.php' />";
 
 }
 	

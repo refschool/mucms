@@ -13,17 +13,17 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 <title>Manager </title>
 <meta name="description" content="" />
 <meta name="keywords" content = "" />
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/user.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 </head>
 <body>
 <?php
 
-echo 'you are logged in';
+echo 'you are logged in<br>';
 echo 'loggedIn = '. $_SESSION['LoggedIn'].'<br>';
 echo 'Username = '. $_SESSION['Username'].'<br>';
-echo "<meta http-equiv='refresh' content='0;".$tld2 ."/manage/write.php' />";	
+echo "<a href='http://localhost/mucms/manage/write.php' />Go To Admin</a>";	
 }
 
 elseif(!empty($_POST['username']) && !empty($_POST['password'])){
@@ -58,15 +58,15 @@ elseif(!empty($_POST['username']) && !empty($_POST['password'])){
 			else {
 				
 				echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
-				echo '<a href="'.$tld2."/".$install_folder.'">Retour</a><br>';
-				echo '<a href="'.$tld2."/".$install_folder.'manage/logout.php">Logout</a>';	
+				echo '<a href="/">Retour</a><br>';
+				echo '<a href="manage/logout.php">Logout</a>';	
 				
 			}
 		}
 		else {
 		
 		echo 'Login or password not correct please try again';
-		echo "<meta http-equiv='refresh' content='1;$tld2"."/".$install_folder."/manage/index.php' />";
+		echo "<meta http-equiv='refresh' content='1;'/manage/index.php' />";
 		}
 }
 

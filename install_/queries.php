@@ -76,6 +76,7 @@ $sql = "CREATE TABLE `$prefix"."_content` (
   `id` smallint(6) NOT NULL,
   `meta_id` int(11) NOT NULL,
   `title` text character set utf8 collate utf8_unicode_ci,
+  `path` text COLLATE utf8_unicode_ci,
   `h1_title` text character set utf8 collate utf8_unicode_ci,
   `author` text character set utf8 collate utf8_unicode_ci,
   `date_posted` datetime default NULL,
@@ -85,7 +86,7 @@ $sql = "CREATE TABLE `$prefix"."_content` (
   `readmore` text character set utf8 collate utf8_unicode_ci,
   `published` text character set utf8 collate utf8_unicode_ci,
   `com_closed` varchar(7) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `note` text character set utf8 collate utf8_unicode_ci NOT NULL,
+  `note` text COLLATE utf8_unicode_ci,
   `last_edited` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
@@ -190,7 +191,7 @@ $sql = "CREATE TABLE `$tprefix"."_users` (
   `level` text NOT NULL,
   `email` text character set utf8 collate utf8_unicode_ci NOT NULL,
   `password` text character set utf8 collate utf8_unicode_ci NOT NULL,
-  `crea_dat` datetime NOT NULL,
+  `crea_dat` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `act_stat` varchar(1) character set utf8 collate utf8_unicode_ci NOT NULL default 'I',
   `hash` text character set utf8 collate utf8_unicode_ci NOT NULL,
   `user_group_id` int(11) NOT NULL default '0',
@@ -200,9 +201,9 @@ $sql = "CREATE TABLE `$tprefix"."_users` (
 ";
 $db->query($sql);
 //insert default user
-$sql = "INSERT INTO `$tprefix"."_users` (`user_id`, `username`, `level`, `email`, `password`, `crea_dat`, `act_stat`, `hash`, `user_group_id`, `reg_ip`) VALUES
-(1, 'admin', 'admin', 'yvon.huynh@gmail.com', 'a7b6ca345d0fc16f344b4077214e3848', '0000-00-00 00:00:00', 'A', '', 0, NULL);";
-$db->query($sql);
+$sql = "INSERT INTO `$tprefix"."_users` (`user_id`, `username`, `level`, `email`, `password`, `act_stat`, `hash`, `user_group_id`, `reg_ip`) VALUES
+(1, 'admin', 'admin', 'yvon.huynh@gmail.com', 'a7b6ca345d0fc16f344b4077214e3848',  'A', '', 0, NULL);";
+$db->query($sql);echo $sql.'<br>';
 
 
 //create seo_urls BO
@@ -216,7 +217,7 @@ $sql = "CREATE TABLE `$tprefix"."_seo_urls` (
   `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP,
   PRIMARY KEY  (`url_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 
 
 //create linkbuilding table
@@ -233,7 +234,7 @@ $sql = "CREATE TABLE IF NOT EXISTS `$tprefix"."_linkbuilding` (
   `misc` text NOT NULL,
   PRIMARY KEY  (`inlink_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 
 //create linkerati table
 $sql = "CREATE TABLE IF NOT EXISTS `$tprefix"."_linkerati` (
@@ -245,6 +246,6 @@ $sql = "CREATE TABLE IF NOT EXISTS `$tprefix"."_linkerati` (
   `date` date NOT NULL,
   PRIMARY KEY  (`linkerati_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;";
-$db->query($sql);
+$db->query($sql);echo $sql.'<br>';
 
 echo 'Installation finished';

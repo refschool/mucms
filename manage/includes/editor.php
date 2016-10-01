@@ -51,9 +51,8 @@ if(isset($_GET['id'])){
 				<input type="text" name="date_posted" size ="19" maxlength="19" value="<?php
 if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];} ?>">
 			</td>
-
 			<td>			
-				<input type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed']; ?>>Closed to comment
+				<input type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>>Closed to comment
 			</td>
 
 		</tr>
@@ -294,7 +293,7 @@ if (empty($post['author'])){echo $authorname;} else {
 	
 	?>
 	<div style="position:relative;width:300px;top:120px;margin-left:auto;margin-right:auto">
-	<p style="font-size:30px;"><a href="<?=$tld2?>/manage/newpost.php">Create a New Post</a></p>
+	<p style="font-size:30px;"><a href="newpost.php">Create a New Post</a></p>
 	</div>
 	<?php
 }

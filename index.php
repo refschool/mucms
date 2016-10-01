@@ -27,7 +27,7 @@ include("content/plugins/plugin-config.php");
 	<meta name="keywords" content = "<?php hook_insert('meta_kw');?>" />
 	<?php hook_insert('meta_robots'); ?>
 	<?php hook_insert('verification'); ?>
-	<link rel="stylesheet" type="text/css" href="<?=$tld.$themepath?>global.css" />
+	<link rel="stylesheet" type="text/css" href="<?=$themepath?>global.css" />
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?=$tld . 'content/feed/' ?>atom.xml" />
 	<link rel="shortcut icon" href="<?=$tld.$themepath?>images/favicon.ico" type="images/x-icon" />
 	<?php

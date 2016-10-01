@@ -10,7 +10,7 @@ $top_level_on = 1;               // What top-level category are we on?
 $exclude = ARRAY();               // Define the exclusion array
 ARRAY_PUSH($exclude, 0);     // Put a starting value in it
 //$tempTree = '';
-//script principal
+//script principal         
 WHILE ( $nav_row = $nav_query->fetch_array() )
 {
      $goOn = 1;               // Resets variable to allow us to continue building out the tree.
@@ -24,7 +24,7 @@ WHILE ( $nav_row = $nav_query->fetch_array() )
      }
      IF ( $goOn == 1 )
      {
-          $tree .= '<input type="checkbox" name="category[]" value="'.$nav_row['cat_id'].'"  '.check_category($editid,$nav_row['cat_id']).'/>'.$nav_row['cat_label'].'<a href="'.$tld.'/manage/settings/category-form.php?parent_id='.$nav_row['cat_id'].'&parent_name='.$nav_row['cat_label'].'">[+]</a><br>';      // Process the main tree node
+          $tree .= '<input type="checkbox" name="category[]" value="'.$nav_row['cat_id'].'"  '.check_category($editid,$nav_row['cat_id']).'/>'.$nav_row['cat_label'].'<a href="settings/category-form.php?parent_id='.$nav_row['cat_id'].'&parent_name='.$nav_row['cat_label'].'">[+]</a><br>';      // Process the main tree node
           ARRAY_PUSH($exclude, $nav_row['cat_id']);          // Add to the exclusion list$tld
           IF ( $nav_row['cat_id'] < 6 )
           { $top_level_on = $nav_row['cat_id']; }
