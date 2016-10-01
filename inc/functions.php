@@ -98,33 +98,33 @@ function get_single_post($path){
 	global $tprefix; global $tld;global $db;
 	$sql = "select * from `$tprefix"."_content` C INNER JOIN `$tprefix"."_meta` M ON C.meta_id = M.meta_id where M.path = '$path' ";//echo $sql;
 	$result=$db->query($sql);
-		if($result){
-			while($row = $result->fetch_assoc()){
-				$p['id'] = $row['id'];
-				$p['meta_id'] = $row['id']; 
-				$p['title'] = $row['title'];  
-				$p['h1_title'] = $row['h1_title'];	
-				$p['author'] = $row['author'];
-				$p['date_posted'] = $row['date_posted'];		
-				$p['social_body_text'] = $row['social_body_text'];		
-				$p['main_text'] = $row['main_text'];
-				$p['lang'] = $row['lang'];	
-				$p['readmore'] = $row['readmore'];
-				$p['com_closed'] = $row['com_closed'];		
-				
-				$p['path'] = $row['path'];
-				$p['redirect'] = $row['redirect'];
-				$p['redirect_type'] = $row['redirect_type']; 
-				$p['meta_robot_index '] = $row['meta_robot_index'];
-				$p['meta_robot_follow'] = $row['meta_robot_follow']; 		
-				$p['meta_robot_archive'] = $row['meta_robot_archive'];
-				$p['meta_robot_snippet'] = $row['meta_robot_snippet']; 
-				$p['meta_canonical'] = $row['meta_canonical'];
-				$p['meta_robot_odp '] = $row['meta_robot_odp']; 	
-				$p['meta_robot_ydir'] = $row['meta_robot_ydir'];
-				$p['meta_googlebot '] = $row['meta_googlebot']; 
-				$p['description'] = $row['description'];
-				$p['keyword'] = $row['keyword']; 	
+	if($result){
+		while($row = $result->fetch_assoc()){
+			$p['id'] = $row['id'];
+			$p['meta_id'] = $row['id']; 
+			$p['title'] = $row['title'];  
+			$p['h1_title'] = $row['h1_title'];	
+			$p['author'] = $row['author'];
+			$p['date_posted'] = $row['date_posted'];		
+			$p['social_body_text'] = $row['social_body_text'];		
+			$p['main_text'] = $row['main_text'];
+			$p['lang'] = $row['lang'];	
+			$p['readmore'] = $row['readmore'];
+			$p['com_closed'] = $row['com_closed'];		
+			
+			$p['path'] = $row['path'];
+			$p['redirect'] = $row['redirect'];
+			$p['redirect_type'] = $row['redirect_type']; 
+			$p['meta_robot_index '] = $row['meta_robot_index'];
+			$p['meta_robot_follow'] = $row['meta_robot_follow']; 		
+			$p['meta_robot_archive'] = $row['meta_robot_archive'];
+			$p['meta_robot_snippet'] = $row['meta_robot_snippet']; 
+			$p['meta_canonical'] = $row['meta_canonical'];
+			$p['meta_robot_odp '] = $row['meta_robot_odp']; 	
+			$p['meta_robot_ydir'] = $row['meta_robot_ydir'];
+			$p['meta_googlebot '] = $row['meta_googlebot']; 
+			$p['description'] = $row['description'];
+			$p['keyword'] = $row['keyword']; 	
 				//$p['post'] = $row['post']; 
 		}	
 		
@@ -134,8 +134,8 @@ function get_single_post($path){
 		else {
 			return $p;
 		}
-	
-}	
+		
+	}	
 	
 }
 
@@ -214,28 +214,27 @@ function get_post_id($sefurl){
 
 //show the horizontal menu at top of page
 //this function does not exist and not useful anymore
-function get_menu (){
-	$m = get_link_items('menu');
-	
+/*function get_menu (){
 	?>
 	<div id="menu">
-	<ul>
+		<ul>
 	<?php
-	for($i=0;$i<count($m);$i++){  ?>
-	<li><a href="<?=$m[$i]['url']?>" ><?=$m[$i]['anchor']?></a></li>
-	
-		
+			for($i=0;$i<count($m);$i++){  ?>
+			<li>
+				<a href="<?=$m[$i]['url']?>" >
+					<?=$m[$i]['anchor']?>
+				</a>
+			</li>
 	<?php
 	}  //end for loop
 	?>
-	
-	</ul>
+		</ul>
 	</div>
-	
+
 	
 	<?php
 	
-}
+}*/
 //get nth latest posts
 function get_latest_post($nb_post){
 			global $tprefix,$tld,$db;
