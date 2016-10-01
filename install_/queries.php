@@ -30,10 +30,10 @@ $db->query($sql);echo $sql.'<br>';
 $sql = "
 CREATE TABLE `$prefix"."_meta` (
   `meta_id` int(11) NOT NULL auto_increment,
-  `query_string` text collate utf8_unicode_ci NOT NULL,
+  `query_string` text COLLATE utf8_unicode_ci,
   `path` text collate utf8_unicode_ci NOT NULL,
-  `redirect` text collate utf8_unicode_ci NOT NULL,
-  `redirect_type` text collate utf8_unicode_ci NOT NULL,
+  `redirect` text COLLATE utf8_unicode_ci,
+  `redirect_type` text collate utf8_unicode_ci,
   `meta_robot_index` text collate utf8_unicode_ci,
   `meta_robot_follow` text collate utf8_unicode_ci,
   `meta_robot_archive` text collate utf8_unicode_ci,
@@ -42,8 +42,8 @@ CREATE TABLE `$prefix"."_meta` (
   `meta_robot_odp` text collate utf8_unicode_ci,
   `meta_robot_ydir` text collate utf8_unicode_ci,
   `meta_googlebot` text collate utf8_unicode_ci,
-  `description` text collate utf8_unicode_ci NOT NULL,
-  `keyword` text collate utf8_unicode_ci NOT NULL,
+  `description` text collate utf8_unicode_ci,
+  `keyword` text collate utf8_unicode_ci,
   `type` text collate utf8_unicode_ci,
   PRIMARY KEY  (`meta_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;";

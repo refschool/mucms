@@ -11,7 +11,7 @@ include('inc/functions.php');
 *********************************/
 
 //require_once("mu-header.php");//decide which content to display(post, tag, directory etc)
-require_once("mu-header.php");
+require_once("router.php");
 require_once('hooks.php');
 
 /********************************

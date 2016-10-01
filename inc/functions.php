@@ -70,18 +70,23 @@ function get_meta_type($path){
 
 function get_title(){
 	global $content;
+	if(isset($content['title'])){
 	echo $content['title'];
-
+}
 }
 
 function get_description($content_type){
 	global $content;
-	echo $content['description'];
+	if(isset($content['description'])){
+		echo $content['description'];
+	}
 }
 
 function get_keyword($content_type){
 	global $content;
-	echo $content['keyword'];
+	if(isset($content['keyword'])){
+		echo $content['keyword'];
+	}
 }
 
 
@@ -234,6 +239,9 @@ function get_menu (){
 //get nth latest posts
 function get_latest_post($nb_post){
 			global $tprefix,$tld,$db;
+
+$latest = array();
+
 			$sql = "select * from `$tprefix"."_content` C INNER JOIN `$tprefix"."_meta` M ON M.meta_id = C.meta_id where C.published='Y' order by C.date_posted desc limit $nb_post";//echo $sql;
 			$result = $db->query($sql);$k=0;
 			while($row=$result->fetch_assoc()){
