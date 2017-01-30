@@ -19,19 +19,15 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 </head>
 <body>
 <?php
-
 echo 'you are logged in<br>';
 echo 'loggedIn = '. $_SESSION['LoggedIn'].'<br>';
 echo 'Username = '. $_SESSION['Username'].'<br>';
-echo "<a href='http://localhost/mucms/manage/write.php' />Go To Admin</a>";	
+echo "<a href='/manage/write.php' />Go To Admin</a>";	
 }
 
 elseif(!empty($_POST['username']) && !empty($_POST['password'])){
-
-
 	$username = $_POST['username'];
 	$password = md5(trim($_POST['password']));
-	
 	
 	$sql = "SELECT `user_id`,`username`,`level` FROM `$tprefix"."_users` WHERE `username` = '".$username."' AND `password`= '".$password."' AND `act_stat`='A'";
 	
@@ -59,7 +55,7 @@ elseif(!empty($_POST['username']) && !empty($_POST['password'])){
 				
 				echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
 				echo '<a href="/">Retour</a><br>';
-				echo '<a href="manage/logout.php">Logout</a>';	
+				echo '<a href="/manage/logout.php">Logout</a>';	
 				
 			}
 		}

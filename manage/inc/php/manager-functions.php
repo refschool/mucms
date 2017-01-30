@@ -92,6 +92,7 @@ function get_post_content($id){
 	$post['id'] = $row['id'];
 	$post['meta_id'] = $row['meta_id'];	
 	$post['title'] = $row['title'];
+	$post['path'] = $row['path'];
 	$post['h1_title'] = $row['h1_title'];
 	$post['author'] = $row['author'];
 	$post['date_posted'] = $row['date_posted'];

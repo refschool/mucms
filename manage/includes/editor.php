@@ -21,7 +21,7 @@ if(isset($_GET['id'])){
 			echo 'Empty';
 		}
 
-			?>
+/			?>
 
 		</a></li>		
 		<li><a href="#tabs-5">Ping</a></li>
@@ -158,8 +158,8 @@ if (empty($post['author'])){echo $authorname;} else {
 
 		<tr>
 			<td>Permalink</td>
-			<td><?=$tld2 . '/'?>
-			<input type=text id="thisurl" name="thisurl" size ="60" maxlength="300" value="<?=$post['query_string']; ?>">
+			<td>
+			<input type=text id="thisurl" name="thisurl" size ="60" maxlength="300" value="<?=$post['path']; ?>">
 <a href="<?=$post['path']?>">Preview</a>
 			</td>
 		</tr>

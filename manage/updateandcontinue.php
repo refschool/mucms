@@ -22,8 +22,6 @@ $id = $_POST['id'];
 $meta_id = $_POST['meta_id'];
 
 
-
-
 pretty($_POST);
 
 if(get_magic_quotes_gpc () == 1){
@@ -34,8 +32,7 @@ else {
 }
 
 
-//$query_string = trim($_POST['thisurl']);
-
+//fix this for good !!
 $path = trim($_POST['thisurl']);
 
 if(get_magic_quotes_gpc () == 1){
@@ -51,7 +48,7 @@ if(get_magic_quotes_gpc () == 1){
 	$author = $_POST['author'];
 }
 else {
-	$author = addslashes($_POST['author']);;
+	$author = addslashes($_POST['author']);
 }
 
 
@@ -141,6 +138,7 @@ $keyword = $_POST['keyword'];
 //--CONTENT TABLE UPDATE QUERY______________________
 $update_content = "update `$tprefix"."_content` set 
 `title`='$title',
+`path`= '$path',
 `h1_title`='$h1_title',
 `author`='$author',
 `date_posted`='$date_posted',
@@ -253,7 +251,7 @@ build_rss();
 //update the sitemap
 build_sitemap();
 
-echo "<meta http-equiv='refresh' content='1; url=write.php?id=$id'>";
+echo "<meta http-equiv='refresh' content='100; url=write.php?id=$id'>";
 $db->close();
 ?>
 

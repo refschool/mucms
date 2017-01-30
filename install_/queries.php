@@ -92,22 +92,7 @@ $sql = "CREATE TABLE `$prefix"."_content` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
 $db->query($sql);echo $sql.'<br>';
 
-//create table tags
-$sql = "CREATE TABLE `$prefix"."_tags` (
-  `tag_id` int(11) NOT NULL AUTO_INCREMENT,
-  `meta_id` int(11) NOT NULL,
-  `tag_label` text COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`tag_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-";
-$db->query($sql);echo $sql.'<br>';
 
-//create table tags-post
-$sql = "CREATE TABLE `$prefix"."_tag_post` (
-  `tag_id` int(11) NOT NULL,
-  `post_id` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-$db->query($sql);echo $sql.'<br>';
 /*******************************************************		
 
 					DATA INSERTION

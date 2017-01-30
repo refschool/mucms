@@ -39,22 +39,8 @@ else {
 		<script type="text/javascript" src="js/js/jquery-1.6.2.min.js"></script>
 		<script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.jeditable.mini.js"></script>
-<script type="text/javascript" src="js/tinymce/jscripts/tiny_mce/tiny_mce.js" ></script >
-<script type="text/javascript" >
-tinyMCE.init({
-        mode : "textareas",
-		editor_selector :"mceEditor",
-		/*entity_encoding : "raw",*/
-		convert_urls : false,
-        theme : "advanced",   //(n.b. no trailing comma, this will be critical as you experiment later)
-		plugins:"wordcount,table,fullscreen,searchreplace",
-		theme_advanced_buttons3_add : "search,replace,fullscreen,tablecontrols,fontsizeselect,",
-		theme_advanced_toolbar_location : "top",
-		theme_advanced_statusbar_location : "bottom",
-		theme_advanced_toolbar_align : "left"
-		
-});
-</script >		
+	  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
 <script type="text/javascript">
 //jeditable
 $(document).ready(function() {
