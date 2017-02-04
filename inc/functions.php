@@ -5,6 +5,11 @@ include("hook-functions.php");
 include("comment_functions.php");
 include("tag-category-functions.php");
 
+function pretty($array){
+	echo '<pre>';
+	print_r($array);
+	echo '</pre>';
+}
 
 //recursive ksort
 function deep_ksort(&$arr) {

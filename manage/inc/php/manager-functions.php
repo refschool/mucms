@@ -1,6 +1,4 @@
 <?php
-
-
 //include("../inc/debug-functions.php");
 include("tag-functions.php");
 include("category-functions.php");
@@ -10,8 +8,6 @@ include("comment-functions.php");
 include("crawltrack-functions.php");
 include("rss-functions.php");
 include("sitemap-functions.php");
-
-
 
 //creat a new post and insert information in the table content and meta and set uncategorized as default category
 function create_post($authorname = ''){
@@ -112,7 +108,6 @@ function get_post_content($id){
 	$post['keyword'] = $row['keyword']; 	
 	
 	return $post;
-
 }
 
 

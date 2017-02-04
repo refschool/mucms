@@ -7,8 +7,6 @@ if(isset($_GET['id'])){
 	//pretty($post);
 	?>
 	
-	
-
 <div id="tabs">
 	<ul>
 		<li><a href="#tabs-1">Body Element</a></li>
@@ -20,39 +18,55 @@ if(isset($_GET['id'])){
 		} else {
 			echo 'Empty';
 		}
-
-/			?>
-
+		?>
 		</a></li>		
 		<li><a href="#tabs-5">Ping</a></li>
 	</ul>
 	
 <div id="tabs-1">
+<div class="uk-grid">
+	<div class="uk-width-1-4">
+		<label>
+			<input type="radio" name="published" value="Y" <?php if($post['published'] == 'Y'){echo "checked";} else {echo "";}?>> Publish
+		</label><br>
+		<label><input type="radio" name="published" value="N" <?php if($post['published'] == 'N'){echo "checked";} else {echo "";}?>> Unpublish</label>
+
+
+	</div>	
+	<div class="uk-width-1-4">
+			Post Id<br/>
+				<input type="text" readonly name="id" size ="6" maxlength="10" value="<?php if(!isset($editid)){echo get_latest_post_id(); } else {echo $post['id']; }?>"><br>
+				<input type="hidden" name="meta_id" value="<?=$post['meta_id']?>" />
+	</div>	
+	<div class="uk-width-1-4">
+		Date Posted<br/>
+				<input type="text" name="date_posted" size ="19" maxlength="19" value="<?php
+if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];} ?>">
+	</div>	
+
+	<div class="uk-width-1-4">
+		<input type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>>Closed to comment
+	</div>	
+
+</div>
+
+
 
 <div class="info1">
 	<table>
 		<tr>
 			<td>
-				<label><input type="radio" name="published" value="Y" <?php if($post['published'] == 'Y'){echo "checked";} else {echo "";}?>> Publish</label>
 			</td>	
 			<td>
-				<label><input type="radio" name="published" value="N" <?php if($post['published'] == 'N'){echo "checked";} else {echo "";}?>> Unpublish</label>
 			</td>	
 	
 	
 			
-			<td>Post Id<br/>
-				<input type="text" readonly name="id" size ="6" maxlength="10" value="<?php 
-	 if(!isset($editid)){echo get_latest_post_id(); } else {echo $post['id']; }?>">
-				<input type="hidden" name="meta_id" value="<?=$post['meta_id']?>" />
 			</td>
 			
-			<td>Date Posted<br/>
-				<input type="text" name="date_posted" size ="19" maxlength="19" value="<?php
-if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];} ?>">
+			<td>
 			</td>
 			<td>			
-				<input type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>>Closed to comment
 			</td>
 
 		</tr>

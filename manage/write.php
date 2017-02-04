@@ -1,10 +1,8 @@
 <?php session_start();
-
 ini_set("include_path", ".:../:./inc:../inc:../../inc");
 
 include("../inc/config.php");
 include("inc/php/manager-functions.php");
-//include("inc/php/manager.class.php");
 //manage default values
 if(!isset($_GET['cat'])){$cat='all';} else {$cat = $_GET['cat'];}
 if(!isset($_GET['id'])){$editid='1';} else {$editid = $_GET['id'];}
@@ -15,7 +13,6 @@ if(!isset($_SESSION['LoggedIn'])){
 echo "<meta http-equiv='refresh' content='2;'/manage/index.php' />";
 
 }
-	
 	
 if(isset($_SESSION['Userlevel']) &&  $_SESSION['Userlevel'] <> 'admin'){
 echo 'user level = '. $_SESSION['Userlevel'];
@@ -35,12 +32,17 @@ else {
 <link rel="stylesheet" type="text/css" href="inc/css/manager.css" />
 <script type="text/javascript" src="js/ajax.js"></script>
 <script language="javascript" type="text/javascript" src="js/script.js"></script>
-		<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />	
-		<script type="text/javascript" src="js/js/jquery-1.6.2.min.js"></script>
-		<script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
-		<script type="text/javascript" src="js/jquery.jeditable.mini.js"></script>
-	  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'textarea' });</script>
+<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />	
+<script type="text/javascript" src="js/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.jeditable.mini.js"></script>
+<script src="<?=$tld.$install_folder."/manage/lib/tinymce/js/tinymce/tinymce.min.js"?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.css" />
+<link rel="stylesheet" href="http://localhost/mucms/inc/uikit/css/uikit.min.css" />
+<!-- <script src="http://localhost/mucms/inc/uikit/js/uikit.min.js"></script> -->
+<!--uikit component-->
+<script type="text/javascript" src="inc/js/write.js"></script>
 <script type="text/javascript">
 //jeditable
 $(document).ready(function() {
@@ -53,11 +55,8 @@ $(document).ready(function() {
 		
 		$.post('controller.php',{action:"delete",id:x});
 		$(this).parent().remove();
-	
 	});
- 
  });
- 
  
  $(function() {
 	$('#rel_add').click(function(){
@@ -66,14 +65,9 @@ $(document).ready(function() {
 		
 		//dynamically populate the row with callback function
 		$.post('controller.php',{action:"add"},function(data){$("#postd_").html(<?=$editid ?>).attr("id", "postd_" + data.link_id).next().attr("id","ancho_"+data.link_id).next().attr("id","urloc_"+data.link_id)},"json");
-
-		
-		
 	});
- 
  });
 
- 
 	$(function() {
 		$("#tabs").tabs();
 	});
@@ -84,8 +78,6 @@ $(document).ready(function() {
 	
 	$(function() {
 		$("#category").click(function(){
-			
-		
 		});
 	});
 	
@@ -99,8 +91,6 @@ $(document).ready(function() {
 	
 	
 	});
-	
-	
 	</script>
 
 </head>
@@ -108,58 +98,50 @@ $(document).ready(function() {
 	if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 	{
 ?>
+
+
 <body onload="updatelist('<?php if(empty($_SESSION['category'])){echo 'all'; } else{echo $_SESSION['category'];} ?>');">
 
-<div id="frame">
-	<div id="header">
-		<div class="message">
-			<?php 
-			//$myMan = new Manager();
-			//$myMan->showVersionMessage();
-			?>
-		</div>
-		
+<div class="uk-width-1-1" style="margin:0;padding:0;">
+	
+
+	<div id="header" class="uk-width-1-1">
 		<div id="menu">
 			<?php
 			include("includes/menu.php");
 			?>
-		
 		</div>
 		<br style="clear:both" />
 	</div><!-- END OF HEADER DIV  -->
 
-	<div id="main">		
+	<div class="uk-grid">
+		<div class="uk-width-1-2">
+				<?php
+				include("includes/editor.php");
+				?>
+		</div>
 
-		<div id="editor" style="width:50%">
-			<?php
-			include("includes/editor.php");
-			?>
 
-		</div><!-- END OF EDITOR DIV -->
 
-		<div id="browser" style="width:49%">
-			<?php
-			include("includes/browser.php");
-			?>
-		</div><!-- END OF BROWSER DIV -->
+		<div class="uk-width-1-2">
+				<?php
+				include("includes/browser.php");
+				?>
+		</div>
+
 
 	</div>
+
+	<div id="footer">
+	<?=get_manager_version();?>
+	</div>
+
 </div>
-<br style="clear:both" />
-<div id="footer">
-<?=get_manager_version();?>
-</div>
+
 
 </body>
 <?php
-
-}
-
+	}
 }//end level
-
-
 ?>
-
-
-
 </html>
