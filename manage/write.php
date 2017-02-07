@@ -146,9 +146,8 @@ $(document).ready(function() {
 
 <script>
 	var b = document.getElementById('toggler')
-	console.log(b)
 	b.onclick = function(){
-		alert('hello')
+		document.getElementById('editor').style.display = none;
 	}
 </script>
 </html>
