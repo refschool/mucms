@@ -138,7 +138,6 @@ $keyword = $_POST['keyword'];
 //--CONTENT TABLE UPDATE QUERY______________________
 $update_content = "update `$tprefix"."_content` set 
 `title`='$title',
-`path`= '$path',
 `h1_title`='$h1_title',
 `author`='$author',
 `date_posted`='$date_posted',
@@ -149,7 +148,7 @@ $update_content = "update `$tprefix"."_content` set
 `published`='$published',
 `com_closed`='$com_closed',
 `note`='$note' where `id`='$id'" ;
-echo '<br>'.$update_content;
+echo 'yyy<br>'.$update_content;
 
 $query_state = $db->query($update_content); 
 if($query_state === TRUE){echo '<h1>The Query Was successful </h1>';} else {echo '<h1>The Query Failed </h1>'.$db->error;};
@@ -170,7 +169,9 @@ $update_meta = "update `$tprefix"."_meta` set
 `description` = '$description',
 `keyword` = '$keyword',
 `type` = 'post'
- where `meta_id` = '$meta_id' ";echo $update_meta;
+ where `meta_id` = '$meta_id' ";
+
+ echo 'update xxx '.$update_meta;
  
 $db->query($update_meta);
 
@@ -251,7 +252,7 @@ build_rss();
 //update the sitemap
 build_sitemap();
 
-echo "<meta http-equiv='refresh' content='100; url=write.php?id=$id'>";
+echo "<meta http-equiv='refresh' content='5; url=write.php?id=$id'>";
 $db->close();
 ?>
 

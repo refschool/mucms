@@ -102,7 +102,7 @@ $(document).ready(function() {
 
 <body onload="updatelist('<?php if(empty($_SESSION['category'])){echo 'all'; } else{echo $_SESSION['category'];} ?>');">
 
-<div class="uk-width-1-1" style="margin:0;padding:0;">
+<div class="uk-width-1-1">
 	
 
 	<div id="header" class="uk-width-1-1">
@@ -114,22 +114,21 @@ $(document).ready(function() {
 		<br style="clear:both" />
 	</div><!-- END OF HEADER DIV  -->
 
-	<div class="uk-grid">
-		<div class="uk-width-1-2">
+	<div class="uk-grid" id="editor" style="z-index:9;display:none">
+		<div class="uk-width-1-1">
 				<?php
 				include("includes/editor.php");
 				?>
 		</div>
+	</div>
 
 
-
-		<div class="uk-width-1-2">
+		<div class="uk-grid" id="browser" style="display:block;z-index:10">
+		<div class="uk-width-1-1">
 				<?php
 				include("includes/browser.php");
 				?>
 		</div>
-
-
 	</div>
 
 	<div id="footer">
@@ -144,4 +143,12 @@ $(document).ready(function() {
 	}
 }//end level
 ?>
+
+<script>
+	var b = document.getElementById('toggler')
+	console.log(b)
+	b.onclick = function(){
+		alert('hello')
+	}
+</script>
 </html>

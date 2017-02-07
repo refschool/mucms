@@ -10,17 +10,10 @@
 </li>
 <li><a href="#">Site Settings</a>
 	<ul>
-		<li><a href="<?=$tld2?>/manage/settings/index.php">Site Settings</a></li>
+		<li><a href="<?=$tld2?>/mucms/manage/settings/index.php">Site Settings</a></li>
 		<li><a href="<?=$tld2?>/manage/settings/categories.php">Category</a></li>
 	</ul>
 </li>	
-<li><a href="<?=$tld2?>/crawltrack">Crawltrack</a>
-	<ul>
-		<li><a href="<?=$tld2?>/manage/crawltrack/hit-by-page.php">Traffic to site by pages</a></li>
-		<li><a href="<?=$tld2?>/manage/crawltrack/">Sitewide keyword/Page</a></li>
-		<li><a href="<?=$tld2?>/manage/crawltrack/traffic-driving-kw.php">Overview Traffic Driving Keywords</a></li>
-	</ul>
-</li>
-
 <li><a href="<?=$tld2?>/manage/logout.php">Logout</a></li>
+<li><a href="#" id="toggler">Toggle</a></li>
 </ul>

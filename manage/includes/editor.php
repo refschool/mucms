@@ -24,7 +24,8 @@ if(isset($_GET['id'])){
 	</ul>
 	
 <div id="tabs-1">
-<div class="uk-grid">
+
+<div class="uk-grid" style="margin-top:10px">
 	<div class="uk-width-1-4">
 		<label>
 			<input type="radio" name="published" value="Y" <?php if($post['published'] == 'Y'){echo "checked";} else {echo "";}?>> Publish
@@ -35,59 +36,38 @@ if(isset($_GET['id'])){
 	</div>	
 	<div class="uk-width-1-4">
 			Post Id<br/>
-				<input type="text" readonly name="id" size ="6" maxlength="10" value="<?php if(!isset($editid)){echo get_latest_post_id(); } else {echo $post['id']; }?>"><br>
+				<input type="text" readonly name="id" class="uk-input" maxlength="10" value="<?php if(!isset($editid)){echo get_latest_post_id(); } else {echo $post['id']; }?>"><br>
 				<input type="hidden" name="meta_id" value="<?=$post['meta_id']?>" />
 	</div>	
 	<div class="uk-width-1-4">
 		Date Posted<br/>
-				<input type="text" name="date_posted" size ="19" maxlength="19" value="<?php
+				<input type="text" name="date_posted" class="uk-input" maxlength="19" value="<?php
 if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];} ?>">
 	</div>	
 
 	<div class="uk-width-1-4">
+	<label for="com_closed">
 		<input type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>>Closed to comment
+	</label>
 	</div>	
 
 </div>
 
-
-
-<div class="info1">
-	<table>
-		<tr>
-			<td>
-			</td>	
-			<td>
-			</td>	
-	
-	
-			
-			</td>
-			
-			<td>
-			</td>
-			<td>			
-			</td>
-
-		</tr>
-		<tr>
-			<td>Author<br/>
-				<input type="text" name="author" size ="20" maxlength="40" value="<?php
+<div class="uk-grid">
+	<div class="uk-width-1-2">
+		Author<br/>
+				<input type="text" name="author" class="uk-input" maxlength="40" value="<?php
 if (empty($post['author'])){echo $authorname;} else {
 	echo $post['author'];} ?>">
-			</td>
-			<td colspan="3">Tags<br/>
-				<input type="text" id="tag" name="tag" size ="50" maxlength="120" value="<?php echo get_tags_as_string($editid); ?>">
-			</td>			
-		</tr>		
-		
-	</table>
-</div>	
-	<table>
-	
-	</table>
+	</div>
+	<div class="uk-width-1-2">
+		Tags<br/>
+				<input type="text" id="tag" name="tag" class="uk-input" maxlength="120" value="<?php echo get_tags_as_string($editid); ?>">
+	</div>
 
-			
+</div>
+
+
 <!--Metadatas hidden by default-->
 
 <br />
@@ -122,11 +102,8 @@ if (empty($post['author'])){echo $authorname;} else {
 
 	<?php
 	$meta_array = fetch_meta_info($post['path']);
-	//pretty($meta_array);
-
 	?>
 
-	
 
 	<div class="subset">
 		<h2>meta_robot</h2>
@@ -152,35 +129,19 @@ if (empty($post['author'])){echo $authorname;} else {
 </fieldset>
 <br />
 
+<div class="uk-grid">
+	<div class="uk-width-1-1">
+		Title<br>
+		<input type=text id="title" name="title" class="uk-input" maxlength="120" value="<?php echo $post['title'];?>">
+		<a href="javascript:sefurlize()">Sefurlize</a>
+	</div>
+	<div class="uk-width-1-1">
+		Permalink <br>
+		<input type=text id="thisurl" name="thisurl" class="uk-input" maxlength="300" value="<?=$post['path']; ?>">
 
-<div class="info1">	
-	<table>
-		<tr>
-			<td width="30">Title</td>
-			<td>
-				<input type=text id="title" name="title" size ="60" maxlength="120" value="<?php echo $post['title'];?>">
-			<a href="javascript:sefurlize()">Sefurlize</a></td>
-		</tr>
-		
-		<tr>
-			<td>H1 title</td>
-			<td>
-				<input type=text name="h1_title" size ="60" maxlength="80" value="<?php echo $post['h1_title'];?>">
-			</td>
-		</tr>
-		
-
-		<tr>
-			<td>Permalink</td>
-			<td>
-			<input type=text id="thisurl" name="thisurl" size ="60" maxlength="300" value="<?=$post['path']; ?>">
-<a href="<?=$post['path']?>">Preview</a>
-			</td>
-		</tr>
-	</table>
+		<a href="<?=$post['path']?>">Preview</a>
+	</div>
 </div>
-	
-	
 <!--End of metadata-->
 
 	<textarea id="main_text" name="main_text" rows="25" class="mceEditor"><?php echo $post['main_text'];?></textarea>
@@ -202,18 +163,12 @@ if (empty($post['author'])){echo $authorname;} else {
 			<legend>Category tree</legend>
 				<?php
 					include("category-tree.php");
-					
 				?>
 			</fieldset>	
 	</div>
 
 	
 	<div id="tabs-3">
-
-		
-		
-		
-
 			<?php
 				$comments = get_comments($post['id']);
 
@@ -229,9 +184,6 @@ if (empty($post['author'])){echo $authorname;} else {
 					<?php
 
 				for($i=0;$i<count($comments);$i++){
-
-					
-	
 			?>
 				
 					<tr style="border-bottom:solid 1px #aaa;">
@@ -244,13 +196,8 @@ if (empty($post['author'])){echo $authorname;} else {
 						
 						</td>
 					</tr>
-
-	
-
 	<?php
-
 				}
-
 					//end for loop
 				?>
 
@@ -262,12 +209,7 @@ if (empty($post['author'])){echo $authorname;} else {
 				echo 'no comment.';
 			}
 		?>
-			
-	
-	
-
 	</div>
-
 	<div id="tabs-4">
 	<p>Modifications</p>
 	<textarea name="post_note" rows="10" cols="90"><?=$post['note']?></textarea>
@@ -276,7 +218,7 @@ if (empty($post['author'])){echo $authorname;} else {
 	
 	
 	<div id="tabs-5">
-		<a href="<?php $pingst = $tld.'manage/ping.php?url='.$post['path'];echo $pingst;  ?>">Ping Google</a>	<br />
+		<a href="<?php $pingst = $tld.'manage/ping.php?url='.$post['path'];echo $pingst;  ?>">Ping Google</a><br />
 		<a href="http://twitter.com/">Tweet this !</a><br />	
 	</div>
 

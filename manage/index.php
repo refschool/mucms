@@ -1,5 +1,7 @@
 <?php session_start();
  include ("../inc/config.php");
+ include("inc/php/manager-functions.php");
+
 pretty($_SESSION);
 
  //code executed if owner is logged in

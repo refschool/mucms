@@ -1,7 +1,9 @@
 <?php session_start();
 //index of settings
 ini_set("include_path", ".:../:./inc:../inc:../../inc:../Smarty-2.6.19/libs");
-include("config.php");include("class/manager.class.php");include("class/manager-functions.php");
+include("../../inc/config.php");
+include("../inc/php/manager.class.php");
+include("../inc/php/manager-functions.php");
 $cat = $_GET['cat'];$editid = $_GET['id'];$tab_id = $_GET['tab_id'];
 
 
@@ -20,8 +22,6 @@ echo 'user level = '. $_SESSION['Userlevel'];
 }
 
 else {
-
-
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
