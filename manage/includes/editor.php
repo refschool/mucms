@@ -27,10 +27,13 @@ if(isset($_GET['id'])){
 
 <div class="uk-grid" style="margin-top:10px">
 	<div class="uk-width-1-4">
-		<label>
+		<label style="cursor:pointer;">
 			<input type="radio" name="published" value="Y" <?php if($post['published'] == 'Y'){echo "checked";} else {echo "";}?>> Publish
 		</label><br>
-		<label><input type="radio" name="published" value="N" <?php if($post['published'] == 'N'){echo "checked";} else {echo "";}?>> Unpublish</label>
+		<label  style="cursor:pointer;">
+			<input type="radio" name="published" value="N" <?php if($post['published'] == 'N'){echo "checked";} else {echo "";}?>> 
+			Unpublish
+		</label>
 
 
 	</div>	
@@ -46,8 +49,8 @@ if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];
 	</div>	
 
 	<div class="uk-width-1-4">
-	<label for="com_closed">
-		<input type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>>Closed to comment
+	<label style="cursor:pointer;">
+		<input class="uk-checkbox" type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>>Closed to comment
 	</label>
 	</div>	
 
@@ -71,11 +74,11 @@ if (empty($post['author'])){echo $authorname;} else {
 <!--Metadatas hidden by default-->
 
 <br />
-	<fieldset>
-		<legend style="border-radius:3px;border:1px solid #aaa;padding:3px;"><a href="javascript:toggleMeta()">Show/Hide Meta</a></legend>
+	<fieldset class="uk-fieldset">
+		<legend class="uk-fieldset" style="border-radius:3px;border:1px solid #aaa;padding:3px;"><a href="javascript:toggleMeta()">Show/Hide Meta</a></legend>
 
 
-<div id="metadata" >		
+<div id="metadata">		
 		<table>
 			<tr>
 				<td>

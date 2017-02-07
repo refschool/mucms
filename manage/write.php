@@ -37,8 +37,8 @@ else {
 <script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.jeditable.mini.js"></script>
 <script src="<?=$tld.$install_folder."/manage/lib/tinymce/js/tinymce/tinymce.min.js"?>"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.css" />
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.css" /> -->
 <link rel="stylesheet" href="http://localhost/mucms/inc/uikit/css/uikit.min.css" />
 <!-- <script src="http://localhost/mucms/inc/uikit/js/uikit.min.js"></script> -->
 <!--uikit component-->
@@ -114,7 +114,7 @@ $(document).ready(function() {
 		<br style="clear:both" />
 	</div><!-- END OF HEADER DIV  -->
 
-	<div class="uk-grid" id="editor" style="z-index:9;display:none">
+	<div class="uk-grid" id="editor" style="z-index:9;display:block">
 		<div class="uk-width-1-1">
 				<?php
 				include("includes/editor.php");
@@ -123,7 +123,7 @@ $(document).ready(function() {
 	</div>
 
 
-		<div class="uk-grid" id="browser" style="display:block;z-index:10">
+		<div class="uk-grid" id="browser" style="display:none;z-index:10">
 		<div class="uk-width-1-1">
 				<?php
 				include("includes/browser.php");

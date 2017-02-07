@@ -252,7 +252,7 @@ build_rss();
 //update the sitemap
 build_sitemap();
 
-echo "<meta http-equiv='refresh' content='5; url=write.php?id=$id'>";
+echo "<meta http-equiv='refresh' content='1; url=write.php?id=$id'>";
 $db->close();
 ?>
 
