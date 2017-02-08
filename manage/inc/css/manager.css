@@ -103,3 +103,6 @@ input.savenedit {width:33px;height:33px;margin:0;padding:2px;background:transpar
 /*comments*/
 .com_U {background-color:#ff0000;}
 .com_P {}
+
+
+.label {font-size:1.5em;margin-left:5px;}

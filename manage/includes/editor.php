@@ -25,18 +25,20 @@ if(isset($_GET['id'])){
 	
 <div id="tabs-1">
 
-<div class="uk-grid" style="margin-top:10px">
-	<div class="uk-width-1-4">
+<div class="uk-grid " style="margin-top:10px">
+
+	<div class="uk-width-1-4 ">
+	<div class="uk-center-left">
 		<label style="cursor:pointer;">
-			<input type="radio" name="published" value="Y" <?php if($post['published'] == 'Y'){echo "checked";} else {echo "";}?>> Publish
+			<input type="radio" name="published" value="Y" <?php if($post['published'] == 'Y'){echo "checked";} else {echo "";}?>> <span class="label">Publish</span>
 		</label><br>
 		<label  style="cursor:pointer;">
 			<input type="radio" name="published" value="N" <?php if($post['published'] == 'N'){echo "checked";} else {echo "";}?>> 
-			Unpublish
+			<span class="label">Unpublish</span>
 		</label>
-
-
 	</div>	
+</div>
+
 	<div class="uk-width-1-4">
 			Post Id<br/>
 				<input type="text" readonly name="id" class="uk-input" maxlength="10" value="<?php if(!isset($editid)){echo get_latest_post_id(); } else {echo $post['id']; }?>"><br>
@@ -50,7 +52,7 @@ if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];
 
 	<div class="uk-width-1-4">
 	<label style="cursor:pointer;">
-		<input class="uk-checkbox" type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>>Closed to comment
+		<input class="uk-checkbox" type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>><span class="label">Closed to comment</span>
 	</label>
 	</div>	
 
@@ -148,13 +150,10 @@ if (empty($post['author'])){echo $authorname;} else {
 <!--End of metadata-->
 
 	<textarea id="main_text" name="main_text" rows="25" class="mceEditor"><?php echo $post['main_text'];?></textarea>
-
-	
-
-	
 	
 	</form>
-	<input type="submit" Value="Update" >
+	<br>
+	<input class="uk-input" type="submit" Value="Update" style="cursor:pointer">
 </div>
 <!-- END OF BODY ELEMENTS-->
 		

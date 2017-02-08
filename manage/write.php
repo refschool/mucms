@@ -36,17 +36,14 @@ else {
 <script type="text/javascript" src="js/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.jeditable.mini.js"></script>
-<script src="<?=$tld.$install_folder."/manage/lib/tinymce/js/tinymce/tinymce.min.js"?>"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script> -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism.css" /> -->
-<link rel="stylesheet" href="http://localhost/mucms/inc/uikit/css/uikit.min.css" />
-<!-- <script src="http://localhost/mucms/inc/uikit/js/uikit.min.js"></script> -->
-<!--uikit component-->
-<script type="text/javascript" src="inc/js/write.js"></script>
+<script src="<?=$base_url."/manage/lib/tinymce/js/tinymce/tinymce.min.js"?>"></script>
+<link rel="stylesheet" href="<?=$base_url."/inc/uikit/css/uikit.min.css" ?>"/>
+
+<script type="text/javascript" src="<?=$base_url."/manage/inc/js/write.js"?>"></script>
 <script type="text/javascript">
 //jeditable
 $(document).ready(function() {
-     $('.edit').editable('<?=$tld.'manage/includes/save.php'?>');
+     $('.edit').editable('<?=$base_url.'/manage/includes/save.php'?>');
  });
 
  $(function() {
@@ -145,9 +142,17 @@ $(document).ready(function() {
 ?>
 
 <script>
-	var b = document.getElementById('toggler')
+	const b = document.getElementById('toggler')
+	const c = document.getElementById('close_browser')
+
 	b.onclick = function(){
-		document.getElementById('editor').style.display = none;
+		document.getElementById('editor').style.display = "none";
+		document.getElementById('browser').style.display = "block";
+	}
+
+	c.onclick = function(){
+		document.getElementById('editor').style.display = "block";
+		document.getElementById('browser').style.display = "none";
 	}
 </script>
 </html>

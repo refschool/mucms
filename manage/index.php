@@ -24,7 +24,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 echo 'you are logged in<br>';
 echo 'loggedIn = '. $_SESSION['LoggedIn'].'<br>';
 echo 'Username = '. $_SESSION['Username'].'<br>';
-echo "<a href='/",$install_folder,"/manage/write.php' />Go To Admin</a>";	
+echo "<a href='".$base_url."/manage/write.php' />Go To Admin</a>";	
 }
 
 elseif(!empty($_POST['username']) && !empty($_POST['password'])){
