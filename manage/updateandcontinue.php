@@ -22,7 +22,7 @@ $id = $_POST['id'];
 $meta_id = $_POST['meta_id'];
 
 
-pretty($_POST);
+//pretty($_POST);
 
 if(get_magic_quotes_gpc () == 1){
 	$title = $_POST['title'];
@@ -107,12 +107,12 @@ $meta_robotCANONICAL =(isset($_POST['meta_robotCANONICAL']) ?  $_POST['meta_robo
 //  noindex  = true if post is not published
 if( $_POST['published'] == 'N'){
 	$meta_robotNOINDEX = 'checked';
-	echo '<br>NO INDEX = '.$meta_robotNOINDEX ;
+	//echo '<br>NO INDEX = '.$meta_robotNOINDEX ;
 } 
 
 if( $_POST['published'] == 'Y'){
 	$meta_robotNOINDEX = '';
-	echo '<br>NO INDEX = '.$meta_robotNOINDEX ;
+	//echo '<br>NO INDEX = '.$meta_robotNOINDEX ;
 } 	
 
 
@@ -148,10 +148,16 @@ $update_content = "update `$tprefix"."_content` set
 `published`='$published',
 `com_closed`='$com_closed',
 `note`='$note' where `id`='$id'" ;
-echo 'yyy<br>'.$update_content;
+
+//echo 'yyy<br>'.$update_content;
 
 $query_state = $db->query($update_content); 
-if($query_state === TRUE){echo '<h1>The Query Was successful </h1>';} else {echo '<h1>The Query Failed </h1>'.$db->error;};
+
+if($query_state === TRUE){
+	echo '<h1>The Query Was successful </h1>';}
+	else {
+		echo '<h1>The Query Failed </h1>'.$db->error;
+	};
 
 //--META TABLE UPDATE QUERY______________________
 $update_meta = "update `$tprefix"."_meta` set 
@@ -171,7 +177,7 @@ $update_meta = "update `$tprefix"."_meta` set
 `type` = 'post'
  where `meta_id` = '$meta_id' ";
 
- echo 'update xxx '.$update_meta;
+ //echo 'update xxx '.$update_meta;
  
 $db->query($update_meta);
 
@@ -181,8 +187,8 @@ $db->query($update_meta);
 
 
 //process association
-	echo '<h2>Category TREE (cat_id)</h2>';	
-	echo '<pre>';print_r($category);echo '</pre>';
+	//echo '<h2>Category TREE (cat_id)</h2>';	
+	//echo '<pre>';print_r($category);echo '</pre>';
 
 
 	
@@ -198,11 +204,7 @@ $db->query($update_meta);
 	
 	
 	}
-
-
-
-
-echo '<h2>======= TAG SECTION ============</h2>';
+//echo '<h2>======= TAG SECTION ============</h2>';
 
 //--TAGS TABLE UPDATE QUERY______________________
 // process tag strings
@@ -238,12 +240,7 @@ echo '<h2>======= TAG SECTION ============</h2>';
 
 	add_tag_post_association($tags,$id);
 	}
-	
-
-
-echo '<h2>======= END  TAG SECTION ============</h2>';
-
-	
+//echo '<h2>======= END  TAG SECTION ============</h2>';
 //END OF METADATA PROCESSING
 
 

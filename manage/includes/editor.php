@@ -59,27 +59,24 @@ if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];
 </div>
 
 <div class="uk-grid">
-	<div class="uk-width-1-2">
+	<div class="uk-width-1-3">
 		Author<br/>
 				<input type="text" name="author" class="uk-input" maxlength="40" value="<?php
 if (empty($post['author'])){echo $authorname;} else {
 	echo $post['author'];} ?>">
 	</div>
-	<div class="uk-width-1-2">
+	<div class="uk-width-1-3">
 		Tags<br/>
 				<input type="text" id="tag" name="tag" class="uk-input" maxlength="120" value="<?php echo get_tags_as_string($editid); ?>">
 	</div>
-
+	<div class="uk-width-1-3">
+		<span class="uk-fieldset" style="border-radius:3px;border:1px solid #aaa;padding:3px;" onclick="javascript:toggleMeta();preventDefault();">Show/Hide Meta</span>
+	</div>
 </div>
 
+<br>
 
 <!--Metadatas hidden by default-->
-
-<br />
-	<fieldset class="uk-fieldset">
-		<legend class="uk-fieldset" style="border-radius:3px;border:1px solid #aaa;padding:3px;"><a href="javascript:toggleMeta()">Show/Hide Meta</a></legend>
-
-
 <div id="metadata">		
 		<table>
 			<tr>
@@ -131,19 +128,13 @@ if (empty($post['author'])){echo $authorname;} else {
 	
 </div>	
 
-</fieldset>
-<br />
 
 <div class="uk-grid">
 	<div class="uk-width-1-1">
-		Title<br>
-		<input type=text id="title" name="title" class="uk-input" maxlength="120" value="<?php echo $post['title'];?>">
-		<a href="javascript:sefurlize()">Sefurlize</a>
+		<input onkeyup="sefurlize()"  type=text id="title" name="title" class="uk-input" maxlength="120" value="<?php echo $post['title'];?>">
 	</div>
 	<div class="uk-width-1-1">
-		Permalink <br>
 		<input type=text id="thisurl" name="thisurl" class="uk-input" maxlength="300" value="<?=$post['path']; ?>">
-
 		<a href="<?=$post['path']?>">Preview</a>
 	</div>
 </div>

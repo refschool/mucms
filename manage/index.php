@@ -1,12 +1,6 @@
 <?php session_start();
  include ("../inc/config.php");
  include("inc/php/manager-functions.php");
-
-pretty($_SESSION);
-
- //code executed if owner is logged in
-if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
-{
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -21,10 +15,16 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 </head>
 <body>
 <?php
-echo 'you are logged in<br>';
-echo 'loggedIn = '. $_SESSION['LoggedIn'].'<br>';
-echo 'Username = '. $_SESSION['Username'].'<br>';
-echo "<a href='".$base_url."/manage/write.php' />Go To Admin</a>";	
+ //code executed if owner is logged in
+if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
+{
+?>
+
+<?php
+// echo 'you are logged in<br>';
+// echo 'loggedIn = '. $_SESSION['LoggedIn'].'<br>';
+// echo 'Username = '. $_SESSION['Username'].'<br>';
+ echo "<a href='".$base_url."/manage/write.php' />Go To Admin</a>";	
 }
 
 elseif(!empty($_POST['username']) && !empty($_POST['password'])){
