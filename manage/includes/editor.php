@@ -26,7 +26,6 @@ if(isset($_GET['id'])){
 <div id="tabs-1">
 
 <div class="uk-grid " style="margin-top:10px">
-
 	<div class="uk-width-1-4 ">
 	<div class="uk-center-left">
 		<label style="cursor:pointer;">
@@ -55,7 +54,6 @@ if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];
 		<input class="uk-checkbox" type="checkbox" name="com_closed"  value="checked" <?=$post['com_closed'];?>><span class="label">Closed to comment</span>
 	</label>
 	</div>	
-
 </div>
 
 <div class="uk-grid">
@@ -70,7 +68,7 @@ if (empty($post['author'])){echo $authorname;} else {
 				<input type="text" id="tag" name="tag" class="uk-input" maxlength="120" value="<?php echo get_tags_as_string($editid); ?>">
 	</div>
 	<div class="uk-width-1-3">
-		<span class="uk-fieldset" style="border-radius:3px;border:1px solid #aaa;padding:3px;" onclick="javascript:toggleMeta();preventDefault();">Show/Hide Meta</span>
+		<span class="uk-fieldset" style="cursor:pointer;border-radius:3px;border:1px solid #aaa;padding:3px;" onclick="javascript:toggleMeta();preventDefault();">Show/Hide Meta</span>
 	</div>
 </div>
 
@@ -95,12 +93,9 @@ if (empty($post['author'])){echo $authorname;} else {
 				</td>
 			</tr>
 		</table>
-	
-
 
 	<label>Keyword<br>
 	<input type=text name="keyword" size ="40" maxlength="100" value="<?php echo $post['keyword'];?>"></label>
-
 
 	<?php
 	$meta_array = fetch_meta_info($post['path']);
@@ -125,7 +120,6 @@ if (empty($post['author'])){echo $authorname;} else {
 		<label>Redirect type<br />
 		<input type=text name="redirect_type" size ="3" maxlength="3" value="<?php echo $post['redirect_type'];?>"></label>
 	</div>
-	
 </div>	
 
 
@@ -135,13 +129,11 @@ if (empty($post['author'])){echo $authorname;} else {
 	</div>
 	<div class="uk-width-1-1">
 		<input type=text id="thisurl" name="thisurl" class="uk-input" maxlength="300" value="<?=$post['path']; ?>">
-		<a href="<?=$post['path']?>">Preview</a>
 	</div>
 </div>
 <!--End of metadata-->
 
 	<textarea id="main_text" name="main_text" rows="25" class="mceEditor"><?php echo $post['main_text'];?></textarea>
-	
 	</form>
 	<br>
 	<input class="uk-input" type="submit" Value="Update" style="cursor:pointer">
@@ -150,7 +142,6 @@ if (empty($post['author'])){echo $authorname;} else {
 		
 
 <!-- END OF META  -->		
-		
 	<div id="tabs-2">
 		<fieldset>
 			<legend>Category tree</legend>
@@ -159,12 +150,10 @@ if (empty($post['author'])){echo $authorname;} else {
 				?>
 			</fieldset>	
 	</div>
-
 	
 	<div id="tabs-3">
 			<?php
 				$comments = get_comments($post['id']);
-
 				if(!empty($comments)){
 					?>
 
@@ -178,7 +167,6 @@ if (empty($post['author'])){echo $authorname;} else {
 
 				for($i=0;$i<count($comments);$i++){
 			?>
-				
 					<tr style="border-bottom:solid 1px #aaa;">
 					<td class="com_<?=$comments[$i]['status']?>" style="padding : 10px"><a href="<?=$comments[$i]['website']?>" title="<?=$comments[$i]['website']?>"><?=$comments[$i]['name']?></a>,<?=$comments[$i]['email']?><?=$comments[$i]['timestamp']?> Status:<?=$comments[$i]['status']?> : 
 					<a id="<?=$comments[$i]['comment_id']?>" href="<?=$tld2?>/manage/comment-delete.php?post_id=<?=$post['id']?>&com_id=<?=$comments[$i]['comment_id']?>">Delete</a>
@@ -186,7 +174,6 @@ if (empty($post['author'])){echo $authorname;} else {
 						<br>
 						<br>
 						<?=$comments[$i]['comment']?>
-						
 						</td>
 					</tr>
 	<?php
@@ -214,8 +201,6 @@ if (empty($post['author'])){echo $authorname;} else {
 		<a href="<?php $pingst = $tld.'manage/ping.php?url='.$post['path'];echo $pingst;  ?>">Ping Google</a><br />
 		<a href="http://twitter.com/">Tweet this !</a><br />	
 	</div>
-
-
 </div>
 <?php
 } else {
@@ -232,14 +217,12 @@ if (empty($post['author'])){echo $authorname;} else {
 	$post['readmore'] ='';
 	$post['published'] = '';
 	$post['note'] = '';
-	
 	$post['query_string'] = '';
 	$post['path'] = ''; 
 	$post['redirect'] = ''; 	
 	$post['redirect_type'] = ''; 	
 	$post['description'] = '';
 	$post['keyword'] = ''; 	
-	
 	?>
 	<div style="position:relative;width:300px;top:120px;margin-left:auto;margin-right:auto">
 	<p style="font-size:30px;"><a href="newpost.php">Create a New Post</a></p>

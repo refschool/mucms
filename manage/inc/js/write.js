@@ -1,6 +1,6 @@
 tinymce.init({
   selector: 'textarea',
-  plugins: 'codesample,link,preview,wordcount',
+  plugins: 'codesample,link,preview,wordcount,save',
   codesample_languages: [
         {text: 'HTML/XML', value: 'markup'},
         {text: 'JavaScript', value: 'javascript'},
@@ -13,5 +13,5 @@ tinymce.init({
         {text: 'C#', value: 'csharp'},
         {text: 'C++', value: 'cpp'}
     ],
-  toolbar: 'codesample,link,preview,wordcount,undo,redo,formatselect'
+  toolbar: 'codesample,link,preview,wordcount,undo,redo,formatselect,save'
 });

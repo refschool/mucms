@@ -1,8 +1,6 @@
 <?php session_start();
 
  include("../inc/config.php"); 
- include("../inc/debug-functions.php"); 
- //include("inc/manager.class.php");
  include("inc/php/manager-functions.php");
  
 ?>
@@ -35,12 +33,12 @@ else {
 //fix this for good !!
 $path = trim($_POST['thisurl']);
 
-if(get_magic_quotes_gpc () == 1){
-	$h1_title = $_POST['h1_title'];
-}
-else {
-	$h1_title = addslashes($_POST['h1_title']);
-}
+// if(get_magic_quotes_gpc () == 1){
+// 	$h1_title = $_POST['h1_title'];
+// }
+// else {
+// 	$h1_title = addslashes($_POST['h1_title']);
+// }
 
 
 
@@ -138,7 +136,6 @@ $keyword = $_POST['keyword'];
 //--CONTENT TABLE UPDATE QUERY______________________
 $update_content = "update `$tprefix"."_content` set 
 `title`='$title',
-`h1_title`='$h1_title',
 `author`='$author',
 `date_posted`='$date_posted',
 `social_body_text`='$social_body_text',
@@ -195,12 +192,13 @@ $db->query($update_meta);
 	//first delete categories attached to the product
 	$sql_del_cat_post = "delete from `$tprefix"."_cat_post` where `post_id` = '$id'";
 	$db->query($sql_del_cat_post);
-	echo '<br> delete cat_post ' . $sql_del_cat_post;
+	//echo '<br> delete cat_post ' . $sql_del_cat_post;
 	
 	//and then reinsert the category-product pairs
 	for($i=0;$i<count($category);$i++){
 		$sql = "insert into `$tprefix"."_cat_post` (`cat_id`,`post_id`) values ('".$category[$i]."','" . $id . "') ";
-		$db->query($sql);echo '<br>cat_post table update : ' .$sql;
+		$db->query($sql);
+		//echo '<br>cat_post table update : ' .$sql;
 	
 	
 	}
@@ -244,10 +242,8 @@ $db->query($update_meta);
 //END OF METADATA PROCESSING
 
 
-//update the RSS Feed
-build_rss();
 //update the sitemap
-build_sitemap();
+// build_sitemap();
 
 echo "<meta http-equiv='refresh' content='1; url=write.php?id=$id'>";
 $db->close();
