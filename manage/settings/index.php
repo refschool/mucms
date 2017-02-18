@@ -1,10 +1,15 @@
 <?php session_start();
 //index of settings
-ini_set("include_path", ".:../:./inc:../inc:../../inc:../Smarty-2.6.19/libs");
 include("../../inc/config.php");
 include("../inc/php/manager.class.php");
 include("../inc/php/manager-functions.php");
-$cat = $_GET['cat'];$editid = $_GET['id'];$tab_id = $_GET['tab_id'];
+
+if(isset($_GET['cat'])){
+
+$cat = $_GET['cat'];
+$editid = $_GET['id'];
+$tab_id = $_GET['tab_id'];
+}
 
 
 if(!isset($_SESSION['Userlevel'])){
@@ -30,8 +35,8 @@ else {
 <title>Site settings</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" type="text/css" href="../css/manager.css" />
-<script type="text/javascript" src="../js/ajax.js"></script>
-<script language="javascript" type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="<?=$base_url?>/manage/inc/js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="<?=$base_url?>/manage/inc/js/script.js"></script>
 		<link type="text/css" href="../js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />	
 		<script type="text/javascript" src="../js/js/jquery-1.6.2.min.js"></script>
 		<script type="text/javascript" src="../js/js/jquery-ui-1.8.15.custom.min.js"></script>
@@ -108,7 +113,7 @@ $(document).ready(function() {
 		
 		<div id="menu">
 			<?php
-			include("includes/menu.php");
+			include("../includes/menu.php");
 			?>
 		
 		</div>

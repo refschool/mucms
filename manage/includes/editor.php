@@ -59,13 +59,13 @@ if (!isset($editid)){echo date('Y-m-d H:m:s');} else {echo $post['date_posted'];
 <div class="uk-grid">
 	<div class="uk-width-1-3">
 		Author<br/>
-				<input type="text" name="author" class="uk-input" maxlength="40" value="<?php
+				<input tabindex="1" type="text" name="author" class="uk-input" maxlength="40" value="<?php
 if (empty($post['author'])){echo $authorname;} else {
 	echo $post['author'];} ?>">
 	</div>
 	<div class="uk-width-1-3">
 		Tags<br/>
-				<input type="text" id="tag" name="tag" class="uk-input" maxlength="120" value="<?php echo get_tags_as_string($editid); ?>">
+				<input tabindex="2" type="text" id="tag" name="tag" class="uk-input" maxlength="120" value="<?php echo get_tags_as_string($editid); ?>">
 	</div>
 	<div class="uk-width-1-3">
 		<span class="uk-fieldset" style="cursor:pointer;border-radius:3px;border:1px solid #aaa;padding:3px;" onclick="javascript:toggleMeta();preventDefault();">Show/Hide Meta</span>
@@ -125,18 +125,18 @@ if (empty($post['author'])){echo $authorname;} else {
 
 <div class="uk-grid">
 	<div class="uk-width-1-1">
-		<input onkeyup="sefurlize()"  type=text id="title" name="title" class="uk-input" maxlength="120" value="<?php echo $post['title'];?>">
+		<input tabindex="20" onkeyup="sefurlize()"  type=text id="title" name="title" class="uk-input" maxlength="120" value="<?php echo $post['title'];?>">
 	</div>
 	<div class="uk-width-1-1">
-		<input type=text id="thisurl" name="thisurl" class="uk-input" maxlength="300" value="<?=$post['path']; ?>">
+		<input tabindex="21" type=text id="thisurl" name="thisurl" class="uk-input" maxlength="300" value="<?=$post['path']; ?>">
 	</div>
 </div>
 <!--End of metadata-->
 
-	<textarea id="main_text" name="main_text" rows="25" class="mceEditor"><?php echo $post['main_text'];?></textarea>
+	<textarea tabindex="22" id="main_text" name="main_text" rows="25" class="mceEditor"><?php echo $post['main_text'];?></textarea>
 	</form>
 	<br>
-	<input class="uk-input" type="submit" Value="Update" style="cursor:pointer">
+	<input tabindex="23" class="uk-input" type="submit" Value="Update" style="cursor:pointer">
 </div>
 <!-- END OF BODY ELEMENTS-->
 		

@@ -30,8 +30,8 @@ else {
 <title>Article management</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="inc/css/manager.css" />
-<script type="text/javascript" src="js/ajax.js"></script>
-<script language="javascript" type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="<?=$base_url?>/manage/inc/js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="<?=$base_url?>/manage/inc/js/script.js"></script>
 <link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />	
 <script type="text/javascript" src="js/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
@@ -79,15 +79,12 @@ $(document).ready(function() {
 	});
 	
 	//ajax update of the textarea
-	$(function() {
-		$('#ajaxUpdate').click(function(){
-			var txt = $('#main_text').val();
-			
-			$.post('do.php',{postid: "<?=$editid ?>" , main_text : txt });//alert('<?=$editid ?>'+' édité : ' + txt);
-		});
-	
-	
-	});
+	// $(function() {
+	// 	$('#ajaxUpdate').click(function(){
+	// 		var txt = $('#main_text').val();
+	// 		$.post('do.php',{postid: "<?=$editid ?>" , main_text : txt });//alert('<?=$editid ?>'+' édité : ' + txt);
+	// 	});
+	// });
 	</script>
 
 </head>

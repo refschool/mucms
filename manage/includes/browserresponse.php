@@ -48,7 +48,7 @@ this script will update the listing of the posts in the brower based on the cate
 //select the post for a given category
 
 
-//echo $sql;
+echo $sql;
 
 $content = '<table class="collapse">';
 $content .= '<tr class="header">';

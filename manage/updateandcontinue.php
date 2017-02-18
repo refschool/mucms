@@ -64,10 +64,10 @@ $social_body_text = addslashes(trim(($_POST['social_body_text'])));
 
 
 if(get_magic_quotes_gpc () == 1){
-$main_text = $_POST['main_text'];
+$main_text = htmlentities($_POST['main_text']);
 }
 else {
-$main_text = addslashes(trim(($_POST['main_text'])));
+$main_text = addslashes(trim(htmlentities($_POST['main_text'])));
 }
 
 //$lang = $_POST['lang'];
@@ -114,7 +114,7 @@ if( $_POST['published'] == 'Y'){
 } 	
 
 
-
+// todo function update_meta(){}
 $meta_robotNOFOLLOW =(isset($_POST['meta_robotNOFOLLOW']) ?  $_POST['meta_robotNOFOLLOW'] : '');
 $meta_robotNOARCHIVE =(isset($_POST['meta_robotNOARCHIVE']) ?  $_POST['meta_robotNOARCHIVE'] : '');
 $meta_robotNOSNIPPET =(isset($_POST['meta_robotNOSNIPPET']) ?  $_POST['meta_robotNOSNIPPET'] : '');
@@ -133,7 +133,11 @@ $description = addslashes(trim(($_POST['description'])));
 
 $keyword = $_POST['keyword'];
 
+//TODO function update_content()
 //--CONTENT TABLE UPDATE QUERY______________________
+
+
+
 $update_content = "update `$tprefix"."_content` set 
 `title`='$title',
 `author`='$author',
@@ -145,8 +149,6 @@ $update_content = "update `$tprefix"."_content` set
 `published`='$published',
 `com_closed`='$com_closed',
 `note`='$note' where `id`='$id'" ;
-
-//echo 'yyy<br>'.$update_content;
 
 $query_state = $db->query($update_content); 
 

@@ -1,6 +1,4 @@
 <?php
-
-include("debug-functions.php");
 include("hook-functions.php");
 include("comment_functions.php");
 include("tag-category-functions.php");

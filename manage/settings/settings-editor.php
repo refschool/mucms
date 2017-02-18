@@ -1,4 +1,3 @@
-
 <?php 
 $editid = $_GET['id'];//if(!isset($editid)){$editid = 1;}
 
