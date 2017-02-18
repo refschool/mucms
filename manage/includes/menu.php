@@ -14,6 +14,6 @@
 		<li><a href="<?=$tld2?>/manage/settings/categories.php">Category</a></li>
 	</ul>
 </li>	
-<li><a href="<?=$tld2?>/manage/logout.php">Logout</a></li>
+<li><a href="<?=$base_url?>/manage/logout.php">Logout</a></li>
 <li><a href="#" id="toggler">Toggle</a></li>
 </ul>

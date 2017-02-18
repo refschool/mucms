@@ -77,25 +77,13 @@ $(document).ready(function() {
 		$("#category").click(function(){
 		});
 	});
-	
-	//ajax update of the textarea
-	// $(function() {
-	// 	$('#ajaxUpdate').click(function(){
-	// 		var txt = $('#main_text').val();
-	// 		$.post('do.php',{postid: "<?=$editid ?>" , main_text : txt });//alert('<?=$editid ?>'+' édité : ' + txt);
-	// 	});
-	// });
 	</script>
-
 </head>
 <?php
 	if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 	{
 ?>
-
-
 <body onload="updatelist('<?php if(empty($_SESSION['category'])){echo 'all'; } else{echo $_SESSION['category'];} ?>');">
-
 <div class="uk-width-1-1">
 	
 
@@ -115,8 +103,6 @@ $(document).ready(function() {
 				?>
 		</div>
 	</div>
-
-
 		<div class="uk-grid" id="browser" style="display:none;z-index:10">
 		<div class="uk-width-1-1">
 				<?php

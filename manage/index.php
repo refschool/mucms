@@ -7,9 +7,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Manager </title>
-<meta name="description" content="" />
-<meta name="keywords" content = "" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="inc/css/manager.css" />
+<script type="text/javascript" src="<?=$base_url?>/manage/inc/js/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="<?=$base_url?>/manage/inc/js/script.js"></script>
+<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />	
+<script type="text/javascript" src="js/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.jeditable.mini.js"></script>
+<script src="<?=$base_url."/manage/lib/tinymce/js/tinymce/tinymce.min.js"?>"></script>
+<link rel="stylesheet" href="<?=$base_url."/inc/uikit/css/uikit.min.css" ?>"/>
+
+
 <link rel="stylesheet" type="text/css" href="css/user.css" />
 <link rel="shortcut icon" href="/favicon.ico" />
 </head>
@@ -20,11 +29,17 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
 ?>
 
+<div class="uk-container">
+	<div class="uk-width-1-1">
+		<div style="margin-left:40%;margin-right:40%;">
+			<div class="uk-alert-success" uk-alert style="padding:1.5em">
+				<a href="<?=$base_url?>/manage/write.php" />Go To Admin</a>
+			</div>
+		</div>
+	</div>
+</div>
+
 <?php
-// echo 'you are logged in<br>';
-// echo 'loggedIn = '. $_SESSION['LoggedIn'].'<br>';
-// echo 'Username = '. $_SESSION['Username'].'<br>';
- echo "<a href='".$base_url."/manage/write.php' />Go To Admin</a>";	
 }
 
 elseif(!empty($_POST['username']) && !empty($_POST['password'])){
@@ -50,15 +65,25 @@ elseif(!empty($_POST['username']) && !empty($_POST['password'])){
 		    $_SESSION['LoggedIn'] = 1;
 			
 			if($_SESSION['Userlevel'] == 'admin'){
-			//echo 'Success : '.$_SESSION['Username'];
 			echo "<meta http-equiv='refresh' content='0;".$_SESSION['returnPath']."' />";
 			}
 			else {
-				
-				echo "Vous n'avez pas les droits suffisants pour éditer !<br> ";
-				echo '<a href="/">Retour</a><br>';
-				echo '<a href="/manage/logout.php">Logout</a>';	
-				
+
+?>
+<div class="uk-container">
+	<div class="uk-width-1-1">
+		<div style="margin-left:40%;margin-right:40%">
+			<div class="uk-alert-warning" uk-alert>
+				<p>Vous n'avez pas les droits suffisants pour Ã©diter !</p>
+				<p><a href="/">Retour</a></p>
+				<p><a href="/manage/logout.php">Logout</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<?php
+
 			}
 		}
 		else {
@@ -72,15 +97,20 @@ elseif(!empty($_POST['username']) && !empty($_POST['password'])){
 else {
 ?>
 
-<form method="post" action="index.php" name="loginform" id="loginform">
-	<table class="centered-table">
-		<tr><td class="vform"><label for="username">Login</label><input class="bg" type="text" name="username" id="username" /></td></tr>
-		<tr><td class="vform"><label for="password">Password</label><input class="bg" type="password" name="password" id="password" /></td></tr>
-		<tr><td class="vform"><input class="btn" type="submit" name="login" id="login" value="Login" /></td></tr>
-		<tr><td><a href="<?=$tld2 . $install_folder?>/user/requestpassword.php">Mot de passe oublié?</a></td></tr>
-	</table>
-	</form>
-
+<div class="uk-container">
+	<div class="uk-width-1-1">
+	<div style="margin-left:40%;margin-right:40%">
+			<form class="uk-form" method="post" action="index.php" name="loginform" id="loginform">
+				<label for="username">Login</label>
+				<input class="uk-input" type="text" name="username" id="username" /><br />
+				<label for="password">Password</label>
+				<input class="uk-input" type="password" name="password" id="password" /><br /><br />
+				<input class="uk-input" type="submit" name="login" id="login" value="Login" /><br />
+				<a href="<?=$base_url?>/user/requestpassword.php">Mot de passe oubliÃ©?</a>
+			</form>
+		</div>
+	</div>
+</div>
 <?php
 }
 ?>
