@@ -2,9 +2,19 @@
 * {font-family:Arial, Helvetica, sans-serif;}
 body {background-color:#eee;}
 /* styling for div elements */
+.center-login {
+	position:absolute;
+	left:50%;top:50%;
+	width:400px !important;
+	height:250px;
+	margin-top:-145px;
+	margin-left:-200px;
+	border: solid 1px grey;
+    border-radius: 10px;
+    padding: 15px;}
 
 #header {z-index:101;color:#fff; background-color:#888;}
-#main {width:100%;height:auto;/*float:left;*/ margin:0; padding:40px 0 0 0; background-color:none;}
+#main {width:100%;height:auto;margin:0; padding:40px 0 0 0; background-color:none;}
 
 /****** menu bar **********/
 /****** common styling **********/

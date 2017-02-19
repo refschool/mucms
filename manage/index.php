@@ -30,12 +30,10 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 ?>
 
 <div class="uk-container">
-	<div class="uk-width-1-1">
-		<div style="margin-left:40%;margin-right:40%;">
+	<div class="uk-width-1-1 center-login" >
 			<div class="uk-alert-success" uk-alert style="padding:1.5em">
 				<a href="<?=$base_url?>/manage/write.php" />Go To Admin</a>
 			</div>
-		</div>
 	</div>
 </div>
 
@@ -71,8 +69,8 @@ elseif(!empty($_POST['username']) && !empty($_POST['password'])){
 
 ?>
 <div class="uk-container">
-	<div class="uk-width-1-1">
-		<div style="margin-left:40%;margin-right:40%">
+	<div class="uk-width-1-1 center-login">
+		<div style="margin-left:20%;margin-right:20%">
 			<div class="uk-alert-warning" uk-alert>
 				<p>Vous n'avez pas les droits suffisants pour éditer !</p>
 				<p><a href="/">Retour</a></p>
@@ -98,8 +96,7 @@ else {
 ?>
 
 <div class="uk-container">
-	<div class="uk-width-1-1">
-	<div style="margin-left:40%;margin-right:40%">
+	<div class="uk-width-1-1 center-login">
 			<form class="uk-form" method="post" action="index.php" name="loginform" id="loginform">
 				<label for="username">Login</label>
 				<input class="uk-input" type="text" name="username" id="username" /><br />
@@ -108,7 +105,6 @@ else {
 				<input class="uk-input" type="submit" name="login" id="login" value="Login" /><br />
 				<a href="<?=$base_url?>/user/requestpassword.php">Mot de passe oublié?</a>
 			</form>
-		</div>
 	</div>
 </div>
 <?php

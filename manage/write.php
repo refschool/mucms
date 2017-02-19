@@ -35,36 +35,11 @@ else {
 <link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />	
 <script type="text/javascript" src="js/js/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
-<script type="text/javascript" src="js/jquery.jeditable.mini.js"></script>
 <script src="<?=$base_url."/manage/lib/tinymce/js/tinymce/tinymce.min.js"?>"></script>
 <link rel="stylesheet" href="<?=$base_url."/inc/uikit/css/uikit.min.css" ?>"/>
 
 <script type="text/javascript" src="<?=$base_url."/manage/inc/js/write.js"?>"></script>
 <script type="text/javascript">
-//jeditable
-$(document).ready(function() {
-     $('.edit').editable('<?=$base_url.'/manage/includes/save.php'?>');
- });
-
- $(function() {
-	$('table td#delete').click(function(){
-		var x=$(this).prev().attr('id');alert(x);
-		
-		$.post('controller.php',{action:"delete",id:x});
-		$(this).parent().remove();
-	});
- });
- 
- $(function() {
-	$('#rel_add').click(function(){
-	//dynamically add the row and send data to remote function
-		$('#rel_links > tbody:last').append('<tr class="data edit"><td class="data edit" id="postd_"><td class="data edit" id="ancho_"></td><td class="data edit" id="urloc_"></td><td class="data" id="delete"><a href="#">Delete</a></td></tr>').bind('click',function(){$('.edit').editable('<?=$tld.'manage/settings/savedb.php'?>')});
-		
-		//dynamically populate the row with callback function
-		$.post('controller.php',{action:"add"},function(data){$("#postd_").html(<?=$editid ?>).attr("id", "postd_" + data.link_id).next().attr("id","ancho_"+data.link_id).next().attr("id","urloc_"+data.link_id)},"json");
-	});
- });
-
 	$(function() {
 		$("#tabs").tabs();
 	});
@@ -86,7 +61,7 @@ $(document).ready(function() {
 <body onload="updatelist('<?php if(empty($_SESSION['category'])){echo 'all'; } else{echo $_SESSION['category'];} ?>');">
 <div class="uk-width-1-1">
 	
-
+	<!-- END OF HEADER DIV  -->
 	<div id="header" class="uk-width-1-1">
 		<div id="menu">
 			<?php
@@ -94,7 +69,9 @@ $(document).ready(function() {
 			?>
 		</div>
 		<br style="clear:both" />
-	</div><!-- END OF HEADER DIV  -->
+	</div>
+
+	<!-- EDITOR DIV  -->
 
 	<div class="uk-grid" id="editor" style="z-index:9;display:block">
 		<div class="uk-width-1-1">
@@ -103,11 +80,14 @@ $(document).ready(function() {
 				?>
 		</div>
 	</div>
-		<div class="uk-grid" id="browser" style="display:none;z-index:10">
+
+	<!-- BROWSER DIV  -->
+
+	<div class="uk-grid" id="browser" style="display:none;z-index:10">
 		<div class="uk-width-1-1">
-				<?php
-				include("includes/browser.php");
-				?>
+			<?php
+			include("includes/browser.php");
+			?>
 		</div>
 	</div>
 
