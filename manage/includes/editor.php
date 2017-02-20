@@ -125,7 +125,7 @@ if (empty($post['author'])){echo $authorname;} else {
 
 <div class="uk-grid">
 	<div class="uk-width-1-1">
-		<input tabindex="20" onkeyup="sefurlize()"  type=text id="title" name="title" class="uk-input" maxlength="120" value="<?php echo $post['title'];?>">
+		<input tabindex="20" onkeyup="sefurlize('<?=$base_url?>')"  type=text id="title" name="title" class="uk-input" maxlength="120" value="<?php echo $post['title'];?>">
 	</div>
 	<div class="uk-width-1-1">
 		<input tabindex="21" type=text id="thisurl" name="thisurl" class="uk-input" maxlength="300" value="<?=$post['path']; ?>">

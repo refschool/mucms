@@ -6,7 +6,7 @@ function copyDescription()
 	}
 
 //this function render a sefurl from a string (titleof the post)
-function sefurlize(){
+function sefurlize(root){
 //http://www2.craven.fr/blojsom/blog/default/Work/Programming/2007/07/04/Tableau-des-accents-pour-JavaScript-et-HTML.html
 	var title = document.getElementById('title').value;
 	// Clean up the title		
@@ -25,7 +25,7 @@ function sefurlize(){
 		.replace(/[-]+/g, "-") // replace multiple instances of the hyphen with a single instance
 		.replace(/^-+|-+$/g, "") // trim leading and trailing hyphens				
 		; 
-		document.getElementById('thisurl').value = url+'/';
+		document.getElementById('thisurl').value = root + '/' + url+'/';
 }
 
 function setImageSize() {
