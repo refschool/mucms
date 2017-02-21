@@ -32,27 +32,15 @@ else {
 <link rel="stylesheet" type="text/css" href="inc/css/manager.css" />
 <script type="text/javascript" src="<?=$base_url?>/manage/inc/js/ajax.js"></script>
 <script language="javascript" type="text/javascript" src="<?=$base_url?>/manage/inc/js/script.js"></script>
-<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />	
-<script type="text/javascript" src="js/js/jquery-1.6.2.min.js"></script>
-<script type="text/javascript" src="js/js/jquery-ui-1.8.15.custom.min.js"></script>
+<link type="text/css" href="js/css/ui-lightness/jquery-ui-1.8.15.custom.css" rel="stylesheet" />
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>	
 <script src="<?=$base_url."/manage/lib/tinymce/js/tinymce/tinymce.min.js"?>"></script>
 <link rel="stylesheet" href="<?=$base_url."/inc/uikit/css/uikit.min.css" ?>"/>
 <script type="text/javascript"  src="<?=$base_url."/inc/uikit/js/uikit.min.js" ?>"></script>
 <script type="text/javascript" src="<?=$base_url."/manage/inc/js/write.js"?>"></script>
-<script type="text/javascript">
-	$(function() {
-		$("#tabs").tabs();
-	});
-	
-	$(function() {
-		$("#btabs").tabs();
-	});
-	
-	$(function() {
-		$("#category").click(function(){
-		});
-	});
-	</script>
 </head>
 <?php
 	if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
@@ -71,50 +59,17 @@ else {
 
 
 		<!-- test DIV  -->
-	<div class="uk-grid" >
-		<div class="uk-width-3-4">
-			<div class="uk-card uk-card-default uk-card-body">
-
-			<div id="editor" style="z-index:9;display:block" class="uk-grid">
-				<div class="uk-width-1-1">
-					<?php
-					include("includes/editor.php");
-					?>
+				<div style="display:block" >
+						<?php
+						include("includes/editor.php");
+						?>
 				</div>
-			</div>
 
-			<div class="uk-grid" id="browser" style="display:none;z-index:10">
-				<div class="uk-width-1-1">
-					<?php
-					include("includes/browser.php");
-					?>
-				</div>
-			</div>			
-
-			</div>
-
-		</div>
-
-
-		<div class="uk-width-1-4">
-			<div class="uk-card uk-card-default uk-card-body">sidebar</div>
-				
-
-			<div class="uk-card uk-card-default uk-card-body">sidebar</div>
-		</div>
-	</div>
-
-
-
-		<div>
-
-			<div id="footer">
-				<?=get_manager_version();?>
-			</div>
-		</div>
-
-	</div>
-
+				<div style="display:block;">
+						<?php
+						include("includes/browser.php");
+						?>
+				</div>	
 </body>
 <?php
 	}
@@ -122,17 +77,17 @@ else {
 ?>
 
 <script>
-	const b = document.getElementById('toggler')
-	const c = document.getElementById('close_browser')
+	// const b = document.getElementById('toggler')
+	// const c = document.getElementById('close_browser')
 
-	b.onclick = function(){
-		document.getElementById('editor').style.display = "none";
-		document.getElementById('browser').style.display = "block";
-	}
+	// b.onclick = function(){
+	// 	document.getElementById('editor').style.display = "none";
+	// 	document.getElementById('browser').style.display = "block";
+	// }
 
-	c.onclick = function(){
-		document.getElementById('editor').style.display = "block";
-		document.getElementById('browser').style.display = "none";
-	}
+	// c.onclick = function(){
+	// 	document.getElementById('editor').style.display = "block";
+	// 	document.getElementById('browser').style.display = "none";
+	// }
 </script>
 </html>

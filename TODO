@@ -1,5 +1,5 @@
 TODO :
-tabindex
-manage : redirect après login foireuse
+body.php modifié
 relever le textarea !
-deplacer les js et css dnas un même endroit
+suppress "gotoadmin",manage : redirect après login foireuse,
+deplacer les js et css dans un même endroit
