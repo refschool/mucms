@@ -33,7 +33,7 @@ function get_body(){
 									<div class="post">
 										<div class="text">	
 										<a href="<?=$content['page_element'][$i]['thisurl']?>"><h2 class="home"><?=$content['page_element'][$i]['sub_title']?></h2></a>
-										<p><?=$content['page_element'][$i]['main_text']?></p>
+										<p><?=html_entity_decode($content['page_element'][$i]['main_text'])?></p>
 										</div>
 									</div>
 										<?php
@@ -91,7 +91,7 @@ function get_body(){
 								
 								hook_insert('after_post_title');
 								
-									echo $content['page_element'][0]['main_text'];
+									echo html_entity_decode($content['page_element'][0]['main_text']);
 									
 									hook_insert('end_of_post');
 

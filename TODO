@@ -1,4 +1,7 @@
 TODO :
+uploader new manage (sauf phpninja)
+html_entity_decode à mettre là où il faut
+
 body.php modifié
 relever le textarea !
 suppress "gotoadmin",manage : redirect après login foireuse,
