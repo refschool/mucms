@@ -1,6 +1,6 @@
 tinymce.init({
   selector: 'textarea',
-  plugins: 'codesample,link,preview,wordcount,save',
+  plugins: 'codesample,link,preview,wordcount,save,code,image',
   codesample_languages: [
         {text: 'HTML/XML', value: 'markup'},
         {text: 'JavaScript', value: 'javascript'},
@@ -13,5 +13,7 @@ tinymce.init({
         {text: 'C#', value: 'csharp'},
         {text: 'C++', value: 'cpp'}
     ],
-  toolbar: 'codesample,link,preview,wordcount,undo,redo,formatselect,save'
+  toolbar: 'codesample,link,preview,wordcount,undo,redo,formatselect,save,code,image',
+  image_caption: true,
+  image_prepend_url: "http://www.tinymce.com/images/"
 });
